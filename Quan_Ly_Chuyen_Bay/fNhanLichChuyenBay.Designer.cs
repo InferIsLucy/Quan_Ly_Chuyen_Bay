@@ -192,7 +192,7 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel5.Controls.Add(this.textBox1);
             this.panel5.Location = new System.Drawing.Point(4, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(461, 59);
+            this.panel5.Size = new System.Drawing.Size(455, 59);
             this.panel5.TabIndex = 4;
             // 
             // textBox1
@@ -269,7 +269,7 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel9.Controls.Add(this.textBox6);
             this.panel9.Location = new System.Drawing.Point(4, 68);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(461, 59);
+            this.panel9.Size = new System.Drawing.Size(455, 59);
             this.panel9.TabIndex = 6;
             // 
             // label6
