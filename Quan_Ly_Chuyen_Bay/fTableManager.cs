@@ -16,5 +16,10 @@ namespace Quan_Ly_Chuyen_Bay
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
