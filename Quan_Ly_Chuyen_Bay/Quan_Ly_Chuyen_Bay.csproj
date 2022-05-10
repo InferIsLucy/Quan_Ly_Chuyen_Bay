@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fBanVeChuyenBay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBanVeChuyenBay.Designer.cs">
+      <DependentUpon>fBanVeChuyenBay.cs</DependentUpon>
+    </Compile>
     <Compile Include="fNhanLichChuyenBay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fBanVeChuyenBay.resx">
+      <DependentUpon>fBanVeChuyenBay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fNhanLichChuyenBay.resx">
       <DependentUpon>fNhanLichChuyenBay.cs</DependentUpon>
     </EmbeddedResource>

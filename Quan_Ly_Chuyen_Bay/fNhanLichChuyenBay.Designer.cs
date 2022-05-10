@@ -41,29 +41,29 @@ namespace Quan_Ly_Chuyen_Bay
             this.nutTim = new System.Windows.Forms.Button();
             this.txbTim = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txbMaChuyenBay = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txbSanBayDi = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txbSanBayDen = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txbGiaVe = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txbNgayGio = new System.Windows.Forms.TextBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txbThoiGianBay = new System.Windows.Forms.TextBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txbSLGhe1 = new System.Windows.Forms.TextBox();
             this.panel14 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txbSLGhe2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -189,18 +189,18 @@ namespace Quan_Ly_Chuyen_Bay
             // panel5
             // 
             this.panel5.Controls.Add(this.label1);
-            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Controls.Add(this.txbMaChuyenBay);
             this.panel5.Location = new System.Drawing.Point(4, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(455, 59);
             this.panel5.TabIndex = 4;
             // 
-            // textBox1
+            // txbMaChuyenBay
             // 
-            this.textBox1.Location = new System.Drawing.Point(116, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(336, 22);
-            this.textBox1.TabIndex = 1;
+            this.txbMaChuyenBay.Location = new System.Drawing.Point(116, 19);
+            this.txbMaChuyenBay.Name = "txbMaChuyenBay";
+            this.txbMaChuyenBay.Size = new System.Drawing.Size(336, 22);
+            this.txbMaChuyenBay.TabIndex = 1;
             // 
             // label1
             // 
@@ -215,7 +215,7 @@ namespace Quan_Ly_Chuyen_Bay
             // panel6
             // 
             this.panel6.Controls.Add(this.label2);
-            this.panel6.Controls.Add(this.textBox2);
+            this.panel6.Controls.Add(this.txbSanBayDi);
             this.panel6.Location = new System.Drawing.Point(4, 133);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(225, 59);
@@ -230,17 +230,17 @@ namespace Quan_Ly_Chuyen_Bay
             this.label2.TabIndex = 2;
             this.label2.Text = "Sân Bay Đi: ";
             // 
-            // textBox2
+            // txbSanBayDi
             // 
-            this.textBox2.Location = new System.Drawing.Point(95, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(101, 22);
-            this.textBox2.TabIndex = 1;
+            this.txbSanBayDi.Location = new System.Drawing.Point(95, 19);
+            this.txbSanBayDi.Name = "txbSanBayDi";
+            this.txbSanBayDi.Size = new System.Drawing.Size(101, 22);
+            this.txbSanBayDi.TabIndex = 1;
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.label3);
-            this.panel7.Controls.Add(this.textBox3);
+            this.panel7.Controls.Add(this.txbSanBayDen);
             this.panel7.Location = new System.Drawing.Point(234, 133);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(225, 59);
@@ -255,18 +255,18 @@ namespace Quan_Ly_Chuyen_Bay
             this.label3.TabIndex = 2;
             this.label3.Text = "Sân Bay Đến:";
             // 
-            // textBox3
+            // txbSanBayDen
             // 
-            this.textBox3.Location = new System.Drawing.Point(95, 19);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(101, 22);
-            this.textBox3.TabIndex = 1;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txbSanBayDen.Location = new System.Drawing.Point(95, 19);
+            this.txbSanBayDen.Name = "txbSanBayDen";
+            this.txbSanBayDen.Size = new System.Drawing.Size(101, 22);
+            this.txbSanBayDen.TabIndex = 1;
+            this.txbSanBayDen.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // panel9
             // 
             this.panel9.Controls.Add(this.label6);
-            this.panel9.Controls.Add(this.textBox6);
+            this.panel9.Controls.Add(this.txbGiaVe);
             this.panel9.Location = new System.Drawing.Point(4, 68);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(455, 59);
@@ -281,17 +281,17 @@ namespace Quan_Ly_Chuyen_Bay
             this.label6.TabIndex = 2;
             this.label6.Text = "Giá vé: ";
             // 
-            // textBox6
+            // txbGiaVe
             // 
-            this.textBox6.Location = new System.Drawing.Point(66, 19);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(386, 22);
-            this.textBox6.TabIndex = 1;
+            this.txbGiaVe.Location = new System.Drawing.Point(66, 19);
+            this.txbGiaVe.Name = "txbGiaVe";
+            this.txbGiaVe.Size = new System.Drawing.Size(386, 22);
+            this.txbGiaVe.TabIndex = 1;
             // 
             // panel11
             // 
             this.panel11.Controls.Add(this.label7);
-            this.panel11.Controls.Add(this.textBox7);
+            this.panel11.Controls.Add(this.txbNgayGio);
             this.panel11.Location = new System.Drawing.Point(4, 198);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(225, 59);
@@ -307,17 +307,17 @@ namespace Quan_Ly_Chuyen_Bay
             this.label7.Text = "Ngày giờ: ";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // textBox7
+            // txbNgayGio
             // 
-            this.textBox7.Location = new System.Drawing.Point(95, 19);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(101, 22);
-            this.textBox7.TabIndex = 1;
+            this.txbNgayGio.Location = new System.Drawing.Point(95, 19);
+            this.txbNgayGio.Name = "txbNgayGio";
+            this.txbNgayGio.Size = new System.Drawing.Size(101, 22);
+            this.txbNgayGio.TabIndex = 1;
             // 
             // panel12
             // 
             this.panel12.Controls.Add(this.label8);
-            this.panel12.Controls.Add(this.textBox8);
+            this.panel12.Controls.Add(this.txbThoiGianBay);
             this.panel12.Location = new System.Drawing.Point(234, 198);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(225, 59);
@@ -333,17 +333,17 @@ namespace Quan_Ly_Chuyen_Bay
             this.label8.Text = "Thời Gian Bay:";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // textBox8
+            // txbThoiGianBay
             // 
-            this.textBox8.Location = new System.Drawing.Point(111, 19);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(101, 22);
-            this.textBox8.TabIndex = 1;
+            this.txbThoiGianBay.Location = new System.Drawing.Point(111, 19);
+            this.txbThoiGianBay.Name = "txbThoiGianBay";
+            this.txbThoiGianBay.Size = new System.Drawing.Size(101, 22);
+            this.txbThoiGianBay.TabIndex = 1;
             // 
             // panel13
             // 
             this.panel13.Controls.Add(this.label9);
-            this.panel13.Controls.Add(this.textBox9);
+            this.panel13.Controls.Add(this.txbSLGhe1);
             this.panel13.Location = new System.Drawing.Point(4, 263);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(225, 59);
@@ -358,17 +358,17 @@ namespace Quan_Ly_Chuyen_Bay
             this.label9.TabIndex = 2;
             this.label9.Text = "Số lượng ghế hạng 1:";
             // 
-            // textBox9
+            // txbSLGhe1
             // 
-            this.textBox9.Location = new System.Drawing.Point(149, 19);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(73, 22);
-            this.textBox9.TabIndex = 1;
+            this.txbSLGhe1.Location = new System.Drawing.Point(149, 19);
+            this.txbSLGhe1.Name = "txbSLGhe1";
+            this.txbSLGhe1.Size = new System.Drawing.Size(73, 22);
+            this.txbSLGhe1.TabIndex = 1;
             // 
             // panel14
             // 
             this.panel14.Controls.Add(this.label10);
-            this.panel14.Controls.Add(this.textBox10);
+            this.panel14.Controls.Add(this.txbSLGhe2);
             this.panel14.Location = new System.Drawing.Point(234, 263);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(225, 59);
@@ -383,12 +383,12 @@ namespace Quan_Ly_Chuyen_Bay
             this.label10.TabIndex = 2;
             this.label10.Text = "Số lượng ghế hạng 2:";
             // 
-            // textBox10
+            // txbSLGhe2
             // 
-            this.textBox10.Location = new System.Drawing.Point(149, 19);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(73, 22);
-            this.textBox10.TabIndex = 1;
+            this.txbSLGhe2.Location = new System.Drawing.Point(149, 19);
+            this.txbSLGhe2.Name = "txbSLGhe2";
+            this.txbSLGhe2.Size = new System.Drawing.Size(73, 22);
+            this.txbSLGhe2.TabIndex = 1;
             // 
             // fNhanLichChuyenBay
             // 
@@ -440,29 +440,29 @@ namespace Quan_Ly_Chuyen_Bay
         private System.Windows.Forms.Button nutXem;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txbMaChuyenBay;
         private System.Windows.Forms.TextBox txbTim;
         private System.Windows.Forms.Button nutTim;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txbGiaVe;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txbSanBayDen;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txbSanBayDi;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txbNgayGio;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txbThoiGianBay;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txbSLGhe2;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txbSLGhe1;
     }
 }
