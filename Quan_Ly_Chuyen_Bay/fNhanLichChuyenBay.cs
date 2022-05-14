@@ -46,5 +46,10 @@ namespace Quan_Ly_Chuyen_Bay
         {
 
         }
+
+        private void nutThem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
