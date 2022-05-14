@@ -255,6 +255,7 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             this.btDatVe.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btDatVe.Location = new System.Drawing.Point(681, 80);
+            this.btDatVe.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.btDatVe.Name = "btDatVe";
             this.btDatVe.Size = new System.Drawing.Size(92, 41);
             this.btDatVe.TabIndex = 8;
