@@ -90,7 +90,7 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             this.panel13.Controls.Add(this.label9);
             this.panel13.Controls.Add(this.txbSLGhe1);
-            this.panel13.Location = new System.Drawing.Point(508, 4);
+            this.panel13.Location = new System.Drawing.Point(508, 3);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(215, 59);
             this.panel13.TabIndex = 8;
