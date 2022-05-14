@@ -108,6 +108,9 @@
     <EmbeddedResource Include="fPhieuDatCho.resx">
       <DependentUpon>fPhieuDatCho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fTraCuuChuyenBay.resx">
+      <DependentUpon>fTraCuuChuyenBay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fVeChuyenBay.resx">
       <DependentUpon>fVeChuyenBay.cs</DependentUpon>
     </EmbeddedResource>
