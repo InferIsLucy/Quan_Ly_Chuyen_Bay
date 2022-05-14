@@ -30,6 +30,11 @@ namespace Quan_Ly_Chuyen_Bay
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.nutXem = new System.Windows.Forms.Button();
+            this.nutSua = new System.Windows.Forms.Button();
+            this.nutXoa = new System.Windows.Forms.Button();
+            this.nutThem = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.txbSLGhe1 = new System.Windows.Forms.TextBox();
@@ -51,14 +56,10 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txbMaChuyenBay = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.nutThem = new System.Windows.Forms.Button();
-            this.nutXoa = new System.Windows.Forms.Button();
-            this.nutSua = new System.Windows.Forms.Button();
-            this.nutXem = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -66,7 +67,6 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -81,189 +81,11 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel5);
-            this.panel3.Location = new System.Drawing.Point(4, 9);
+            this.panel3.Location = new System.Drawing.Point(6, 14);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(784, 198);
+            this.panel3.Size = new System.Drawing.Size(1176, 309);
             this.panel3.TabIndex = 2;
-            // 
-            // panel13
-            // 
-            this.panel13.Controls.Add(this.label9);
-            this.panel13.Controls.Add(this.txbSLGhe1);
-            this.panel13.Location = new System.Drawing.Point(508, 3);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(215, 59);
-            this.panel13.TabIndex = 8;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 22);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(92, 17);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Số lượng ghế";
-            // 
-            // txbSLGhe1
-            // 
-            this.txbSLGhe1.Location = new System.Drawing.Point(101, 21);
-            this.txbSLGhe1.Name = "txbSLGhe1";
-            this.txbSLGhe1.Size = new System.Drawing.Size(108, 22);
-            this.txbSLGhe1.TabIndex = 1;
-            // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.label8);
-            this.panel12.Controls.Add(this.txbThoiGianBay);
-            this.panel12.Location = new System.Drawing.Point(256, 133);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(246, 59);
-            this.panel12.TabIndex = 7;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 22);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 17);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Thời Gian Bay:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // txbThoiGianBay
-            // 
-            this.txbThoiGianBay.Location = new System.Drawing.Point(116, 19);
-            this.txbThoiGianBay.Name = "txbThoiGianBay";
-            this.txbThoiGianBay.Size = new System.Drawing.Size(125, 22);
-            this.txbThoiGianBay.TabIndex = 1;
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.label7);
-            this.panel11.Controls.Add(this.txbNgayGio);
-            this.panel11.Location = new System.Drawing.Point(4, 133);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(246, 59);
-            this.panel11.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 17);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Ngày giờ: ";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // txbNgayGio
-            // 
-            this.txbNgayGio.Location = new System.Drawing.Point(95, 19);
-            this.txbNgayGio.Name = "txbNgayGio";
-            this.txbNgayGio.Size = new System.Drawing.Size(101, 22);
-            this.txbNgayGio.TabIndex = 1;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.label6);
-            this.panel9.Controls.Add(this.txbGiaVe);
-            this.panel9.Location = new System.Drawing.Point(256, 3);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(246, 59);
-            this.panel9.TabIndex = 6;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 22);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 17);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Giá vé: ";
-            // 
-            // txbGiaVe
-            // 
-            this.txbGiaVe.Location = new System.Drawing.Point(116, 19);
-            this.txbGiaVe.Name = "txbGiaVe";
-            this.txbGiaVe.Size = new System.Drawing.Size(125, 22);
-            this.txbGiaVe.TabIndex = 1;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.label3);
-            this.panel7.Controls.Add(this.txbSanBayDen);
-            this.panel7.Location = new System.Drawing.Point(256, 68);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(246, 59);
-            this.panel7.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Sân Bay Đến:";
-            // 
-            // txbSanBayDen
-            // 
-            this.txbSanBayDen.Location = new System.Drawing.Point(116, 19);
-            this.txbSanBayDen.Name = "txbSanBayDen";
-            this.txbSanBayDen.Size = new System.Drawing.Size(125, 22);
-            this.txbSanBayDen.TabIndex = 1;
-            this.txbSanBayDen.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.label2);
-            this.panel6.Controls.Add(this.txbSanBayDi);
-            this.panel6.Location = new System.Drawing.Point(4, 68);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(246, 59);
-            this.panel6.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Sân Bay Đi: ";
-            // 
-            // txbSanBayDi
-            // 
-            this.txbSanBayDi.Location = new System.Drawing.Point(95, 19);
-            this.txbSanBayDi.Name = "txbSanBayDi";
-            this.txbSanBayDi.Size = new System.Drawing.Size(101, 22);
-            this.txbSanBayDi.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Controls.Add(this.txbMaChuyenBay);
-            this.panel5.Location = new System.Drawing.Point(4, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(246, 59);
-            this.panel5.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Mã Chuyến Bay: ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // txbMaChuyenBay
-            // 
-            this.txbMaChuyenBay.Location = new System.Drawing.Point(116, 19);
-            this.txbMaChuyenBay.Name = "txbMaChuyenBay";
-            this.txbMaChuyenBay.Size = new System.Drawing.Size(125, 22);
-            this.txbMaChuyenBay.TabIndex = 1;
             // 
             // panel1
             // 
@@ -271,83 +93,295 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel1.Controls.Add(this.nutSua);
             this.panel1.Controls.Add(this.nutXoa);
             this.panel1.Controls.Add(this.nutThem);
-            this.panel1.Location = new System.Drawing.Point(565, 108);
+            this.panel1.Location = new System.Drawing.Point(848, 169);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(216, 84);
+            this.panel1.Size = new System.Drawing.Size(324, 131);
             this.panel1.TabIndex = 0;
-            // 
-            // nutThem
-            // 
-            this.nutThem.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.nutThem.Location = new System.Drawing.Point(3, 3);
-            this.nutThem.Name = "nutThem";
-            this.nutThem.Size = new System.Drawing.Size(100, 36);
-            this.nutThem.TabIndex = 0;
-            this.nutThem.Text = "Thêm";
-            this.nutThem.UseVisualStyleBackColor = false;
-            this.nutThem.Click += new System.EventHandler(this.nutThem_Click);
-            // 
-            // nutXoa
-            // 
-            this.nutXoa.BackColor = System.Drawing.Color.Red;
-            this.nutXoa.Location = new System.Drawing.Point(109, 3);
-            this.nutXoa.Name = "nutXoa";
-            this.nutXoa.Size = new System.Drawing.Size(100, 36);
-            this.nutXoa.TabIndex = 1;
-            this.nutXoa.Text = "Xóa";
-            this.nutXoa.UseVisualStyleBackColor = false;
-            // 
-            // nutSua
-            // 
-            this.nutSua.BackColor = System.Drawing.Color.Yellow;
-            this.nutSua.Location = new System.Drawing.Point(109, 43);
-            this.nutSua.Name = "nutSua";
-            this.nutSua.Size = new System.Drawing.Size(100, 36);
-            this.nutSua.TabIndex = 2;
-            this.nutSua.Text = "Sửa";
-            this.nutSua.UseVisualStyleBackColor = false;
-            this.nutSua.Click += new System.EventHandler(this.button1_Click);
             // 
             // nutXem
             // 
             this.nutXem.BackColor = System.Drawing.Color.Lime;
-            this.nutXem.Location = new System.Drawing.Point(3, 43);
+            this.nutXem.Location = new System.Drawing.Point(4, 67);
+            this.nutXem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nutXem.Name = "nutXem";
-            this.nutXem.Size = new System.Drawing.Size(100, 36);
+            this.nutXem.Size = new System.Drawing.Size(150, 56);
             this.nutXem.TabIndex = 3;
             this.nutXem.Text = "Xem";
             this.nutXem.UseVisualStyleBackColor = false;
             this.nutXem.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // nutSua
+            // 
+            this.nutSua.BackColor = System.Drawing.Color.Yellow;
+            this.nutSua.Location = new System.Drawing.Point(164, 67);
+            this.nutSua.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nutSua.Name = "nutSua";
+            this.nutSua.Size = new System.Drawing.Size(150, 56);
+            this.nutSua.TabIndex = 2;
+            this.nutSua.Text = "Sửa";
+            this.nutSua.UseVisualStyleBackColor = false;
+            this.nutSua.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // nutXoa
+            // 
+            this.nutXoa.BackColor = System.Drawing.Color.Red;
+            this.nutXoa.Location = new System.Drawing.Point(164, 5);
+            this.nutXoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nutXoa.Name = "nutXoa";
+            this.nutXoa.Size = new System.Drawing.Size(150, 56);
+            this.nutXoa.TabIndex = 1;
+            this.nutXoa.Text = "Xóa";
+            this.nutXoa.UseVisualStyleBackColor = false;
+            // 
+            // nutThem
+            // 
+            this.nutThem.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.nutThem.Location = new System.Drawing.Point(4, 5);
+            this.nutThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nutThem.Name = "nutThem";
+            this.nutThem.Size = new System.Drawing.Size(150, 56);
+            this.nutThem.TabIndex = 0;
+            this.nutThem.Text = "Thêm";
+            this.nutThem.UseVisualStyleBackColor = false;
+            this.nutThem.Click += new System.EventHandler(this.nutThem_Click);
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.label9);
+            this.panel13.Controls.Add(this.txbSLGhe1);
+            this.panel13.Location = new System.Drawing.Point(762, 5);
+            this.panel13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(322, 92);
+            this.panel13.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(4, 34);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(139, 25);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Số lượng ghế";
+            // 
+            // txbSLGhe1
+            // 
+            this.txbSLGhe1.Location = new System.Drawing.Point(152, 33);
+            this.txbSLGhe1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txbSLGhe1.Name = "txbSLGhe1";
+            this.txbSLGhe1.Size = new System.Drawing.Size(160, 31);
+            this.txbSLGhe1.TabIndex = 1;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.label8);
+            this.panel12.Controls.Add(this.txbThoiGianBay);
+            this.panel12.Location = new System.Drawing.Point(384, 208);
+            this.panel12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(369, 92);
+            this.panel12.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(4, 34);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(154, 25);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Thời Gian Bay:";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // txbThoiGianBay
+            // 
+            this.txbThoiGianBay.Location = new System.Drawing.Point(174, 30);
+            this.txbThoiGianBay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txbThoiGianBay.Name = "txbThoiGianBay";
+            this.txbThoiGianBay.Size = new System.Drawing.Size(186, 31);
+            this.txbThoiGianBay.TabIndex = 1;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.label7);
+            this.panel11.Controls.Add(this.txbNgayGio);
+            this.panel11.Location = new System.Drawing.Point(6, 208);
+            this.panel11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(369, 92);
+            this.panel11.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(4, 34);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(109, 25);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Ngày giờ: ";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // txbNgayGio
+            // 
+            this.txbNgayGio.Location = new System.Drawing.Point(142, 30);
+            this.txbNgayGio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txbNgayGio.Name = "txbNgayGio";
+            this.txbNgayGio.Size = new System.Drawing.Size(150, 31);
+            this.txbNgayGio.TabIndex = 1;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.label6);
+            this.panel9.Controls.Add(this.txbGiaVe);
+            this.panel9.Location = new System.Drawing.Point(384, 5);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(369, 92);
+            this.panel9.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(4, 34);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 25);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Giá vé: ";
+            // 
+            // txbGiaVe
+            // 
+            this.txbGiaVe.Location = new System.Drawing.Point(174, 30);
+            this.txbGiaVe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txbGiaVe.Name = "txbGiaVe";
+            this.txbGiaVe.Size = new System.Drawing.Size(186, 31);
+            this.txbGiaVe.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.label3);
+            this.panel7.Controls.Add(this.txbSanBayDen);
+            this.panel7.Location = new System.Drawing.Point(384, 106);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(369, 92);
+            this.panel7.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(4, 34);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(144, 25);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Sân Bay Đến:";
+            // 
+            // txbSanBayDen
+            // 
+            this.txbSanBayDen.Location = new System.Drawing.Point(174, 30);
+            this.txbSanBayDen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txbSanBayDen.Name = "txbSanBayDen";
+            this.txbSanBayDen.Size = new System.Drawing.Size(186, 31);
+            this.txbSanBayDen.TabIndex = 1;
+            this.txbSanBayDen.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Controls.Add(this.txbSanBayDi);
+            this.panel6.Location = new System.Drawing.Point(6, 106);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(369, 92);
+            this.panel6.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(4, 34);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(131, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Sân Bay Đi: ";
+            // 
+            // txbSanBayDi
+            // 
+            this.txbSanBayDi.Location = new System.Drawing.Point(142, 30);
+            this.txbSanBayDi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txbSanBayDi.Name = "txbSanBayDi";
+            this.txbSanBayDi.Size = new System.Drawing.Size(150, 31);
+            this.txbSanBayDi.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.txbMaChuyenBay);
+            this.panel5.Location = new System.Drawing.Point(6, 5);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(369, 92);
+            this.panel5.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(177, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Mã Chuyến Bay: ";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txbMaChuyenBay
+            // 
+            this.txbMaChuyenBay.Location = new System.Drawing.Point(174, 30);
+            this.txbMaChuyenBay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txbMaChuyenBay.Name = "txbMaChuyenBay";
+            this.txbMaChuyenBay.Size = new System.Drawing.Size(186, 31);
+            this.txbMaChuyenBay.TabIndex = 1;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(4, 213);
+            this.panel2.Location = new System.Drawing.Point(6, 333);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(784, 225);
+            this.panel2.Size = new System.Drawing.Size(1176, 352);
             this.panel2.TabIndex = 3;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 3);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 5);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(780, 219);
+            this.dataGridView1.Size = new System.Drawing.Size(1170, 342);
             this.dataGridView1.TabIndex = 0;
             // 
             // fNhanLichChuyenBay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AcceptButton = this.nutThem;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 703);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "fNhanLichChuyenBay";
-            this.Text = "fNhanLichChuyenBay";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Nhận lịch chuyến bay";
             this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             this.panel12.ResumeLayout(false);
@@ -362,7 +396,6 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
