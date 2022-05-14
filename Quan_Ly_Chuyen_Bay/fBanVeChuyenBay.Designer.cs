@@ -46,7 +46,7 @@ namespace Quan_Ly_Chuyen_Bay
             this.label4 = new System.Windows.Forms.Label();
             this.txbNgayDi = new System.Windows.Forms.TextBox();
             this.btnTim = new System.Windows.Forms.Button();
-            this.btnXem = new System.Windows.Forms.Button();
+            this.btnXemThongTinCB = new System.Windows.Forms.Button();
             this.btnDangKy = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -69,7 +69,7 @@ namespace Quan_Ly_Chuyen_Bay
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnTim);
-            this.flowLayoutPanel1.Controls.Add(this.btnXem);
+            this.flowLayoutPanel1.Controls.Add(this.btnXemThongTinCB);
             this.flowLayoutPanel1.Controls.Add(this.btnDangKy);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(347, 148);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -209,14 +209,15 @@ namespace Quan_Ly_Chuyen_Bay
             this.btnTim.Text = "Tìm Chuyến Bay";
             this.btnTim.UseVisualStyleBackColor = true;
             // 
-            // btnXem
+            // btnXemThongTinCB
             // 
-            this.btnXem.Location = new System.Drawing.Point(135, 3);
-            this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(126, 41);
-            this.btnXem.TabIndex = 1;
-            this.btnXem.Text = "Xem Tất Cả";
-            this.btnXem.UseVisualStyleBackColor = true;
+            this.btnXemThongTinCB.Location = new System.Drawing.Point(135, 3);
+            this.btnXemThongTinCB.Name = "btnXemThongTinCB";
+            this.btnXemThongTinCB.Size = new System.Drawing.Size(126, 41);
+            this.btnXemThongTinCB.TabIndex = 1;
+            this.btnXemThongTinCB.Text = "Xem Thông Tin";
+            this.btnXemThongTinCB.UseVisualStyleBackColor = true;
+            this.btnXemThongTinCB.Click += new System.EventHandler(this.btnXemThongTinCB_Click);
             // 
             // btnDangKy
             // 
@@ -272,7 +273,7 @@ namespace Quan_Ly_Chuyen_Bay
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txbSanBayDen;
         private System.Windows.Forms.Button btnTim;
-        private System.Windows.Forms.Button btnXem;
+        private System.Windows.Forms.Button btnXemThongTinCB;
         private System.Windows.Forms.Button btnDangKy;
     }
 }
