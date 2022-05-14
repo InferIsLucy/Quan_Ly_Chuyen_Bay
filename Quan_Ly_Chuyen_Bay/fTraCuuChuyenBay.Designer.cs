@@ -29,7 +29,6 @@ namespace Quan_Ly_Chuyen_Bay
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnXemThongTin = new System.Windows.Forms.Button();
@@ -44,23 +43,16 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.dTimeNgayBay = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 162);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(775, 276);
-            this.dataGridView1.TabIndex = 0;
             // 
             // panel1
             // 
@@ -196,17 +188,34 @@ namespace Quan_Ly_Chuyen_Bay
             this.dTimeNgayBay.TabIndex = 3;
             this.dTimeNgayBay.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.dataGridView1);
+            this.panel6.Location = new System.Drawing.Point(12, 162);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(774, 276);
+            this.panel6.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(771, 270);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // fTraCuuChuyenBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.dataGridView1);
             this.Name = "fTraCuuChuyenBay";
             this.Text = "fTraCuuChuyenBay";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -215,13 +224,13 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnDatVe;
         private System.Windows.Forms.Button btnXemThongTin;
@@ -236,5 +245,7 @@ namespace Quan_Ly_Chuyen_Bay
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txbSanBayDi;
         private System.Windows.Forms.DateTimePicker dTimeNgayBay;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
