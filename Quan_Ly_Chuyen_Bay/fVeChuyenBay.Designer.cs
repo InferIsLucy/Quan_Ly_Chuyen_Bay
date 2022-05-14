@@ -66,6 +66,7 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel11 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.btnDatVe = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -204,6 +205,7 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnDatVe);
             this.panel2.Controls.Add(this.panel11);
             this.panel2.Controls.Add(this.panel12);
             this.panel2.Controls.Add(this.panel10);
@@ -363,7 +365,7 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             this.panel12.Controls.Add(this.label12);
             this.panel12.Controls.Add(this.label11);
-            this.panel12.Location = new System.Drawing.Point(498, 225);
+            this.panel12.Location = new System.Drawing.Point(420, 225);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(239, 47);
             this.panel12.TabIndex = 15;
@@ -413,6 +415,16 @@ namespace Quan_Ly_Chuyen_Bay
             this.label13.Size = new System.Drawing.Size(54, 17);
             this.label13.TabIndex = 3;
             this.label13.Text = "label13";
+            // 
+            // btnDatVe
+            // 
+            this.btnDatVe.BackColor = System.Drawing.Color.LightGreen;
+            this.btnDatVe.Location = new System.Drawing.Point(680, 230);
+            this.btnDatVe.Name = "btnDatVe";
+            this.btnDatVe.Size = new System.Drawing.Size(106, 34);
+            this.btnDatVe.TabIndex = 17;
+            this.btnDatVe.Text = "Đặt Vé";
+            this.btnDatVe.UseVisualStyleBackColor = false;
             // 
             // fVeChuyenBay
             // 
@@ -492,5 +504,6 @@ namespace Quan_Ly_Chuyen_Bay
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnDatVe;
     }
 }

@@ -64,6 +64,18 @@
     <Compile Include="fNhanLichChuyenBay.Designer.cs">
       <DependentUpon>fNhanLichChuyenBay.cs</DependentUpon>
     </Compile>
+    <Compile Include="fPhieuDatCho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fPhieuDatCho.Designer.cs">
+      <DependentUpon>fPhieuDatCho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fTraCuuChuyenBay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTraCuuChuyenBay.Designer.cs">
+      <DependentUpon>fTraCuuChuyenBay.cs</DependentUpon>
+    </Compile>
     <Compile Include="fVeChuyenBay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fNhanLichChuyenBay.resx">
       <DependentUpon>fNhanLichChuyenBay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fPhieuDatCho.resx">
+      <DependentUpon>fPhieuDatCho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fVeChuyenBay.resx">
       <DependentUpon>fVeChuyenBay.cs</DependentUpon>
