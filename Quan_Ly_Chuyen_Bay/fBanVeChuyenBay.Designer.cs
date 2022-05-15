@@ -30,51 +30,95 @@ namespace Quan_Ly_Chuyen_Bay
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txbMaChuyenBay = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txbSanBayDi = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txbSanBayDen = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txbNgayDi = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnTim = new System.Windows.Forms.Button();
             this.btnXem = new System.Windows.Forms.Button();
             this.btnDangKy = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txbNgayDi = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txbSanBayDen = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txbSanBayDi = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txbMaChuyenBay = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel5.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(13, 225);
+            this.panel1.Location = new System.Drawing.Point(20, 352);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(775, 213);
+            this.panel1.Size = new System.Drawing.Size(1162, 333);
             this.panel1.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1152, 331);
+            this.dataGridView1.TabIndex = 0;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.btnTim);
             this.flowLayoutPanel1.Controls.Add(this.btnXem);
             this.flowLayoutPanel1.Controls.Add(this.btnDangKy);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(347, 148);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(520, 231);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(400, 44);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(600, 69);
             this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // btnTim
+            // 
+            this.btnTim.Location = new System.Drawing.Point(4, 5);
+            this.btnTim.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(189, 64);
+            this.btnTim.TabIndex = 0;
+            this.btnTim.Text = "Tìm Chuyến Bay";
+            this.btnTim.UseVisualStyleBackColor = true;
+            // 
+            // btnXem
+            // 
+            this.btnXem.Location = new System.Drawing.Point(201, 5);
+            this.btnXem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(189, 64);
+            this.btnXem.TabIndex = 1;
+            this.btnXem.Text = "Xem Tất Cả";
+            this.btnXem.UseVisualStyleBackColor = true;
+            // 
+            // btnDangKy
+            // 
+            this.btnDangKy.Location = new System.Drawing.Point(398, 5);
+            this.btnDangKy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDangKy.Name = "btnDangKy";
+            this.btnDangKy.Size = new System.Drawing.Size(189, 64);
+            this.btnDangKy.TabIndex = 2;
+            this.btnDangKy.Text = "Đăng ký mua vé";
+            this.btnDangKy.UseVisualStyleBackColor = true;
+            this.btnDangKy.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel2
             // 
@@ -83,172 +127,149 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.flowLayoutPanel1);
-            this.panel2.Location = new System.Drawing.Point(12, 17);
+            this.panel2.Location = new System.Drawing.Point(18, 27);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(773, 202);
+            this.panel2.Size = new System.Drawing.Size(1160, 316);
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // dataGridView1
+            // panel6
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 1);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(768, 212);
-            this.dataGridView1.TabIndex = 0;
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Controls.Add(this.txbNgayDi);
+            this.panel6.Location = new System.Drawing.Point(8, 208);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(472, 92);
+            this.panel6.TabIndex = 7;
             // 
-            // panel5
+            // label4
             // 
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Controls.Add(this.txbMaChuyenBay);
-            this.panel5.Location = new System.Drawing.Point(5, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(315, 59);
-            this.panel5.TabIndex = 5;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(4, 34);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(97, 25);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Ngày đi: ";
             // 
-            // label1
+            // txbNgayDi
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Mã Chuyến Bay: ";
+            this.txbNgayDi.Location = new System.Drawing.Point(174, 30);
+            this.txbNgayDi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txbNgayDi.Name = "txbNgayDi";
+            this.txbNgayDi.Size = new System.Drawing.Size(283, 31);
+            this.txbNgayDi.TabIndex = 1;
             // 
-            // txbMaChuyenBay
+            // panel4
             // 
-            this.txbMaChuyenBay.Location = new System.Drawing.Point(116, 19);
-            this.txbMaChuyenBay.Name = "txbMaChuyenBay";
-            this.txbMaChuyenBay.Size = new System.Drawing.Size(190, 22);
-            this.txbMaChuyenBay.TabIndex = 1;
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.txbSanBayDen);
+            this.panel4.Location = new System.Drawing.Point(648, 106);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(472, 92);
+            this.panel4.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(4, 34);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(139, 25);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Sân bay đến:";
+            // 
+            // txbSanBayDen
+            // 
+            this.txbSanBayDen.Location = new System.Drawing.Point(174, 30);
+            this.txbSanBayDen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txbSanBayDen.Name = "txbSanBayDen";
+            this.txbSanBayDen.Size = new System.Drawing.Size(283, 31);
+            this.txbSanBayDen.TabIndex = 1;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.txbSanBayDi);
-            this.panel3.Location = new System.Drawing.Point(5, 68);
+            this.panel3.Location = new System.Drawing.Point(8, 106);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(315, 59);
+            this.panel3.Size = new System.Drawing.Size(472, 92);
             this.panel3.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 22);
+            this.label2.Location = new System.Drawing.Point(4, 34);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 17);
+            this.label2.Size = new System.Drawing.Size(120, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Sân bay đi:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txbSanBayDi
             // 
-            this.txbSanBayDi.Location = new System.Drawing.Point(116, 19);
+            this.txbSanBayDi.Location = new System.Drawing.Point(174, 30);
+            this.txbSanBayDi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbSanBayDi.Name = "txbSanBayDi";
-            this.txbSanBayDi.Size = new System.Drawing.Size(190, 22);
+            this.txbSanBayDi.Size = new System.Drawing.Size(283, 31);
             this.txbSanBayDi.TabIndex = 1;
             // 
-            // panel4
+            // panel5
             // 
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.txbSanBayDen);
-            this.panel4.Location = new System.Drawing.Point(432, 68);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(315, 59);
-            this.panel4.TabIndex = 7;
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.txbMaChuyenBay);
+            this.panel5.Location = new System.Drawing.Point(8, 5);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(472, 92);
+            this.panel5.TabIndex = 5;
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Sân bay đến:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(177, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Mã Chuyến Bay: ";
             // 
-            // txbSanBayDen
+            // txbMaChuyenBay
             // 
-            this.txbSanBayDen.Location = new System.Drawing.Point(116, 19);
-            this.txbSanBayDen.Name = "txbSanBayDen";
-            this.txbSanBayDen.Size = new System.Drawing.Size(190, 22);
-            this.txbSanBayDen.TabIndex = 1;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.label4);
-            this.panel6.Controls.Add(this.txbNgayDi);
-            this.panel6.Location = new System.Drawing.Point(5, 133);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(315, 59);
-            this.panel6.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 17);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Ngày đi: ";
-            // 
-            // txbNgayDi
-            // 
-            this.txbNgayDi.Location = new System.Drawing.Point(116, 19);
-            this.txbNgayDi.Name = "txbNgayDi";
-            this.txbNgayDi.Size = new System.Drawing.Size(190, 22);
-            this.txbNgayDi.TabIndex = 1;
-            // 
-            // btnTim
-            // 
-            this.btnTim.Location = new System.Drawing.Point(3, 3);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(126, 41);
-            this.btnTim.TabIndex = 0;
-            this.btnTim.Text = "Tìm Chuyến Bay";
-            this.btnTim.UseVisualStyleBackColor = true;
-            // 
-            // btnXem
-            // 
-            this.btnXem.Location = new System.Drawing.Point(135, 3);
-            this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(126, 41);
-            this.btnXem.TabIndex = 1;
-            this.btnXem.Text = "Xem Tất Cả";
-            this.btnXem.UseVisualStyleBackColor = true;
-            // 
-            // btnDangKy
-            // 
-            this.btnDangKy.Location = new System.Drawing.Point(267, 3);
-            this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(126, 41);
-            this.btnDangKy.TabIndex = 2;
-            this.btnDangKy.Text = "Đăng ký mua vé";
-            this.btnDangKy.UseVisualStyleBackColor = true;
-            this.btnDangKy.Click += new System.EventHandler(this.button2_Click);
+            this.txbMaChuyenBay.Location = new System.Drawing.Point(174, 30);
+            this.txbMaChuyenBay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txbMaChuyenBay.Name = "txbMaChuyenBay";
+            this.txbMaChuyenBay.Size = new System.Drawing.Size(283, 31);
+            this.txbMaChuyenBay.TabIndex = 1;
             // 
             // fBanVeChuyenBay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1200, 703);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "fBanVeChuyenBay";
             this.Text = "fBanVeChuyenBay";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }

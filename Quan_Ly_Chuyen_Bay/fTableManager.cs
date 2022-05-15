@@ -21,5 +21,24 @@ namespace Quan_Ly_Chuyen_Bay
         {
 
         }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fAccountProfile facf = new fAccountProfile();
+            facf.ShowDialog();
+        }
+
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fAdmin f = new fAdmin();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }

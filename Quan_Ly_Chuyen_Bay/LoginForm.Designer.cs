@@ -43,18 +43,20 @@
             // txbUsername
             // 
             this.txbUsername.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbUsername.Location = new System.Drawing.Point(106, 8);
+            this.txbUsername.Location = new System.Drawing.Point(212, 15);
+            this.txbUsername.Margin = new System.Windows.Forms.Padding(6);
             this.txbUsername.Name = "txbUsername";
-            this.txbUsername.Size = new System.Drawing.Size(334, 26);
+            this.txbUsername.Size = new System.Drawing.Size(664, 44);
             this.txbUsername.TabIndex = 0;
             // 
             // lbUsername
             // 
             this.lbUsername.AutoSize = true;
             this.lbUsername.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsername.Location = new System.Drawing.Point(10, 11);
+            this.lbUsername.Location = new System.Drawing.Point(20, 21);
+            this.lbUsername.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbUsername.Name = "lbUsername";
-            this.lbUsername.Size = new System.Drawing.Size(90, 19);
+            this.lbUsername.Size = new System.Drawing.Size(177, 37);
             this.lbUsername.TabIndex = 1;
             this.lbUsername.Text = "Tài khoản:";
             // 
@@ -62,19 +64,21 @@
             // 
             this.lbPassword.AutoSize = true;
             this.lbPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPassword.Location = new System.Drawing.Point(13, 58);
+            this.lbPassword.Location = new System.Drawing.Point(20, 108);
+            this.lbPassword.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(87, 19);
+            this.lbPassword.Size = new System.Drawing.Size(171, 37);
             this.lbPassword.TabIndex = 3;
             this.lbPassword.Text = "Mật Khẩu:";
             // 
             // txbPassword
             // 
             this.txbPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPassword.Location = new System.Drawing.Point(106, 55);
+            this.txbPassword.Location = new System.Drawing.Point(212, 106);
+            this.txbPassword.Margin = new System.Windows.Forms.Padding(6);
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.PasswordChar = '*';
-            this.txbPassword.Size = new System.Drawing.Size(334, 26);
+            this.txbPassword.Size = new System.Drawing.Size(664, 44);
             this.txbPassword.TabIndex = 1;
             // 
             // panel1
@@ -84,25 +88,28 @@
             this.panel1.Controls.Add(this.lbPassword);
             this.panel1.Controls.Add(this.lbUsername);
             this.panel1.Controls.Add(this.txbPassword);
-            this.panel1.Location = new System.Drawing.Point(3, 4);
+            this.panel1.Location = new System.Drawing.Point(6, 8);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(454, 163);
+            this.panel1.Size = new System.Drawing.Size(908, 313);
             this.panel1.TabIndex = 4;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Controls.Add(this.btnLogin);
-            this.panel2.Location = new System.Drawing.Point(106, 87);
+            this.panel2.Location = new System.Drawing.Point(212, 167);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(334, 75);
+            this.panel2.Size = new System.Drawing.Size(668, 144);
             this.panel2.TabIndex = 6;
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(224, 32);
+            this.btnExit.Location = new System.Drawing.Point(448, 62);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(6);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(107, 31);
+            this.btnExit.Size = new System.Drawing.Size(214, 60);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -110,9 +117,10 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(114, 32);
+            this.btnLogin.Location = new System.Drawing.Point(228, 62);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(6);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(107, 31);
+            this.btnLogin.Size = new System.Drawing.Size(214, 60);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -120,10 +128,13 @@
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.btnLogin;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 169);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(920, 325);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
