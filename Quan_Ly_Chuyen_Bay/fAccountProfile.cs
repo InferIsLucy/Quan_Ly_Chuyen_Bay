@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Quan_Ly_Chuyen_Bay
 {
-    public partial class fVeChuyenBay : Form
+    public partial class fAccountProfile : Form
     {
-        public fVeChuyenBay()
+        public fAccountProfile()
         {
             InitializeComponent();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
