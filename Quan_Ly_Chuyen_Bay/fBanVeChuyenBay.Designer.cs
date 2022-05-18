@@ -36,6 +36,9 @@ namespace Quan_Ly_Chuyen_Bay
             this.btnXemThongTinCB = new System.Windows.Forms.Button();
             this.btnDangKy = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.txbNgayDi = new System.Windows.Forms.TextBox();
@@ -48,13 +51,11 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txbMaChuyenBay = new System.Windows.Forms.TextBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,6 +93,34 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel2.Size = new System.Drawing.Size(1160, 316);
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.label5);
+            this.panel7.Controls.Add(this.textBox1);
+            this.panel7.Location = new System.Drawing.Point(648, 5);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(472, 92);
+            this.panel7.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(4, 34);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(154, 25);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Thời gian bay: ";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(174, 30);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(283, 31);
+            this.textBox1.TabIndex = 1;
             // 
             // panel6
             // 
@@ -132,26 +161,29 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.txbSanBayDi);
-            this.panel3.Location = new System.Drawing.Point(5, 68);
+            this.panel3.Location = new System.Drawing.Point(8, 106);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(315, 59);
+            this.panel3.Size = new System.Drawing.Size(472, 92);
             this.panel3.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 22);
+            this.label2.Location = new System.Drawing.Point(4, 34);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 17);
+            this.label2.Size = new System.Drawing.Size(120, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Sân bay đi:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txbSanBayDi
             // 
-            this.txbSanBayDi.Location = new System.Drawing.Point(116, 19);
+            this.txbSanBayDi.Location = new System.Drawing.Point(174, 30);
+            this.txbSanBayDi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbSanBayDi.Name = "txbSanBayDi";
-            this.txbSanBayDi.Size = new System.Drawing.Size(190, 22);
+            this.txbSanBayDi.Size = new System.Drawing.Size(283, 31);
             this.txbSanBayDi.TabIndex = 1;
             // 
             // panel4
@@ -233,11 +265,14 @@ namespace Quan_Ly_Chuyen_Bay
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "fBanVeChuyenBay";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "fBanVeChuyenBay";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);

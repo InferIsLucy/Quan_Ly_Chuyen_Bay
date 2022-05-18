@@ -722,6 +722,7 @@
             // 
             // fAdmin
             // 
+            this.AcceptButton = this.btnViewBill;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
@@ -799,6 +800,7 @@
         private System.Windows.Forms.TextBox txbFlightTicketID;
         private System.Windows.Forms.Label lbFlightTicketID;
         private System.Windows.Forms.Label lbFlightTicketRegulation;
+        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnUpdateAirport;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lbListAirport;

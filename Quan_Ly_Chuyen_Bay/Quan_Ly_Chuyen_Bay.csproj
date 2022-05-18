@@ -83,6 +83,12 @@
     <Compile Include="fPhieuDatCho.Designer.cs">
       <DependentUpon>fPhieuDatCho.cs</DependentUpon>
     </Compile>
+    <Compile Include="fThongTinKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fThongTinKhachHang.Designer.cs">
+      <DependentUpon>fThongTinKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="fTraCuuChuyenBay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,12 @@
     </Compile>
     <Compile Include="fVeChuyenBay.Designer.cs">
       <DependentUpon>fVeChuyenBay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fVeDaDat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fVeDaDat.Designer.cs">
+      <DependentUpon>fVeDaDat.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -127,11 +139,17 @@
     <EmbeddedResource Include="fPhieuDatCho.resx">
       <DependentUpon>fPhieuDatCho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fThongTinKhachHang.resx">
+      <DependentUpon>fThongTinKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fTraCuuChuyenBay.resx">
       <DependentUpon>fTraCuuChuyenBay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fVeChuyenBay.resx">
       <DependentUpon>fVeChuyenBay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fVeDaDat.resx">
+      <DependentUpon>fVeDaDat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
