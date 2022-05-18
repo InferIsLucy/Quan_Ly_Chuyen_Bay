@@ -10,28 +10,19 @@ using System.Windows.Forms;
 
 namespace Quan_Ly_Chuyen_Bay
 {
-    public partial class fBanVeChuyenBay : Form
+    public partial class fChiTietChuyenBay : Form
     {
-        public fBanVeChuyenBay()
+        public fChiTietChuyenBay()
         {
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void panel14_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-                    }
-
-        private void btnXemThongTinCB_Click(object sender, EventArgs e)
         {
 
         }
