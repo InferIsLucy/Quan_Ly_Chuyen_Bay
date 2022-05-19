@@ -800,7 +800,6 @@
         private System.Windows.Forms.TextBox txbFlightTicketID;
         private System.Windows.Forms.Label lbFlightTicketID;
         private System.Windows.Forms.Label lbFlightTicketRegulation;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnUpdateAirport;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lbListAirport;

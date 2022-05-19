@@ -269,9 +269,5 @@
         private System.Windows.Forms.TextBox txbNewPassword;
         private System.Windows.Forms.Label lbPassword;
         private System.Windows.Forms.TextBox txbPassword;
-        private System.Windows.Forms.TextBox txbUsername;
-        private System.Windows.Forms.Label lbDisplayName;
-        private System.Windows.Forms.Label lbUsername;
-        private System.Windows.Forms.TextBox txbDisplayName;
     }
 }

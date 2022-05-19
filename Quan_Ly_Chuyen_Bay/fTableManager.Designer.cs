@@ -148,7 +148,6 @@
             this.btnSearchFlight.Text = "Tra cứu chuyến bay";
             this.btnSearchFlight.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSearchFlight.UseVisualStyleBackColor = false;
-            this.btnSearchFlight.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
@@ -267,13 +266,7 @@
         private System.Windows.Forms.ToolStripMenuItem thôngTinTàiKhoảnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnSearchFlight;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
     }
 }
