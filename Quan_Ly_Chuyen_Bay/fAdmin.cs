@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Quan_Ly_Chuyen_Bay
 {
-    public partial class fVeChuyenBay : Form
+    public partial class fAdmin : Form
     {
-        public fVeChuyenBay()
+        public fAdmin()
         {
             InitializeComponent();
         }
