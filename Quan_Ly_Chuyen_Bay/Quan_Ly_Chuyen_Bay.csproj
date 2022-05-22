@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -107,6 +108,12 @@
     <Compile Include="fVeDaDat.Designer.cs">
       <DependentUpon>fVeDaDat.cs</DependentUpon>
     </Compile>
+    <Compile Include="fVeDaMua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fVeDaMua.Designer.cs">
+      <DependentUpon>fVeDaMua.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fVeDaDat.resx">
       <DependentUpon>fVeDaDat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fVeDaMua.resx">
+      <DependentUpon>fVeDaMua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

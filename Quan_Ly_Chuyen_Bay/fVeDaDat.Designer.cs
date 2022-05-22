@@ -32,6 +32,7 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -45,12 +46,13 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1188, 616);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.MenuText;
             this.label1.Location = new System.Drawing.Point(477, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -58,6 +60,7 @@ namespace Quan_Ly_Chuyen_Bay
             this.label1.Size = new System.Drawing.Size(252, 58);
             this.label1.TabIndex = 0;
             this.label1.Text = "Vé Đã Bán";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataGridView1
             // 
