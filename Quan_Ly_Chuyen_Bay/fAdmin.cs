@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,14 @@ namespace Quan_Ly_Chuyen_Bay
         public fAdmin()
         {
             InitializeComponent();
+            LoadAccountList();
+        }
+
+        void LoadAccountList()
+        {
+            string query = "EXEC dbo.USP_GetAccountByUserName @userName";
+            DAO.DataProvider data = new DAO.DataProvider();
+            dtgvAccount.DataSource = data.ExcuteQuery(query, new object[] { "admin" });
         }
     }
 }

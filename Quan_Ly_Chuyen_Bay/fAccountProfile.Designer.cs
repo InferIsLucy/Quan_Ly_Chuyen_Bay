@@ -42,6 +42,10 @@
             this.lbDisplayName = new System.Windows.Forms.Label();
             this.lbUsername = new System.Windows.Forms.Label();
             this.txbDisplayName = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -90,7 +94,7 @@
             this.panel2.Margin = new System.Windows.Forms.Padding(6);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(908, 476);
-            this.panel2.TabIndex = 7;
+            this.panel2.TabIndex = 5;
             // 
             // lbReWritePassword
             // 
@@ -201,20 +205,50 @@
             this.txbDisplayName.Size = new System.Drawing.Size(603, 44);
             this.txbDisplayName.TabIndex = 1;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnExit);
+            this.panel1.Controls.Add(this.btnUpdate);
+            this.panel1.Location = new System.Drawing.Point(15, 501);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(908, 98);
+            this.panel1.TabIndex = 6;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(690, 14);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(186, 64);
+            this.btnExit.TabIndex = 1;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(474, 14);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(186, 64);
+            this.btnUpdate.TabIndex = 0;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
             // fAccountProfile
             // 
             this.AcceptButton = this.btnUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 616);
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(938, 608);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "fAccountProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Thông tin cá nhân";
-            this.panel1.ResumeLayout(false);
+            this.Text = "fAccountProfile";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -225,15 +259,15 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txbUsername;
+        private System.Windows.Forms.Label lbDisplayName;
+        private System.Windows.Forms.Label lbUsername;
+        private System.Windows.Forms.TextBox txbDisplayName;
         private System.Windows.Forms.Label lbReWritePassword;
         private System.Windows.Forms.TextBox txbReWritePassword;
         private System.Windows.Forms.Label lbNewPassword;
         private System.Windows.Forms.TextBox txbNewPassword;
         private System.Windows.Forms.Label lbPassword;
         private System.Windows.Forms.TextBox txbPassword;
-        private System.Windows.Forms.TextBox txbUsername;
-        private System.Windows.Forms.Label lbDisplayName;
-        private System.Windows.Forms.Label lbUsername;
-        private System.Windows.Forms.TextBox txbDisplayName;
     }
 }

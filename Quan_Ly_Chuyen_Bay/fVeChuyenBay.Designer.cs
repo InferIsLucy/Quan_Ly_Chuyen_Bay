@@ -461,6 +461,70 @@ namespace Quan_Ly_Chuyen_Bay
             this.label6.TabIndex = 0;
             this.label6.Text = "Thông tin khách hàng";
             // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.label12);
+            this.panel12.Controls.Add(this.label11);
+            this.panel12.Location = new System.Drawing.Point(420, 225);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(239, 47);
+            this.panel12.TabIndex = 15;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(10, 14);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(77, 17);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Tổng Tiền:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 22);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(106, 17);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Số Ghế Trống: ";
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.label13);
+            this.panel11.Controls.Add(this.label10);
+            this.panel11.Location = new System.Drawing.Point(422, 160);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(315, 59);
+            this.panel11.TabIndex = 16;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(107, 14);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 17);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "label12";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(155, 24);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(54, 17);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "label13";
+            // 
+            // btnDatVe
+            // 
+            this.btnDatVe.BackColor = System.Drawing.Color.LightGreen;
+            this.btnDatVe.Location = new System.Drawing.Point(680, 230);
+            this.btnDatVe.Name = "btnDatVe";
+            this.btnDatVe.Size = new System.Drawing.Size(106, 34);
+            this.btnDatVe.TabIndex = 17;
+            this.btnDatVe.Text = "Đặt Vé";
+            this.btnDatVe.UseVisualStyleBackColor = false;
+            // 
             // fVeChuyenBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);

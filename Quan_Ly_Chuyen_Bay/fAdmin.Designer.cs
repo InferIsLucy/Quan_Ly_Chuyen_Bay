@@ -56,7 +56,7 @@
             this.txbUserName = new System.Windows.Forms.TextBox();
             this.lbUserName = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dtgvAccount = new System.Windows.Forms.DataGridView();
             this.panel7 = new System.Windows.Forms.Panel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -88,6 +88,10 @@
             this.txbMinFlightTime = new System.Windows.Forms.TextBox();
             this.lbMinFlightTime = new System.Windows.Forms.Label();
             this.lbAirportRegulation = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnChange = new System.Windows.Forms.Button();
+            this.btnShow = new System.Windows.Forms.Button();
             this.tpAdjustRuleTab.SuspendLayout();
             this.tpBill.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -101,7 +105,8 @@
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
+            this.panel7.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -114,11 +119,11 @@
             this.tpAdjustRuleTab.Controls.Add(this.tpAccount);
             this.tpAdjustRuleTab.Controls.Add(this.tabPage1);
             this.tpAdjustRuleTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpAdjustRuleTab.Location = new System.Drawing.Point(12, 12);
+            this.tpAdjustRuleTab.Location = new System.Drawing.Point(9, 9);
             this.tpAdjustRuleTab.Name = "tpAdjustRuleTab";
             this.tpAdjustRuleTab.SelectedIndex = 0;
             this.tpAdjustRuleTab.Size = new System.Drawing.Size(1734, 1090);
-            this.tpAdjustRuleTab.TabIndex = 1;
+            this.tpAdjustRuleTab.TabIndex = 0;
             // 
             // tpBill
             // 
@@ -282,9 +287,9 @@
             // 
             // btnResetPassword
             // 
-            this.btnResetPassword.Location = new System.Drawing.Point(545, 13);
+            this.btnResetPassword.Location = new System.Drawing.Point(490, 13);
             this.btnResetPassword.Name = "btnResetPassword";
-            this.btnResetPassword.Size = new System.Drawing.Size(198, 110);
+            this.btnResetPassword.Size = new System.Drawing.Size(253, 110);
             this.btnResetPassword.TabIndex = 0;
             this.btnResetPassword.Text = "Thiết lập lại mật khẩu";
             this.btnResetPassword.UseVisualStyleBackColor = true;
@@ -371,24 +376,31 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.dataGridView2);
+            this.panel8.Controls.Add(this.dtgvAccount);
             this.panel8.Location = new System.Drawing.Point(6, 144);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(928, 887);
             this.panel8.TabIndex = 1;
             // 
-            // dataGridView2
+            // dtgvAccount
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(4, 4);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 82;
-            this.dataGridView2.RowTemplate.Height = 33;
-            this.dataGridView2.Size = new System.Drawing.Size(921, 880);
-            this.dataGridView2.TabIndex = 0;
+            this.dtgvAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvAccount.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dtgvAccount.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvAccount.Location = new System.Drawing.Point(4, 4);
+            this.dtgvAccount.Name = "dtgvAccount";
+            this.dtgvAccount.RowHeadersWidth = 82;
+            this.dtgvAccount.RowTemplate.Height = 33;
+            this.dtgvAccount.Size = new System.Drawing.Size(921, 880);
+            this.dtgvAccount.TabIndex = 0;
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.btnShow);
+            this.panel7.Controls.Add(this.btnChange);
+            this.panel7.Controls.Add(this.btnDelete);
+            this.panel7.Controls.Add(this.btnAdd);
             this.panel7.Location = new System.Drawing.Point(4, 4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(928, 134);
@@ -672,15 +684,54 @@
             this.lbAirportRegulation.TabIndex = 0;
             this.lbAirportRegulation.Text = "Quy định về chuyến bay và sân bay";
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(6, 22);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(199, 93);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(248, 22);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(199, 93);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnChange
+            // 
+            this.btnChange.Location = new System.Drawing.Point(490, 22);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(199, 93);
+            this.btnChange.TabIndex = 2;
+            this.btnChange.Text = "Sửa";
+            this.btnChange.UseVisualStyleBackColor = true;
+            // 
+            // btnShow
+            // 
+            this.btnShow.Location = new System.Drawing.Point(726, 22);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(199, 93);
+            this.btnShow.TabIndex = 3;
+            this.btnShow.Text = "Xem";
+            this.btnShow.UseVisualStyleBackColor = true;
+            // 
             // fAdmin
             // 
             this.AcceptButton = this.btnViewBill;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1753, 1109);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1755, 1111);
             this.Controls.Add(this.tpAdjustRuleTab);
+            this.MinimizeBox = false;
             this.Name = "fAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản trị viên";
             this.tpAdjustRuleTab.ResumeLayout(false);
             this.tpBill.ResumeLayout(false);
@@ -700,7 +751,8 @@
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).EndInit();
+            this.panel7.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -716,35 +768,22 @@
 
         private System.Windows.Forms.TabControl tpAdjustRuleTab;
         private System.Windows.Forms.TabPage tpBill;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnStatistic;
-        private System.Windows.Forms.Label lbAmount2;
-        private System.Windows.Forms.Label lbAmount;
+        private System.Windows.Forms.TabPage tpAccount;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnViewBill;
+        private System.Windows.Forms.DateTimePicker dtpkFromDate;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label lbAmount;
+        private System.Windows.Forms.Label lbAmount2;
+        private System.Windows.Forms.Label lbFromDate;
         private System.Windows.Forms.Label lbToDate;
         private System.Windows.Forms.DateTimePicker dtpkToDate;
-        private System.Windows.Forms.Label lbFromDate;
-        private System.Windows.Forms.DateTimePicker dtpkFromDate;
-        private System.Windows.Forms.TabPage tpAccount;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Button btnResetPassword;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.ComboBox cbTypeAccount;
-        private System.Windows.Forms.Label lbTypeAccount;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.TextBox txbDisplayName;
-        private System.Windows.Forms.Label lbDisplayName;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox txbUserName;
-        private System.Windows.Forms.Label lbUserName;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button btnViewBill;
+        private System.Windows.Forms.Button btnStatistic;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lbAirportRegulation;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btnUpdateBookTicket;
         private System.Windows.Forms.Label lbBookRegulattion;
@@ -761,7 +800,6 @@
         private System.Windows.Forms.TextBox txbFlightTicketID;
         private System.Windows.Forms.Label lbFlightTicketID;
         private System.Windows.Forms.Label lbFlightTicketRegulation;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnUpdateAirport;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label lbListAirport;
@@ -773,6 +811,24 @@
         private System.Windows.Forms.Label lbMaxBreakAirport;
         private System.Windows.Forms.TextBox txbMinFlightTime;
         private System.Windows.Forms.Label lbMinFlightTime;
-        private System.Windows.Forms.Label lbAirportRegulation;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Button btnResetPassword;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.ComboBox cbTypeAccount;
+        private System.Windows.Forms.Label lbTypeAccount;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.TextBox txbDisplayName;
+        private System.Windows.Forms.Label lbDisplayName;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.TextBox txbUserName;
+        private System.Windows.Forms.Label lbUserName;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.DataGridView dtgvAccount;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button btnShow;
+        private System.Windows.Forms.Button btnChange;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnAdd;
     }
 }
