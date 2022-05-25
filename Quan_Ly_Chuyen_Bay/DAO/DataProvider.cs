@@ -10,7 +10,18 @@ namespace Quan_Ly_Chuyen_Bay.DAO
 {
     public class DataProvider
     {
+        private static DataProvider Instance; //Ctrl + R + E
         private string connectionStr = @"Data Source=.\SQLEXPRESS;Initial Catalog=QLYBANVECHUYENBAY;Integrated Security=True";
+
+        public static DataProvider Instance1 { get { if (Instance != null) Instance = new DataProvider(); return DataProvider.Instance; } private set => Instance = value; }
+        private DataProvider() { }
+
+        /// <summary>
+        /// Thực hiện truy vấn và tra ra một bảng dữ liệu
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
         public DataTable ExcuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
@@ -42,7 +53,12 @@ namespace Quan_Ly_Chuyen_Bay.DAO
             }
             return data;
         }
-
+        /// <summary>
+        /// Thực hiện truy vấn và trả ra số dòng thành công
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
         public int ExcuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
@@ -72,7 +88,12 @@ namespace Quan_Ly_Chuyen_Bay.DAO
             }
             return data;
         }
-
+        /// <summary>
+        /// Thực hiện truy vấn và trả ra một kết quả ví dụ như truy vấn sum, count, avg
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
         public object ExcuteScalar(string query, object[] parameter = null)
         {
             object data = 0;
