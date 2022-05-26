@@ -127,6 +127,7 @@ CREATE TABLE THAMSO
    TGChamNhatDatVe int NOT NULL,
    TGChamNhatHuyDatVe int NOT NULL,
 )
+GO
  
 ---------------------- TẠO PROCEDURE ---------------------
 CREATE PROC USP_Login
