@@ -58,6 +58,10 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.dtgvAccount = new System.Windows.Forms.DataGridView();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.btnShow = new System.Windows.Forms.Button();
+            this.btnChange = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnUpdateBookTicket = new System.Windows.Forms.Button();
@@ -88,10 +92,8 @@
             this.txbMinFlightTime = new System.Windows.Forms.TextBox();
             this.lbMinFlightTime = new System.Windows.Forms.Label();
             this.lbAirportRegulation = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnChange = new System.Windows.Forms.Button();
-            this.btnShow = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tpAdjustRuleTab.SuspendLayout();
             this.tpBill.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -140,6 +142,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.btnStatistic);
             this.panel3.Controls.Add(this.lbAmount2);
             this.panel3.Controls.Add(this.lbAmount);
@@ -150,10 +154,10 @@
             // 
             // btnStatistic
             // 
-            this.btnStatistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStatistic.Location = new System.Drawing.Point(1361, 3);
+            this.btnStatistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatistic.Location = new System.Drawing.Point(1435, 2);
             this.btnStatistic.Name = "btnStatistic";
-            this.btnStatistic.Size = new System.Drawing.Size(341, 69);
+            this.btnStatistic.Size = new System.Drawing.Size(264, 69);
             this.btnStatistic.TabIndex = 4;
             this.btnStatistic.Text = "Biểu đồ";
             this.btnStatistic.UseVisualStyleBackColor = true;
@@ -162,7 +166,7 @@
             // 
             this.lbAmount2.AutoSize = true;
             this.lbAmount2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAmount2.Location = new System.Drawing.Point(945, 19);
+            this.lbAmount2.Location = new System.Drawing.Point(1156, 19);
             this.lbAmount2.Name = "lbAmount2";
             this.lbAmount2.Size = new System.Drawing.Size(0, 37);
             this.lbAmount2.TabIndex = 3;
@@ -171,7 +175,7 @@
             // 
             this.lbAmount.AutoSize = true;
             this.lbAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAmount.Location = new System.Drawing.Point(681, 19);
+            this.lbAmount.Location = new System.Drawing.Point(892, 19);
             this.lbAmount.Name = "lbAmount";
             this.lbAmount.Size = new System.Drawing.Size(258, 37);
             this.lbAmount.TabIndex = 2;
@@ -209,7 +213,7 @@
             // 
             // btnViewBill
             // 
-            this.btnViewBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewBill.Location = new System.Drawing.Point(1362, 2);
             this.btnViewBill.Name = "btnViewBill";
             this.btnViewBill.Size = new System.Drawing.Size(341, 77);
@@ -405,6 +409,42 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(928, 134);
             this.panel7.TabIndex = 0;
+            // 
+            // btnShow
+            // 
+            this.btnShow.Location = new System.Drawing.Point(726, 22);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(199, 93);
+            this.btnShow.TabIndex = 3;
+            this.btnShow.Text = "Xem";
+            this.btnShow.UseVisualStyleBackColor = true;
+            // 
+            // btnChange
+            // 
+            this.btnChange.Location = new System.Drawing.Point(490, 22);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(199, 93);
+            this.btnChange.TabIndex = 2;
+            this.btnChange.Text = "Sửa";
+            this.btnChange.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(248, 22);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(199, 93);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(6, 22);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(199, 93);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
@@ -684,41 +724,26 @@
             this.lbAirportRegulation.TabIndex = 0;
             this.lbAirportRegulation.Text = "Quy định về chuyến bay và sân bay";
             // 
-            // btnAdd
+            // label1
             // 
-            this.btnAdd.Location = new System.Drawing.Point(6, 22);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(199, 93);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(4, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(408, 37);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Doanh thu theo chuyến bay";
             // 
-            // btnDelete
+            // button1
             // 
-            this.btnDelete.Location = new System.Drawing.Point(248, 22);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(199, 93);
-            this.btnDelete.TabIndex = 1;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnChange
-            // 
-            this.btnChange.Location = new System.Drawing.Point(490, 22);
-            this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(199, 93);
-            this.btnChange.TabIndex = 2;
-            this.btnChange.Text = "Sửa";
-            this.btnChange.UseVisualStyleBackColor = true;
-            // 
-            // btnShow
-            // 
-            this.btnShow.Location = new System.Drawing.Point(726, 22);
-            this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(199, 93);
-            this.btnShow.TabIndex = 3;
-            this.btnShow.Text = "Xem";
-            this.btnShow.UseVisualStyleBackColor = true;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(424, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(219, 66);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Thống kê";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // fAdmin
             // 
@@ -830,5 +855,7 @@
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
     }
 }

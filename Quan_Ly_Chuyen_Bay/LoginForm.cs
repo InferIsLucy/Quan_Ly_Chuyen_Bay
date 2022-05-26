@@ -19,10 +19,24 @@ namespace Quan_Ly_Chuyen_Bay
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            fTableManager f = new fTableManager();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            string userName = txbUsername.Text;
+            string password = txbPassword.Text;
+            if (Login(userName, password))
+            {
+                fTableManager f = new fTableManager();
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Thông báo");
+            }
+        }
+
+        bool Login(string userName, string passWord)
+        {
+            return DAO.AccountDAO.Instance.Login(userName, passWord);
         }
 
         private void btnExit_Click(object sender, EventArgs e)

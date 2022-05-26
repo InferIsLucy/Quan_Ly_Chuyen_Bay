@@ -16,6 +16,19 @@ namespace Quan_Ly_Chuyen_Bay
         public fAdmin()
         {
             InitializeComponent();
+            LoadAccount();
+        }
+
+        void LoadAccount()
+        {
+            string query = "SELECT * FROM dbo.ACCOUNT";
+            dtgvAccount.DataSource = DAO.DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fTurnoverByFlightID f = new fTurnoverByFlightID();
+            f.Show();
         }
     }
 }
