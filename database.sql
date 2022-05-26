@@ -128,6 +128,14 @@ CREATE TABLE THAMSO
    TGChamNhatHuyDatVe int NOT NULL,
 )
  
+---------------------- TẠO PROCEDURE ---------------------
+CREATE PROC USP_Login
+@UserName NVARCHAR(100), @PassWord NVARCHAR(1000)
+AS
+BEGIN
+	SELECT * FROM dbo.ACCOUNT WHERE UserName = @UserName AND Password= @PassWord
+END
+GO
  
 -----------ràng buộc bảng CHUYENBAY
 --khoá ngoại
@@ -199,6 +207,3 @@ VALUES		(	N'Dang',
 				0
 			)
 
-
-SELECT * FROM dbo.ACCOUNT
-GO

@@ -35,5 +35,10 @@ namespace Quan_Ly_Chuyen_Bay
             f.Close();
             this.Show();
         }
+
+        private void btnSearchFlight_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
