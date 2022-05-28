@@ -31,17 +31,16 @@
             this.tpAdjustRuleTab = new System.Windows.Forms.TabControl();
             this.tpBill = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnViewBillByFlightID = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnStatistic = new System.Windows.Forms.Button();
             this.lbAmount2 = new System.Windows.Forms.Label();
             this.lbAmount = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgvBill = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnViewBill = new System.Windows.Forms.Button();
-            this.lbToDate = new System.Windows.Forms.Label();
-            this.dtpkToDate = new System.Windows.Forms.DateTimePicker();
-            this.lbFromDate = new System.Windows.Forms.Label();
-            this.dtpkFromDate = new System.Windows.Forms.DateTimePicker();
+            this.cmbYear = new System.Windows.Forms.ComboBox();
+            this.lbYear = new System.Windows.Forms.Label();
             this.tpAccount = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -80,6 +79,8 @@
             this.lbFlightTicketID = new System.Windows.Forms.Label();
             this.lbFlightTicketRegulation = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnDelAirPort = new System.Windows.Forms.Button();
+            this.btnAddAirPort = new System.Windows.Forms.Button();
             this.btnUpdateAirport = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.lbListAirport = new System.Windows.Forms.Label();
@@ -92,13 +93,11 @@
             this.txbMinFlightTime = new System.Windows.Forms.TextBox();
             this.lbMinFlightTime = new System.Windows.Forms.Label();
             this.lbAirportRegulation = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.tpAdjustRuleTab.SuspendLayout();
             this.tpBill.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).BeginInit();
             this.panel1.SuspendLayout();
             this.tpAccount.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -142,7 +141,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btnViewBillByFlightID);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.btnStatistic);
             this.panel3.Controls.Add(this.lbAmount2);
@@ -152,15 +151,37 @@
             this.panel3.Size = new System.Drawing.Size(1702, 72);
             this.panel3.TabIndex = 2;
             // 
+            // btnViewBillByFlightID
+            // 
+            this.btnViewBillByFlightID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewBillByFlightID.Location = new System.Drawing.Point(424, 3);
+            this.btnViewBillByFlightID.Name = "btnViewBillByFlightID";
+            this.btnViewBillByFlightID.Size = new System.Drawing.Size(219, 66);
+            this.btnViewBillByFlightID.TabIndex = 6;
+            this.btnViewBillByFlightID.Text = "Thống kê";
+            this.btnViewBillByFlightID.UseVisualStyleBackColor = true;
+            this.btnViewBillByFlightID.Click += new System.EventHandler(this.btnViewBillByFlightID_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(4, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(408, 37);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Doanh thu theo chuyến bay";
+            // 
             // btnStatistic
             // 
-            this.btnStatistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStatistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatistic.Location = new System.Drawing.Point(1435, 2);
             this.btnStatistic.Name = "btnStatistic";
             this.btnStatistic.Size = new System.Drawing.Size(264, 69);
             this.btnStatistic.TabIndex = 4;
             this.btnStatistic.Text = "Biểu đồ";
             this.btnStatistic.UseVisualStyleBackColor = true;
+            this.btnStatistic.Click += new System.EventHandler(this.btnStatistic_Click);
             // 
             // lbAmount2
             // 
@@ -183,79 +204,53 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.dtgvBill);
             this.panel2.Location = new System.Drawing.Point(6, 95);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1706, 857);
             this.panel2.TabIndex = 1;
             // 
-            // dataGridView1
+            // dtgvBill
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(1700, 847);
-            this.dataGridView1.TabIndex = 0;
+            this.dtgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvBill.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dtgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvBill.Location = new System.Drawing.Point(3, 3);
+            this.dtgvBill.Name = "dtgvBill";
+            this.dtgvBill.RowHeadersWidth = 82;
+            this.dtgvBill.RowTemplate.Height = 33;
+            this.dtgvBill.Size = new System.Drawing.Size(1700, 847);
+            this.dtgvBill.TabIndex = 0;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnViewBill);
-            this.panel1.Controls.Add(this.lbToDate);
-            this.panel1.Controls.Add(this.dtpkToDate);
-            this.panel1.Controls.Add(this.lbFromDate);
-            this.panel1.Controls.Add(this.dtpkFromDate);
+            this.panel1.Controls.Add(this.cmbYear);
+            this.panel1.Controls.Add(this.lbYear);
             this.panel1.Location = new System.Drawing.Point(6, 6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1706, 83);
             this.panel1.TabIndex = 0;
             // 
-            // btnViewBill
+            // cmbYear
             // 
-            this.btnViewBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewBill.Location = new System.Drawing.Point(1362, 2);
-            this.btnViewBill.Name = "btnViewBill";
-            this.btnViewBill.Size = new System.Drawing.Size(341, 77);
-            this.btnViewBill.TabIndex = 6;
-            this.btnViewBill.Text = "Thống kê";
-            this.btnViewBill.UseVisualStyleBackColor = true;
+            this.cmbYear.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbYear.FormattingEnabled = true;
+            this.cmbYear.Location = new System.Drawing.Point(900, 14);
+            this.cmbYear.Name = "cmbYear";
+            this.cmbYear.Size = new System.Drawing.Size(215, 45);
+            this.cmbYear.TabIndex = 7;
+            this.cmbYear.SelectedValueChanged += new System.EventHandler(this.cmbYear_SelectedValueChanged);
             // 
-            // lbToDate
+            // lbYear
             // 
-            this.lbToDate.AutoSize = true;
-            this.lbToDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbToDate.Location = new System.Drawing.Point(682, 20);
-            this.lbToDate.Name = "lbToDate";
-            this.lbToDate.Size = new System.Drawing.Size(162, 37);
-            this.lbToDate.TabIndex = 5;
-            this.lbToDate.Text = "Đến ngày:";
-            // 
-            // dtpkToDate
-            // 
-            this.dtpkToDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpkToDate.Location = new System.Drawing.Point(850, 22);
-            this.dtpkToDate.Name = "dtpkToDate";
-            this.dtpkToDate.Size = new System.Drawing.Size(478, 38);
-            this.dtpkToDate.TabIndex = 4;
-            // 
-            // lbFromDate
-            // 
-            this.lbFromDate.AutoSize = true;
-            this.lbFromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFromDate.Location = new System.Drawing.Point(18, 22);
-            this.lbFromDate.Name = "lbFromDate";
-            this.lbFromDate.Size = new System.Drawing.Size(142, 37);
-            this.lbFromDate.TabIndex = 3;
-            this.lbFromDate.Text = "Từ ngày:";
-            // 
-            // dtpkFromDate
-            // 
-            this.dtpkFromDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpkFromDate.Location = new System.Drawing.Point(166, 21);
-            this.dtpkFromDate.Name = "dtpkFromDate";
-            this.dtpkFromDate.Size = new System.Drawing.Size(478, 38);
-            this.dtpkFromDate.TabIndex = 0;
+            this.lbYear.AutoSize = true;
+            this.lbYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbYear.Location = new System.Drawing.Point(719, 22);
+            this.lbYear.Name = "lbYear";
+            this.lbYear.Size = new System.Drawing.Size(175, 37);
+            this.lbYear.TabIndex = 3;
+            this.lbYear.Text = "Chọn năm:";
             // 
             // tpAccount
             // 
@@ -607,6 +602,8 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnDelAirPort);
+            this.panel4.Controls.Add(this.btnAddAirPort);
             this.panel4.Controls.Add(this.btnUpdateAirport);
             this.panel4.Controls.Add(this.comboBox1);
             this.panel4.Controls.Add(this.lbListAirport);
@@ -623,6 +620,24 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1708, 261);
             this.panel4.TabIndex = 0;
+            // 
+            // btnDelAirPort
+            // 
+            this.btnDelAirPort.Location = new System.Drawing.Point(917, 164);
+            this.btnDelAirPort.Name = "btnDelAirPort";
+            this.btnDelAirPort.Size = new System.Drawing.Size(151, 39);
+            this.btnDelAirPort.TabIndex = 13;
+            this.btnDelAirPort.Text = "Xóa";
+            this.btnDelAirPort.UseVisualStyleBackColor = true;
+            // 
+            // btnAddAirPort
+            // 
+            this.btnAddAirPort.Location = new System.Drawing.Point(771, 168);
+            this.btnAddAirPort.Name = "btnAddAirPort";
+            this.btnAddAirPort.Size = new System.Drawing.Size(122, 39);
+            this.btnAddAirPort.TabIndex = 12;
+            this.btnAddAirPort.Text = "Thêm";
+            this.btnAddAirPort.UseVisualStyleBackColor = true;
             // 
             // btnUpdateAirport
             // 
@@ -724,30 +739,8 @@
             this.lbAirportRegulation.TabIndex = 0;
             this.lbAirportRegulation.Text = "Quy định về chuyến bay và sân bay";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(408, 37);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Doanh thu theo chuyến bay";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(424, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(219, 66);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Thống kê";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // fAdmin
             // 
-            this.AcceptButton = this.btnViewBill;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
@@ -763,7 +756,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tpAccount.ResumeLayout(false);
@@ -796,16 +789,11 @@
         private System.Windows.Forms.TabPage tpAccount;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgvBill;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DateTimePicker dtpkFromDate;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbAmount;
         private System.Windows.Forms.Label lbAmount2;
-        private System.Windows.Forms.Label lbFromDate;
-        private System.Windows.Forms.Label lbToDate;
-        private System.Windows.Forms.DateTimePicker dtpkToDate;
-        private System.Windows.Forms.Button btnViewBill;
         private System.Windows.Forms.Button btnStatistic;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lbAirportRegulation;
@@ -855,7 +843,11 @@
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnViewBillByFlightID;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnDelAirPort;
+        private System.Windows.Forms.Button btnAddAirPort;
+        private System.Windows.Forms.Label lbYear;
+        private System.Windows.Forms.ComboBox cmbYear;
     }
 }

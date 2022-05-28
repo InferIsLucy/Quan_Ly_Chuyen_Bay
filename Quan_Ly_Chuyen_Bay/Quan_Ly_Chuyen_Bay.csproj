@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\BillDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="fAccountProfile.cs">
       <SubType>Form</SubType>
@@ -66,6 +67,12 @@
     </Compile>
     <Compile Include="fBanVeChuyenBay.Designer.cs">
       <DependentUpon>fBanVeChuyenBay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fChartByYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fChartByYear.Designer.cs">
+      <DependentUpon>fChartByYear.cs</DependentUpon>
     </Compile>
     <Compile Include="fChiTietChuyenBay.cs">
       <SubType>Form</SubType>
@@ -143,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fBanVeChuyenBay.resx">
       <DependentUpon>fBanVeChuyenBay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fChartByYear.resx">
+      <DependentUpon>fChartByYear.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fChiTietChuyenBay.resx">
       <DependentUpon>fChiTietChuyenBay.cs</DependentUpon>

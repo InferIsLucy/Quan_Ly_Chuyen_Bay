@@ -23,9 +23,9 @@ namespace Quan_Ly_Chuyen_Bay
             string password = txbPassword.Text;
             if (Login(userName, password))
             {
-                fTableManager f = new fTableManager();
+                fTableManager form = new fTableManager();
                 this.Hide();
-                f.ShowDialog();
+                form.ShowDialog();
                 this.Show();
             }
             else
