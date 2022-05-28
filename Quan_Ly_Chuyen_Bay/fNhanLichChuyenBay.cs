@@ -59,11 +59,9 @@ namespace Quan_Ly_Chuyen_Bay
         {
             string query = "Select * from CHUYENBAYY";
             
-            DataTable data1 = DAO.DataProvider.Instance.ExcuteQuery(query);
-            DataTable data2 = DAO.DataProvider.Instance.ExcuteQuery(query);
-            comboBox1.DataSource = data1;
+            comboBox1.DataSource = DAO.DataProvider.Instance.ExcuteQuery(query);
             comboBox1.DisplayMember = "SanBayDi";
-            comboBox2.DataSource = data2;
+            comboBox2.DataSource = DAO.DataProvider.Instance.ExcuteQuery(query);
             comboBox2.DisplayMember = "SanBayDen";
         }
 
@@ -72,7 +70,8 @@ namespace Quan_Ly_Chuyen_Bay
             if(dtgvDSChuyenBay.SelectedCells.Count> 0)
             {
                 string query = " Select * from CHUYENBAYY ";
-                DataTable data = DAO.DataProvider.Instance.ExcuteQuery(query);
+                DataTable data = (DataTable)DAO.DataProvider.Instance.ExcuteQuery(query);
+
                 int index = -1;
                 int i = 0;
                 foreach(DataRow item in data.Rows)
@@ -91,20 +90,20 @@ namespace Quan_Ly_Chuyen_Bay
         public bool InsertChuyenBay(string machuyenbay, float giave, string sanbaydi, string sanbayden,DateTime ngaybay, string giobay,int thoigianbay, int soghehang1, int soghehang2)
         {
             string query = string.Format("INSERT INTO CHUYENBAYY values('{0}', {1}, '{2}', '{3}', '{4}', '{5}',{6},{7}, {8})", machuyenbay, giave, sanbaydi, sanbayden, dateTime.Value, giobay,thoigianbay, soghehang1, soghehang2);
-            int result = DAO.DataProvider.Instance.ExcuteNonQuery(query);
+            int result = DAO.DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
         public bool UpdateChuyeBay(string machuyenbay, float giave, string sanbaydi, string sanbayden, DateTime ngaybay, string giobay, int thoigianbay, int soghehang1, int soghehang2)
         {
             string query = string.Format("UPDATE  CHUYENBAYY SET  GiaVe = {1}, SanBayDi = '{2}',SanBayDen = '{3}',NgayKhoiHanh = '{4}',GioKhoiHanh = '{5}', ThoiGianBay ={6}, SoLuongGheHang1 = {7},SoLuongGheHang2 = {8} WHERE MaChuyenBay = '{0}'", machuyenbay, giave, sanbaydi, sanbayden, dateTime.Value, giobay, thoigianbay, soghehang1, soghehang2);
-            int result = DAO.DataProvider.Instance.ExcuteNonQuery(query);
+            int result = DAO.DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
         public bool DeleteChuyenBay(string machuyenbay)
         {
             //Delete Cac chuyen bay co lien quan
             string query = string.Format("DELETE CHUYENBAYY WHERE MaChuyenBay = '{0}'", machuyenbay);
-            int result = DAO.DataProvider.Instance.ExcuteNonQuery(query);
+            int result = DAO.DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
         #region Events
