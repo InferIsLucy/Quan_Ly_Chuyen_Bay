@@ -65,7 +65,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnPayment);
             this.panel2.Location = new System.Drawing.Point(907, 66);
             this.panel2.Margin = new System.Windows.Forms.Padding(6);
             this.panel2.Name = "panel2";

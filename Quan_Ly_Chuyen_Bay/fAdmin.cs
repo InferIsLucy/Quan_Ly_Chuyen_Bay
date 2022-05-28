@@ -22,8 +22,7 @@ namespace Quan_Ly_Chuyen_Bay
         void LoadAccountList()
         {
             string query = "EXEC dbo.USP_GetAccountByUserName @userName";
-            DAO.DataProvider data = new DAO.DataProvider();
-            dtgvAccount.DataSource = data.ExcuteQuery(query, new object[] { "admin" });
+            dtgvAccount.DataSource = DAO.DataProvider.Instance.ExcuteQuery(query, new object[] { "admin" });
         }
     }
 }

@@ -17,29 +17,15 @@ namespace Quan_Ly_Chuyen_Bay
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        void SearchChuyenBayBySanBayDi(string name)
         {
+            //string query = string.format("select * from chuyenbayy from where sanbaydi = '{0}'", name);
+            //DataProvider provider = new DataProvider();
+            //int result = provider.excutenonquery(query);
 
-        }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
+            //string query = string.Format("SELECT * FROM CHUYENBAYY FROM WHERE SanBayDi = '{0}'", name);
+            //return DAO.DataProvider.Inst
         }
     }
 }

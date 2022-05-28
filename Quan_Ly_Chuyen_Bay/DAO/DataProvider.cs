@@ -10,9 +10,16 @@ namespace Quan_Ly_Chuyen_Bay.DAO
 {
     public class DataProvider
     {
-        private string connectionStr = @"Data Source=.\SQLEXPRESS;Initial Catalog=QLYBANVECHUYENBAY;Integrated Security=True";
+        #region MAKE SINGLETON
+        private static DataProvider instance;
+        private readonly string connectionStr = @"Data Source=LAPTOP-8JOFS4BS;Initial Catalog=QLYBANVECHUYENBAY;Integrated Security=True";
+
+        public static DataProvider Instance { get { if(instance == null) instance = new DataProvider(); return instance; } private set => instance = value; }
+        private DataProvider() { }
+        #endregion
+
         public DataTable ExcuteQuery(string query, object[] parameter = null)
-        {
+        { 
             DataTable data = new DataTable();
 
             using (SqlConnection sqlcon = new SqlConnection(connectionStr))
