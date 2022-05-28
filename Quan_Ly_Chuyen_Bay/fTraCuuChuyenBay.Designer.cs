@@ -35,22 +35,17 @@ namespace Quan_Ly_Chuyen_Bay
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.dtpkFlightDate = new System.Windows.Forms.DateTimePicker();
             this.lbFlightDate = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.lbToAirPort = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.lbFromAirPort = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.dtgvFlight = new System.Windows.Forms.DataGridView();
             this.cmbFromAirPort = new System.Windows.Forms.ComboBox();
             this.cmbToAirPort = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvFlight)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,90 +106,75 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.dTimeNgayBay);
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Location = new System.Drawing.Point(264, 9);
+            this.panel5.Location = new System.Drawing.Point(338, 9);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(372, 59);
             this.panel5.TabIndex = 2;
             // 
-            // dtpkFlightDate
-            // 
-            this.dTimeNgayBay.Location = new System.Drawing.Point(77, 22);
-            this.dTimeNgayBay.Name = "dTimeNgayBay";
-            this.dTimeNgayBay.Size = new System.Drawing.Size(250, 22);
-            this.dTimeNgayBay.TabIndex = 0;
-            // 
-            // lbFlightDate
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Ngày bay";
-            // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.txbSanBayDen);
             this.panel4.Location = new System.Drawing.Point(9, 74);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(237, 59);
             this.panel4.TabIndex = 1;
             // 
-            // lbToAirPort
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Sân bay đến: ";
-            // 
-            // txbSanBayDen
-            // 
-            this.txbSanBayDen.Location = new System.Drawing.Point(99, 19);
-            this.txbSanBayDen.Name = "txbSanBayDen";
-            this.txbSanBayDen.Size = new System.Drawing.Size(135, 22);
-            this.txbSanBayDen.TabIndex = 0;
-            // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.txbSanBayDi);
             this.panel3.Location = new System.Drawing.Point(9, 9);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(237, 59);
             this.panel3.TabIndex = 0;
             // 
-            // label2
+            // dtpkFlightDate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Sân bay đi:";
+            this.dtpkFlightDate.Location = new System.Drawing.Point(0, 0);
+            this.dtpkFlightDate.Name = "dtpkFlightDate";
+            this.dtpkFlightDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpkFlightDate.TabIndex = 0;
             // 
-            // txbSanBayDi
+            // lbFlightDate
             // 
-            this.txbSanBayDi.Location = new System.Drawing.Point(99, 19);
-            this.txbSanBayDi.Name = "txbSanBayDi";
-            this.txbSanBayDi.Size = new System.Drawing.Size(135, 22);
-            this.txbSanBayDi.TabIndex = 0;
+            this.lbFlightDate.Location = new System.Drawing.Point(0, 0);
+            this.lbFlightDate.Name = "lbFlightDate";
+            this.lbFlightDate.Size = new System.Drawing.Size(100, 23);
+            this.lbFlightDate.TabIndex = 0;
             // 
-            // panel6
+            // lbToAirPort
             // 
-            this.panel6.Controls.Add(this.dataGridView1);
-            this.panel6.Location = new System.Drawing.Point(12, 162);
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(771, 270);
-            this.dataGridView1.TabIndex = 0;
+            this.lbToAirPort.Location = new System.Drawing.Point(0, 0);
+            this.lbToAirPort.Name = "lbToAirPort";
+            this.lbToAirPort.Size = new System.Drawing.Size(100, 23);
+            this.lbToAirPort.TabIndex = 0;
+            // 
+            // lbFromAirPort
+            // 
+            this.lbFromAirPort.Location = new System.Drawing.Point(0, 0);
+            this.lbFromAirPort.Name = "lbFromAirPort";
+            this.lbFromAirPort.Size = new System.Drawing.Size(100, 23);
+            this.lbFromAirPort.TabIndex = 0;
+            // 
+            // dtgvFlight
+            // 
+            this.dtgvFlight.ColumnHeadersHeight = 29;
+            this.dtgvFlight.Location = new System.Drawing.Point(0, 0);
+            this.dtgvFlight.Name = "dtgvFlight";
+            this.dtgvFlight.RowHeadersWidth = 51;
+            this.dtgvFlight.Size = new System.Drawing.Size(240, 150);
+            this.dtgvFlight.TabIndex = 0;
+            // 
+            // cmbFromAirPort
+            // 
+            this.cmbFromAirPort.Location = new System.Drawing.Point(0, 0);
+            this.cmbFromAirPort.Name = "cmbFromAirPort";
+            this.cmbFromAirPort.Size = new System.Drawing.Size(121, 25);
+            this.cmbFromAirPort.TabIndex = 0;
+            // 
+            // cmbToAirPort
+            // 
+            this.cmbToAirPort.Location = new System.Drawing.Point(0, 0);
+            this.cmbToAirPort.Name = "cmbToAirPort";
+            this.cmbToAirPort.Size = new System.Drawing.Size(121, 25);
+            this.cmbToAirPort.TabIndex = 0;
             // 
             // fTraCuuChuyenBay
             // 
@@ -202,19 +182,11 @@ namespace Quan_Ly_Chuyen_Bay
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
             this.Name = "fTraCuuChuyenBay";
             this.Text = "fTraCuuChuyenBay";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvFlight)).EndInit();
             this.ResumeLayout(false);
 
@@ -233,7 +205,6 @@ namespace Quan_Ly_Chuyen_Bay
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbFromAirPort;
         private System.Windows.Forms.DateTimePicker dtpkFlightDate;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.DataGridView dtgvFlight;
         private System.Windows.Forms.ComboBox cmbToAirPort;
         private System.Windows.Forms.ComboBox cmbFromAirPort;
