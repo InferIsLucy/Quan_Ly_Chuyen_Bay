@@ -30,10 +30,15 @@ namespace Quan_Ly_Chuyen_Bay
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fAdmin f = new fAdmin();
-            this.Close();
-            f.ShowDialog();
+            fAdmin form = new fAdmin();
+            form.ShowDialog();
+            form.Close();
             this.Show();
+        }
+
+        private void btnSearchFlight_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

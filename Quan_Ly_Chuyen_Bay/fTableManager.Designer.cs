@@ -43,42 +43,11 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Location = new System.Drawing.Point(907, 616);
-            this.panel4.Margin = new System.Windows.Forms.Padding(6);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(880, 538);
-            this.panel4.TabIndex = 8;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnFlightSchedule);
-            this.panel3.Location = new System.Drawing.Point(15, 616);
-            this.panel3.Margin = new System.Windows.Forms.Padding(6);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(880, 538);
-            this.panel3.TabIndex = 10;
-            // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(907, 66);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(880, 538);
-            this.panel2.TabIndex = 9;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnSearchFlight);
-            this.panel1.Location = new System.Drawing.Point(15, 66);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(880, 538);
-            this.panel1.TabIndex = 7;
             // 
             // menuStrip1
             // 
@@ -89,14 +58,14 @@
             this.thôngTinTàiKhoảnToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1802, 48);
+            this.menuStrip1.Size = new System.Drawing.Size(1802, 40);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // adminToolStripMenuItem
             // 
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(104, 44);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(104, 36);
             this.adminToolStripMenuItem.Text = "Admin";
             this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
@@ -106,20 +75,20 @@
             this.thôngTinCáNhânToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
             this.thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
-            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(244, 44);
+            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(244, 36);
             this.thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông tin tài khoản";
             // 
             // thôngTinCáNhânToolStripMenuItem
             // 
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(342, 44);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
             this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(342, 44);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
@@ -147,6 +116,7 @@
             this.btnSearchFlight.Text = "Tra cứu chuyến bay";
             this.btnSearchFlight.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSearchFlight.UseVisualStyleBackColor = false;
+            this.btnSearchFlight.Click += new System.EventHandler(this.btnSearchFlight_Click);
             // 
             // panel2
             // 
@@ -196,7 +166,7 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // btnFlightSchedule
+            // panel4
             // 
             this.panel4.Controls.Add(this.button3);
             this.panel4.Location = new System.Drawing.Point(907, 605);
@@ -239,12 +209,12 @@
             this.Name = "fTableManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần mềm quản lý chuyến bay";
-            this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,8 +1,16 @@
 ﻿CREATE database QLYBANVECHUYENBAY
 GO
 
+---use master
+---go
+
+
 Use QLYBANVECHUYENBAY
 GO
+
+---DROP database QLYBANVECHUYENBAY
+---GO
+
 
 --Bang Taikhoan
 CREATE TABLE ACCOUNT
@@ -11,73 +19,74 @@ CREATE TABLE ACCOUNT
 	DisplayName NVARCHAR(100) NOT NULL,
 	UserName NVARCHAR(100) NOT NULL,
 	Password NVARCHAR(1000) NOT NULL,
-	Type INT NOT NULL --1 là admin, 0 là nhân viên
+	Type INT NOT NULL -----1 là admin, 0 là nhân viên
 )
 GO
 
 --Bang CHUYENBAY
 CREATE TABLE CHUYENBAY 
 (
-   MaChuyenBay varchar(50) NOT NULL,
+   MaChuyenBay INT IDENTITY PRIMARY KEY NOT NULL,
    GiaVe money NOT NULL,
-   SanBayDi varchar(50) NOT NULL, --khoangoai
-   SanBayDen varchar(50) NOT NULL, --khoangoai
+   SanBayDi INT NOT NULL, --khoangoai
+   SanBayDen INT NOT NULL, --khoangoai
    NgayKhoiHanh smalldatetime NOT NULL, 
    GioKhoiHanh datetime NOT NULL,
    ThoiGianBay int NOT NULL,
-   SoLuongGheHang1 int NOT NULL,
-   SoLuongGheHang2 int NOT NULL,
-   CONSTRAINT PK_CHUYENBAY PRIMARY KEY(MaChuyenBay),
 )
  
 --Bang DOANHTHUCHUYENBAY
 CREATE TABLE DOANHTHUCHUYENBAY
 (
-   MaChuyenBay varchar(50) NOT NULL, --ngoai
+   MaChuyenBay INT NOT NULL, --ngoai
    NgayKhoiHanh smalldatetime NOT NULL, --ngoai
-   SoVe int NULL,
-   DoanhThu int NULL,
-   TyLe float NULL,
+   SoVe INT DEFAULT 0 NOT NULL, --- MẶC ĐỊNH LÀ KHÔNG CÓ VÉ NÀO
+   DoanhThu FLOAT DEFAULT 0 NOT NULL,
+   TyLe FLOAT DEFAULT 0 NOT NULL,
    CONSTRAINT PK_DOANHTHUCHUYENBAY PRIMARY KEY(MaChuyenBay, NgayKhoiHanh)
 )
+
+---DROP TABLE DBO.DOANHTHUCHUYENBAY
  
 --Bang CHITIETCHUYENBAY
 CREATE TABLE CT_CHUYENBAY 
 (
-   MaCTChuyenBay varchar(50) NOT NULL,
-   MaChuyenBay varchar(50) NOT NULL, --khoangoai
-   SanBayTrungGian varchar(50) NOT NULL, --khoangoai
-   ThoiGianDung int NOT NULL,
+   MaCTChuyenBay INT IDENTITY PRIMARY KEY NOT NULL,
+   MaChuyenBay INT NOT NULL, --khoangoai
+   SanBayTrungGian INT NOT NULL, --khoangoai
+   ThoiGianDung FLOAT DEFAULT 0 NOT NULL, ----TÍNH BẰNG PHÚT
    GhiChu NVARCHAR(200),
-   CONSTRAINT PK_CTCHUYENBAY PRIMARY KEY(MaCTChuyenBay),
 )
  
 --Bang SANBAY
 CREATE TABLE SANBAY 
 (
-   MaSanBay varchar(50) NOT NULL,
+   MaSanBay INT IDENTITY PRIMARY KEY NOT NULL,
    TenSanBay varchar(100) NOT NULL,
-   CONSTRAINT PK_SANBAY PRIMARY KEY(MaSanBay),
 )
  
 --Bang VECHUYENBAY
 CREATE TABLE VECHUYENBAY 
 (
-   MaChuyenBay varchar(50) NOT NULL, --chinh, NGOAI
+   MaChuyenBay INT IDENTITY NOT NULL, --chinh, NGOAI
    CMND varchar(10) NOT NULL, -- chinh, NGOAI
    HanhKhach varchar(100) NOT NULL,
    DienThoai varchar(10) NOT NULL,
    MaHangVe varchar(50) NOT NULL, --khoangoai
    GiaTien money NOT NULL,
-   MaGhe varchar(50) NOT NULL, --ngoai
+   MaGhe INT NOT NULL, --ngoai
+   TrangThai INT DEFAULT 0, --------1 là thanh toán rồi, 0 là chưa thanh toán
+   NgayThanhToan SMALLDATETIME NOT NULL,
    CONSTRAINT PK_VECHUYENBAY PRIMARY KEY(MaChuyenBay, CMND)
 )
- 
+
+---DROP TABLE dbo.VECHUYENBAY
+
 --Bang HANGVE
 CREATE TABLE HANGVE
 (
-   MaHangVe varchar(50) NOT NULL,
-   MaChuyenBay varchar(50) NOT NULL, --NGOAI
+   MaHangVe INT IDENTITY NOT NULL,
+   MaChuyenBay INT NOT NULL, --NGOAI
    TenHangVe varchar(100) NOT NULL,
    PhanTramDonGia float NOT NULL,
    SoLuongGhe int NOT NULL,
@@ -96,24 +105,23 @@ CREATE TABLE KHACHHANG
 )
 GO
  
---Bang VITRIGHE
---CREATE TABLE VITRIGHE
---(
---   MaGhe varchar(50) NOT NULL,
---   TinhTrang BIT NOT NULL, --1: trống, 0: hết
---    CONSTRAINT PK_VITRIGHE PRIMARY KEY(MaGhe),
---)
+----Bang VITRIGHE
+CREATE TABLE VITRIGHE
+(
+   MaGhe INT IDENTITY PRIMARY KEY NOT NULL,
+   TinhTrang INT DEFAULT 0 NOT NULL, ---
+)
+GO
  
 --Bang PHIEUDATCHO
 CREATE TABLE PHIEUDATCHO
 (
-   MaPhieuDat varchar(50) NOT NULL,
-   MaHangVe varchar(50) NOT NULL, --NGOAI
+   MaPhieuDat INT IDENTITY PRIMARY KEY NOT NULL,
+   MaHangVe INT NOT NULL, --NGOAI
    CMND varchar(10) NOT NULL, --NGOAI
-   MaChuyenBay varchar(50) NOT NULL, --NGOAI
+   MaChuyenBay INT NOT NULL, --NGOAI
    GiaTien money NOT NULL,
    NgayDat date NOT NULL,
-   CONSTRAINT PK_PHIEUDATCHO PRIMARY KEY(MaPhieuDat),
 )
  
 --Bang THAMSO
@@ -127,9 +135,116 @@ CREATE TABLE THAMSO
    TGChamNhatDatVe int NOT NULL,
    TGChamNhatHuyDatVe int NOT NULL,
 )
+GO
+
+CREATE TABLE BIEUDODAONH
  
- 
------------ràng buộc bảng CHUYENBAY
+
+
+
+
+
+
+
+
+---------------------- TẠO PROCEDURE ---------------------
+---PROC TRUY XUẤT TÀI KHOẢN NGƯỜI DÙNG---
+CREATE PROC USP_Login
+@UserName NVARCHAR(100), @PassWord NVARCHAR(1000)
+AS
+BEGIN
+	SELECT * FROM dbo.ACCOUNT WHERE UserName = @UserName AND Password= @PassWord
+END
+GO
+---drop proc [USP_Login]
+
+---PROC TRUY SUÂT HÓA ĐƠN BỞI NĂM---
+CREATE PROC USP_GetListBillByYear
+@year INT
+AS
+BEGIN
+SELECT MONTH(NgayKhoiHanh) AS 'THANG', COUNT(MaChuyenBay) AS 'SỐ CHUYẾN BAY', SUM(DoanhThu) AS 'DOANH THU'
+FROM dbo.DOANHTHUCHUYENBAY
+WHERE YEAR(NgayKhoiHanh) = @year 
+GROUP BY MONTH(NgayKhoiHanh)
+END
+GO
+---drop proc [USP_GetListBillByYear]
+
+---DROP PROCEDURE [USP_GetListBillByYear]---XÓA MỘT PROCEDURE
+
+---PROC TÍNH TỔNG TIỀN THEO NĂM
+CREATE PROC USP_GetAmountMoneyByYear
+@year INT
+AS
+BEGIN
+SELECT SUM(DoanhThu)
+FROM dbo.DOANHTHUCHUYENBAY
+WHERE YEAR(NgayKhoiHanh) = @year 
+END
+GO
+---drop proc [USP_GetAmountMoneyByYear]
+
+---PROC THỐNG KÊ DOANH THU THEO THÁNG---
+CREATE PROC USP_GetListBillByDate
+@checkIn date, @checkOut date
+AS
+BEGIN
+	SELECT MaChuyenBay AS [Mã chuyến bay], SoVe AS [Số vé], DoanhThu AS [Doanh thu]
+	FROM dbo.DOANHTHUCHUYENBAY
+	WHERE NgayKhoiHanh >= @checkIn AND NgayKhoiHanh <= @checkOut
+END
+GO
+-----drop proc [USP_GetListBillByDate]
+
+---PROC TÍNH TỔNG TIỀN THEO THÁNG---
+CREATE PROC USP_GetAmountMoneyByMonth
+@checkIn date, @checkOut date
+AS
+BEGIN
+	SELECT SUM(DoanhThu)
+	FROM dbo.DOANHTHUCHUYENBAY
+	WHERE NgayKhoiHanh >= @checkIn AND NgayKhoiHanh <= @checkOut
+END
+GO
+---drop proc [USP_GetAmountMoneyByMonth]
+
+----TEST PROC---
+CREATE PROC USP_TEST
+@year int
+AS
+BEGIN
+	WITH BIEUDO AS (	SELECT MONTH(NgayKhoiHanh) AS 'THANG', SUM(DoanhThu) AS 'DOANHTHU'
+						FROM dbo.DOANHTHUCHUYENBAY
+						WHERE YEAR(NgayKhoiHanh) = 2022
+						GROUP BY MONTH(NgayKhoiHanh)
+					)
+	SELECT THANG, DOANHTHU
+	FROM BIEUDO
+END
+GO
+
+---drop proc USP_TEST
+CREATE TABLE CHART
+(
+	id INT IDENTITY PRIMARY KEY NOT NULL,
+	Thang INT,
+	DoanhThu float DEFAULT 0 NOT NULL,
+)
+
+--DROP PROC [USP_TEST]
+
+
+
+
+
+
+
+
+
+
+
+-----------ràng buộc bảng CHUYENBAY--------------------------
 --khoá ngoại
 ALTER TABLE CHUYENBAY ADD CONSTRAINT fk01_CB FOREIGN KEY(SanBayDi) REFERENCES SANBAY(MaSanBay)
 ALTER TABLE CHUYENBAY ADD CONSTRAINT fk02_CB FOREIGN KEY(SanBayDen) REFERENCES SANBAY(MaSanBay)
@@ -171,10 +286,17 @@ ALTER TABLE PHIEUDATCHO ADD CONSTRAINT fk03_PDC FOREIGN KEY(MaHangVe) REFERENCES
 -----------ràng buộc bảng THAMSO
  
  
-set dateformat dmy
- 
- 
---DU LIEU
+
+
+
+
+
+
+
+
+
+-----------------------DU LIEU----------------------------
+--THÊM TÀI KHOẢN
 INSERT INTO dbo.ACCOUNT
 			(	UserName,
 				DisplayName,
@@ -198,7 +320,95 @@ VALUES		(	N'Dang',
 				N'1',
 				0
 			)
+---SELECT * FROM dbo.ACCOUNT
+---THÊM DOANH THU CHUYẾN BAY
+INSERT INTO dbo.DOANHTHUCHUYENBAY	(	MaChuyenBay,
+										NgayKhoiHanh, --ngoai
+										SoVe, --- MẶC ĐỊNH LÀ KHÔNG CÓ VÉ NÀO
+										DoanhThu
+									)
+VALUES								(	1,
+										'20150701',
+										100,
+										46000
+									)
 
+INSERT INTO dbo.DOANHTHUCHUYENBAY	(	MaChuyenBay,
+										NgayKhoiHanh, --ngoai
+										SoVe, --- MẶC ĐỊNH LÀ KHÔNG CÓ VÉ NÀO
+										DoanhThu
+									)
+VALUES								(	2,
+										'20150101',
+										100,
+										12000
+									)
 
-SELECT * FROM dbo.ACCOUNT
-GO
+INSERT INTO dbo.DOANHTHUCHUYENBAY	(	MaChuyenBay,
+										NgayKhoiHanh, --ngoai
+										SoVe, --- MẶC ĐỊNH LÀ KHÔNG CÓ VÉ NÀO
+										DoanhThu
+									)
+VALUES								(	3,
+										'20220901',
+										100,
+										23000
+									)
+
+INSERT INTO dbo.DOANHTHUCHUYENBAY	(	MaChuyenBay,
+										NgayKhoiHanh, --ngoai
+										SoVe, --- MẶC ĐỊNH LÀ KHÔNG CÓ VÉ NÀO
+										DoanhThu
+									)
+VALUES								(	4,
+										'20220401',
+										100,
+										23000
+									)
+
+INSERT INTO dbo.DOANHTHUCHUYENBAY	(	MaChuyenBay,
+										NgayKhoiHanh, --ngoai
+										SoVe, --- MẶC ĐỊNH LÀ KHÔNG CÓ VÉ NÀO
+										DoanhThu
+									)
+VALUES								(	5,
+										'20220401',
+										100,
+										12000
+									)
+
+INSERT INTO dbo.DOANHTHUCHUYENBAY	(	MaChuyenBay,
+										NgayKhoiHanh, --ngoai
+										SoVe, --- MẶC ĐỊNH LÀ KHÔNG CÓ VÉ NÀO
+										DoanhThu
+									)
+VALUES								(	6,
+										'20220401',
+										100,
+										30000
+									)
+
+INSERT INTO dbo.DOANHTHUCHUYENBAY	(	MaChuyenBay,
+										NgayKhoiHanh, --ngoai
+										SoVe, --- MẶC ĐỊNH LÀ KHÔNG CÓ VÉ NÀO
+										DoanhThu
+									)
+VALUES								(	7,
+										'20160801',
+										100,
+										23000
+									)
+
+INSERT INTO dbo.DOANHTHUCHUYENBAY	(	MaChuyenBay,
+										NgayKhoiHanh, --ngoai
+										SoVe, --- MẶC ĐỊNH LÀ KHÔNG CÓ VÉ NÀO
+										DoanhThu
+									)
+VALUES								(	8,
+										'20160301',
+										100,
+										23000
+									)
+
+---SELECT * FROM dbo.DOANHTHUCHUYENBAY
+

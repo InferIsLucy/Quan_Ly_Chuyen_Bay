@@ -35,23 +35,23 @@ namespace Quan_Ly_Chuyen_Bay
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.dTimeNgayBay = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
+            this.dtpkFlightDate = new System.Windows.Forms.DateTimePicker();
+            this.lbFlightDate = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txbSanBayDen = new System.Windows.Forms.TextBox();
+            this.lbToAirPort = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txbSanBayDi = new System.Windows.Forms.TextBox();
+            this.lbFromAirPort = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgvFlight = new System.Windows.Forms.DataGridView();
+            this.cmbFromAirPort = new System.Windows.Forms.ComboBox();
+            this.cmbToAirPort = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvFlight)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -118,14 +118,14 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel5.Size = new System.Drawing.Size(372, 59);
             this.panel5.TabIndex = 2;
             // 
-            // dTimeNgayBay
+            // dtpkFlightDate
             // 
             this.dTimeNgayBay.Location = new System.Drawing.Point(77, 22);
             this.dTimeNgayBay.Name = "dTimeNgayBay";
             this.dTimeNgayBay.Size = new System.Drawing.Size(250, 22);
             this.dTimeNgayBay.TabIndex = 0;
             // 
-            // label3
+            // lbFlightDate
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 22);
@@ -143,7 +143,7 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel4.Size = new System.Drawing.Size(237, 59);
             this.panel4.TabIndex = 1;
             // 
-            // label1
+            // lbToAirPort
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 22);
@@ -188,12 +188,6 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             this.panel6.Controls.Add(this.dataGridView1);
             this.panel6.Location = new System.Drawing.Point(12, 162);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(774, 276);
-            this.panel6.TabIndex = 3;
-            // 
-            // dataGridView1
-            // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(0, 3);
             this.dataGridView1.Name = "dataGridView1";
@@ -221,7 +215,7 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvFlight)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -233,15 +227,15 @@ namespace Quan_Ly_Chuyen_Bay
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbFlightDate;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txbSanBayDen;
+        private System.Windows.Forms.Label lbToAirPort;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txbSanBayDi;
-        private System.Windows.Forms.DateTimePicker dTimeNgayBay;
+        private System.Windows.Forms.Label lbFromAirPort;
+        private System.Windows.Forms.DateTimePicker dtpkFlightDate;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgvFlight;
+        private System.Windows.Forms.ComboBox cmbToAirPort;
+        private System.Windows.Forms.ComboBox cmbFromAirPort;
     }
 }

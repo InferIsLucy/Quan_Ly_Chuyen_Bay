@@ -10,102 +10,148 @@ namespace Quan_Ly_Chuyen_Bay.DAO
 {
     public class DataProvider
     {
-        #region MAKE SINGLETON
-        private static DataProvider instance;
-        private readonly string connectionStr = @"Data Source=LAPTOP-8JOFS4BS;Initial Catalog=QLYBANVECHUYENBAY;Integrated Security=True";
+        private static DataProvider instance; //Ctrl + R + E
+        private string connectionStr = @"Data Source=.\SQLEXPRESS;Initial Catalog=QLYBANVECHUYENBAY;Integrated Security=True";
 
-        public static DataProvider Instance { get { if(instance == null) instance = new DataProvider(); return instance; } private set => instance = value; }
+        public static DataProvider Instance { get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; } private set => instance = value; }
         private DataProvider() { }
-        #endregion
 
-        public DataTable ExcuteQuery(string query, object[] parameter = null)
-        { 
+        /// <summary>
+        /// Hàm thực hiện lệnh truyền vào 
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
+        public DataTable ExecuteQuery(string query, object[] parameter = null)
+        {
             DataTable data = new DataTable();
 
-            using (SqlConnection sqlcon = new SqlConnection(connectionStr))
+            using (SqlConnection connection = new SqlConnection(connectionStr))
             {
-                sqlcon.Open();
+                connection.Open();
 
-                SqlCommand cmd = new SqlCommand(query, sqlcon);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                if(parameter != null)
+                SqlCommand command = new SqlCommand(query, connection);
+
+
+                if (parameter != null)
                 {
+                    string[] listParameter = query.Split(' ');
+
                     int i = 0;
-                    string[] para = query.Split(' ');
-                    foreach(string item in para)
+
+                    foreach (var item in listParameter)
                     {
                         if (item.Contains('@'))
                         {
-                            //Lưu ý khi viết query nên cách biến với dấu phẩy ra.
-                            cmd.Parameters.AddWithValue(item, parameter[i]);
+
+                            command.Parameters.AddWithValue(item, parameter[i]);
+
                             i++;
                         }
                     }
                 }
+
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
 
                 adapter.Fill(data);
 
-                sqlcon.Close();
+                connection.Close();
             }
+
             return data;
         }
 
-        public int ExcuteNonQuery(string query, object[] parameter = null)
+
+        /// <summary>
+        /// Hàm trả ra số dòng thành công, vd các lệnh: Update , Insert, Delete, ...
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
+        public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
 
-            using (SqlConnection sqlcon = new SqlConnection(connectionStr))
+            using (SqlConnection connection = new SqlConnection(connectionStr))
             {
-                sqlcon.Open();
+                // Hàm trả ra số dòng thành công, vd các lệnh: Update , Insert, Delete, ...
 
-                SqlCommand cmd = new SqlCommand(query, sqlcon);
-                
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+
                 if (parameter != null)
                 {
+                    string[] listParameter = query.Split(' ');
+
                     int i = 0;
-                    string[] para = query.Split(' ');
-                    foreach (string item in para)
+
+                    foreach (var item in listParameter)
                     {
                         if (item.Contains('@'))
                         {
-                            //Lưu ý khi viết query nên cách biến với dấu phẩy ra.
-                            cmd.Parameters.AddWithValue(item, parameter[i]);
+
+                            command.Parameters.AddWithValue(item, parameter[i]);
+
                             i++;
                         }
                     }
                 }
-                data = cmd.ExecuteNonQuery();
-                sqlcon.Close();
+
+
+                data = command.ExecuteNonQuery();
+
+                connection.Close();
             }
+
             return data;
         }
 
-        public object ExcuteScalar(string query, object[] parameter = null)
+
+        /// <summary>
+        /// Hàm thực hiện đếm số lượng (trả về ô đầu tiên của kết quả) , vd: SELECT Count(*) FROM ABC
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
+        public object ExecuteScalar(string query, object[] parameter = null)
         {
+            // Hàm thực hiện đếm số lượng (trả về ô đầu tiên của kết quả) , vd: SELECT Count(*) FROM ABC
+
             object data = 0;
 
-            using (SqlConnection sqlcon = new SqlConnection(connectionStr))
+            using (SqlConnection connection = new SqlConnection(connectionStr))
             {
-                sqlcon.Open();
+                connection.Open();
 
-                SqlCommand cmd = new SqlCommand(query, sqlcon);
+                SqlCommand command = new SqlCommand(query, connection);
+
+
                 if (parameter != null)
                 {
+                    string[] listParameter = query.Split(' ');
+
                     int i = 0;
-                    string[] para = query.Split(' ');
-                    foreach (string item in para)
+
+                    foreach (var item in listParameter)
                     {
                         if (item.Contains('@'))
                         {
-                            //Lưu ý khi viết query nên cách biến với dấu phẩy ra.
-                            cmd.Parameters.AddWithValue(item, parameter[i]);
+
+                            command.Parameters.AddWithValue(item, parameter[i]);
+
                             i++;
                         }
                     }
                 }
-                data = cmd.ExecuteScalar();
-                sqlcon.Close();
+
+
+                data = command.ExecuteScalar();
+                connection.Close();
             }
+
             return data;
         }
     }
