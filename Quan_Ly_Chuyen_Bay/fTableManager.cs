@@ -30,9 +30,9 @@ namespace Quan_Ly_Chuyen_Bay
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fAdmin f = new fAdmin();
-            f.ShowDialog();
-            f.Close();
+            fAdmin form = new fAdmin();
+            form.ShowDialog();
+            form.Close();
             this.Show();
         }
 
