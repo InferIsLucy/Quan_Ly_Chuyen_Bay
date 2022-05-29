@@ -47,7 +47,25 @@ namespace Quan_Ly_Chuyen_Bay
         {
             LoadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
             GetAmountMoneyByMonth(dtpkFromDate.Value, dtpkToDate.Value);
+            this.DtgvViewBill = (DataTable)dtgvViewBill.DataSource;
+        }
+
+        private void btnChart_Click(object sender, EventArgs e)
+        {
+            fChartByFlightID f = new fChartByFlightID(this);
+            f.Show();
+        }
+
+        #endregion
+
+        #region GETSET FUNCTION
+        public DataTable DtgvViewBill
+        {
+            get { if (dtgvViewBill.DataSource == null) dtgvViewBill.DataSource = new DataTable(); return (DataTable)dtgvViewBill.DataSource; }
+            set { dtgvViewBill.DataSource = value; }
         }
         #endregion
+
+        
     }
 }

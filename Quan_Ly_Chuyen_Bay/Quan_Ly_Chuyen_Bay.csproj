@@ -69,6 +69,12 @@
     <Compile Include="fBanVeChuyenBay.Designer.cs">
       <DependentUpon>fBanVeChuyenBay.cs</DependentUpon>
     </Compile>
+    <Compile Include="fChartByFlightID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fChartByFlightID.Designer.cs">
+      <DependentUpon>fChartByFlightID.cs</DependentUpon>
+    </Compile>
     <Compile Include="fChartByYear.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fBanVeChuyenBay.resx">
       <DependentUpon>fBanVeChuyenBay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fChartByFlightID.resx">
+      <DependentUpon>fChartByFlightID.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fChartByYear.resx">
       <DependentUpon>fChartByYear.cs</DependentUpon>

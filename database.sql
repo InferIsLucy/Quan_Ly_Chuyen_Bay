@@ -136,8 +136,6 @@ CREATE TABLE THAMSO
    TGChamNhatHuyDatVe int NOT NULL,
 )
 GO
-
-CREATE TABLE BIEUDODAONH
  
 
 
@@ -209,30 +207,21 @@ END
 GO
 ---drop proc [USP_GetAmountMoneyByMonth]
 
-----TEST PROC---
-CREATE PROC USP_TEST
+---PROC HIỆN CHART BẰNG NĂM NHẬP VÀO----
+CREATE PROC USP_ChartByYear
 @year int
 AS
 BEGIN
 	WITH BIEUDO AS (	SELECT MONTH(NgayKhoiHanh) AS 'THANG', SUM(DoanhThu) AS 'DOANHTHU'
 						FROM dbo.DOANHTHUCHUYENBAY
-						WHERE YEAR(NgayKhoiHanh) = 2022
+						WHERE YEAR(NgayKhoiHanh) = @year
 						GROUP BY MONTH(NgayKhoiHanh)
 					)
 	SELECT THANG, DOANHTHU
 	FROM BIEUDO
 END
 GO
-
----drop proc USP_TEST
-CREATE TABLE CHART
-(
-	id INT IDENTITY PRIMARY KEY NOT NULL,
-	Thang INT,
-	DoanhThu float DEFAULT 0 NOT NULL,
-)
-
---DROP PROC [USP_TEST]
+--DROP PROC [USP_ChartByYear]
 
 
 
