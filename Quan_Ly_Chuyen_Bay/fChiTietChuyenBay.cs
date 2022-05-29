@@ -17,14 +17,6 @@ namespace Quan_Ly_Chuyen_Bay
             InitializeComponent();
         }
 
-        private void panel14_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
