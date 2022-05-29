@@ -12,28 +12,25 @@ namespace Quan_Ly_Chuyen_Bay
 {
     public partial class fBanVeChuyenBay : Form
     {
+        public delegate void SendMaChuyenBay(string MaChuyenBay);
+        public SendMaChuyenBay Sender;
         public fBanVeChuyenBay()
         {
             InitializeComponent();
+            Sender = new SendMaChuyenBay(GetMessage);
         }
-
-        private void label2_Click(object sender, EventArgs e)
+        private void GetMessage(string MaChuyenBay)
         {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-                    }
-
-        private void btnXemThongTinCB_Click(object sender, EventArgs e)
-        {
-
+            txbMaChuyenBay.Text = MaChuyenBay;
+            string query = string.Format("SELECT * FROM CHUYENBAYY WHERE MaChuyenBay = '{0}'", MaChuyenBay);
+            DataTable data = (DataTable)DAO.DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                txbSanBayDen.Text = item["SanBayDen"].ToString();
+                txbSanBayDi.Text = item["SanBayDi"].ToString();
+                txbThoIGianBay.Text = item["ThoiGianBay"].ToString();
+                dtimeNgayBay.Value = DateTime.Parse(item["NgayKhoiHanh"].ToString());
+            }
         }
     }
 }

@@ -22,8 +22,6 @@ namespace Quan_Ly_Chuyen_Bay
             
         }
 
-
-
         #region Function
         void LoadFunction()
         {
@@ -35,7 +33,7 @@ namespace Quan_Ly_Chuyen_Bay
         void LoadFlightSchedule()
         {
             string query = "Select * from CHUYENBAYY";
-            listChuyenBay.DataSource = DAO.DataProvider.Instance.ExcuteQuery(query);
+            listChuyenBay.DataSource = DAO.DataProvider.Instance.ExecuteQuery(query);
         }
         
         void LoadSLGhe()
@@ -59,9 +57,9 @@ namespace Quan_Ly_Chuyen_Bay
         {
             string query = "Select * from CHUYENBAYY";
             
-            comboBox1.DataSource = DAO.DataProvider.Instance.ExcuteQuery(query);
+            comboBox1.DataSource = DAO.DataProvider.Instance.ExecuteQuery(query);
             comboBox1.DisplayMember = "SanBayDi";
-            comboBox2.DataSource = DAO.DataProvider.Instance.ExcuteQuery(query);
+            comboBox2.DataSource = DAO.DataProvider.Instance.ExecuteQuery(query);
             comboBox2.DisplayMember = "SanBayDen";
         }
 
@@ -70,7 +68,7 @@ namespace Quan_Ly_Chuyen_Bay
             if(dtgvDSChuyenBay.SelectedCells.Count> 0)
             {
                 string query = " Select * from CHUYENBAYY ";
-                DataTable data = (DataTable)DAO.DataProvider.Instance.ExcuteQuery(query);
+                DataTable data = (DataTable)DAO.DataProvider.Instance.ExecuteQuery(query);
 
                 int index = -1;
                 int i = 0;
