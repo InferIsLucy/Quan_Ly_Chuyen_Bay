@@ -62,10 +62,7 @@ namespace Quan_Ly_Chuyen_Bay.DAO
             return data;
         }
 
-        internal object ExcuteQuery(string query)
-        {
-            throw new NotImplementedException();
-        }
+
 
 
         /// <summary>
