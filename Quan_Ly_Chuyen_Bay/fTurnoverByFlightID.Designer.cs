@@ -164,6 +164,7 @@
             this.btnChart.TabIndex = 12;
             this.btnChart.Text = "Biểu đồ";
             this.btnChart.UseVisualStyleBackColor = true;
+            this.btnChart.Click += new System.EventHandler(this.btnChart_Click);
             // 
             // fTurnoverByFlightID
             // 

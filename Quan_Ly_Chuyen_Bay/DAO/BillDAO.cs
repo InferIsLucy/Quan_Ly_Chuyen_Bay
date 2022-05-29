@@ -44,5 +44,11 @@ namespace Quan_Ly_Chuyen_Bay.DAO
                 return 0;
             return DataProvider.Instance.ExecuteScalar(query, new object[] { checkIn, checkOut });
         }
+
+        public DataTable GetChartByYear(int year)
+        {
+            string query = "EXEC USP_ChartByYear @year";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { year });
+        }
     }
 }

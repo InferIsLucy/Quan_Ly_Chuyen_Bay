@@ -28,7 +28,7 @@ namespace Quan_Ly_Chuyen_Bay
         void LoadYearForTurnoverByYear()
         {
             //Giả sử 2015 là năm thành lập công ty
-            for(int i = 2015; i <= DateTime.Now.Year; i++)
+            for (int i = 2015; i <= DateTime.Now.Year; i++)
             {
                 cmbYear.Items.Add(i);
             }
@@ -62,7 +62,7 @@ namespace Quan_Ly_Chuyen_Bay
             {
                 ShowTurnover((int)cmbYear.SelectedItem);
                 GetAmountMoneyByYear((int)cmbYear.SelectedItem);
-                 ;
+                ;
             }
             catch (Exception ex)
             {
