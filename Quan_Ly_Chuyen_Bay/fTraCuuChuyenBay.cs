@@ -53,5 +53,12 @@ namespace Quan_Ly_Chuyen_Bay
             BanVe.Sender(txbMaChuyenBay.Text);
             BanVe.Show();
         }
+
+        private void btnThongTin_Click(object sender, EventArgs e)
+        {
+            fChiTietChuyenBay Child = new fChiTietChuyenBay();
+            Child.Sender(txbMaChuyenBay.Text);
+            Child.Show();
+        }
     }
 }

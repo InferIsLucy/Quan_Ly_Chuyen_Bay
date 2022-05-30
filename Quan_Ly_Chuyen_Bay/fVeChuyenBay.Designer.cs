@@ -44,6 +44,7 @@ namespace Quan_Ly_Chuyen_Bay
             this.txbMaChuyenBay = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnXem = new System.Windows.Forms.Button();
             this.btnDatVe = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.lbSoGheTrong = new System.Windows.Forms.Label();
@@ -52,6 +53,7 @@ namespace Quan_Ly_Chuyen_Bay
             this.lbTongTien = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.txbHangVe = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txbSDT = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -63,8 +65,6 @@ namespace Quan_Ly_Chuyen_Bay
             this.label7 = new System.Windows.Forms.Label();
             this.txbHoTen = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txbHangVe = new System.Windows.Forms.TextBox();
-            this.btnXem = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -218,6 +218,16 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel2.Size = new System.Drawing.Size(984, 319);
             this.panel2.TabIndex = 1;
             // 
+            // btnXem
+            // 
+            this.btnXem.Location = new System.Drawing.Point(669, 273);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(186, 43);
+            this.btnXem.TabIndex = 2;
+            this.btnXem.Text = "Xem hạng vé";
+            this.btnXem.UseVisualStyleBackColor = true;
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
+            // 
             // btnDatVe
             // 
             this.btnDatVe.BackColor = System.Drawing.Color.LightGreen;
@@ -292,6 +302,15 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(315, 59);
             this.panel10.TabIndex = 13;
+            // 
+            // txbHangVe
+            // 
+            this.txbHangVe.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txbHangVe.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txbHangVe.Location = new System.Drawing.Point(131, 19);
+            this.txbHangVe.Name = "txbHangVe";
+            this.txbHangVe.Size = new System.Drawing.Size(162, 30);
+            this.txbHangVe.TabIndex = 3;
             // 
             // label9
             // 
@@ -385,25 +404,6 @@ namespace Quan_Ly_Chuyen_Bay
             this.label6.Size = new System.Drawing.Size(201, 25);
             this.label6.TabIndex = 0;
             this.label6.Text = "Thông tin khách hàng";
-            // 
-            // txbHangVe
-            // 
-            this.txbHangVe.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txbHangVe.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txbHangVe.Location = new System.Drawing.Point(131, 19);
-            this.txbHangVe.Name = "txbHangVe";
-            this.txbHangVe.Size = new System.Drawing.Size(162, 30);
-            this.txbHangVe.TabIndex = 3;
-            // 
-            // btnXem
-            // 
-            this.btnXem.Location = new System.Drawing.Point(669, 273);
-            this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(186, 43);
-            this.btnXem.TabIndex = 2;
-            this.btnXem.Text = "Xem hạng vé";
-            this.btnXem.UseVisualStyleBackColor = true;
-            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // fVeChuyenBay
             // 
