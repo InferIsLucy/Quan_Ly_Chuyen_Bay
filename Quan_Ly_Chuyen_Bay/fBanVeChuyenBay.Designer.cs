@@ -36,6 +36,7 @@ namespace Quan_Ly_Chuyen_Bay
             this.btnXemThongTinCB = new System.Windows.Forms.Button();
             this.btnDangKy = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.txbSanBayDen = new System.Windows.Forms.TextBox();
@@ -51,7 +52,7 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel7 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.txbThoIGianBay = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDatCho = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSChuyenBay)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -84,18 +85,19 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.btnTim);
             this.flowLayoutPanel1.Controls.Add(this.btnXemThongTinCB);
+            this.flowLayoutPanel1.Controls.Add(this.btnTim);
             this.flowLayoutPanel1.Controls.Add(this.btnDangKy);
+            this.flowLayoutPanel1.Controls.Add(this.btnDatCho);
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(399, 177);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 177);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(632, 50);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1031, 50);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // btnTim
             // 
-            this.btnTim.Location = new System.Drawing.Point(2, 2);
+            this.btnTim.Location = new System.Drawing.Point(264, 2);
             this.btnTim.Margin = new System.Windows.Forms.Padding(2);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(207, 42);
@@ -106,16 +108,17 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             // btnXemThongTinCB
             // 
-            this.btnXemThongTinCB.Location = new System.Drawing.Point(213, 2);
+            this.btnXemThongTinCB.Location = new System.Drawing.Point(2, 2);
             this.btnXemThongTinCB.Margin = new System.Windows.Forms.Padding(2);
             this.btnXemThongTinCB.Name = "btnXemThongTinCB";
-            this.btnXemThongTinCB.Size = new System.Drawing.Size(200, 42);
+            this.btnXemThongTinCB.Size = new System.Drawing.Size(258, 42);
             this.btnXemThongTinCB.TabIndex = 1;
-            this.btnXemThongTinCB.Text = "XemThongTin";
+            this.btnXemThongTinCB.Text = "Thông tin chuyến bay";
+            this.btnXemThongTinCB.Click += new System.EventHandler(this.btnXemThongTinCB_Click);
             // 
             // btnDangKy
             // 
-            this.btnDangKy.Location = new System.Drawing.Point(417, 2);
+            this.btnDangKy.Location = new System.Drawing.Point(475, 2);
             this.btnDangKy.Margin = new System.Windows.Forms.Padding(2);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(209, 42);
@@ -136,6 +139,17 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1034, 227);
             this.panel2.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.Location = new System.Drawing.Point(889, 129);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(136, 43);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Reset";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel4
             // 
@@ -285,16 +299,15 @@ namespace Quan_Ly_Chuyen_Bay
             this.txbThoIGianBay.Size = new System.Drawing.Size(226, 30);
             this.txbThoIGianBay.TabIndex = 1;
             // 
-            // button1
+            // btnDatCho
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.Location = new System.Drawing.Point(889, 129);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 43);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Reset";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnDatCho.Location = new System.Drawing.Point(689, 3);
+            this.btnDatCho.Name = "btnDatCho";
+            this.btnDatCho.Size = new System.Drawing.Size(250, 41);
+            this.btnDatCho.TabIndex = 3;
+            this.btnDatCho.Text = "Đặt chỗ chuyến bay";
+            this.btnDatCho.UseVisualStyleBackColor = true;
+            this.btnDatCho.Click += new System.EventHandler(this.btnDatCho_Click);
             // 
             // fBanVeChuyenBay
             // 
@@ -351,5 +364,6 @@ namespace Quan_Ly_Chuyen_Bay
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txbThoIGianBay;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDatCho;
     }
 }

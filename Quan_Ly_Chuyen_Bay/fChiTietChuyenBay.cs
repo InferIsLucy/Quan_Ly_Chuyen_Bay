@@ -45,7 +45,8 @@ namespace Quan_Ly_Chuyen_Bay
                 foreach (DataRow items in data1.Rows)
                 {
                     Button btn = new Button() { Width = 100, Height = 100 };
-                    btn.Text = items["TenSanBay"].ToString() + Environment.NewLine + item["ThoiGianDung"].ToString();
+                    btn.Text = items["TenSanBay"].ToString() + Environment.NewLine + item["ThoiGianDung"].ToString() + " Phút";
+                    btn.BackColor = Color.CornflowerBlue;
                     flbTable.Controls.Add(btn);
                 }
             }

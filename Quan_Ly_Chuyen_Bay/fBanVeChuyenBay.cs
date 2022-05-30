@@ -114,5 +114,19 @@ namespace Quan_Ly_Chuyen_Bay
             Child.Sender(txbMaChuyenBay.Text);
             Child.Show();
         }
+
+        private void btnXemThongTinCB_Click(object sender, EventArgs e)
+        {
+            fChiTietChuyenBay Child = new fChiTietChuyenBay();
+            Child.Sender(txbMaChuyenBay.Text);
+            Child.Show();
+        }
+
+        private void btnDatCho_Click(object sender, EventArgs e)
+        {
+            fPhieuDatCho Child = new fPhieuDatCho();
+            Child.Sender(txbMaChuyenBay.Text);
+            Child.Show();
+        }
     }
 }

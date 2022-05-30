@@ -44,8 +44,8 @@ namespace Quan_Ly_Chuyen_Bay
             this.txbMaChuyenBay = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btDatVe = new System.Windows.Forms.Button();
-            this.btnQuayLai = new System.Windows.Forms.Button();
             this.flbTable = new System.Windows.Forms.FlowLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -60,9 +60,9 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel5);
-            this.panel1.Location = new System.Drawing.Point(11, 33);
+            this.panel1.Location = new System.Drawing.Point(11, 61);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(973, 170);
+            this.panel1.Size = new System.Drawing.Size(973, 142);
             this.panel1.TabIndex = 1;
             // 
             // panel4
@@ -175,7 +175,7 @@ namespace Quan_Ly_Chuyen_Bay
             this.label1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label1.Location = new System.Drawing.Point(355, 5);
+            this.label1.Location = new System.Drawing.Point(358, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(274, 25);
             this.label1.TabIndex = 0;
@@ -183,35 +183,35 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             // btDatVe
             // 
-            this.btDatVe.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btDatVe.Location = new System.Drawing.Point(859, 477);
+            this.btDatVe.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btDatVe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btDatVe.Location = new System.Drawing.Point(856, 477);
             this.btDatVe.Name = "btDatVe";
-            this.btDatVe.Size = new System.Drawing.Size(125, 46);
+            this.btDatVe.Size = new System.Drawing.Size(128, 46);
             this.btDatVe.TabIndex = 8;
             this.btDatVe.Text = "Đặt Vé";
             this.btDatVe.UseVisualStyleBackColor = false;
-            // 
-            // btnQuayLai
-            // 
-            this.btnQuayLai.BackColor = System.Drawing.Color.Red;
-            this.btnQuayLai.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnQuayLai.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnQuayLai.Location = new System.Drawing.Point(13, 0);
-            this.btnQuayLai.Name = "btnQuayLai";
-            this.btnQuayLai.Size = new System.Drawing.Size(132, 30);
-            this.btnQuayLai.TabIndex = 10;
-            this.btnQuayLai.Text = "Quay Lại";
-            this.btnQuayLai.UseVisualStyleBackColor = false;
             // 
             // flbTable
             // 
             this.flbTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flbTable.AutoScroll = true;
-            this.flbTable.Location = new System.Drawing.Point(11, 209);
+            this.flbTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.flbTable.Location = new System.Drawing.Point(11, 231);
             this.flbTable.Name = "flbTable";
-            this.flbTable.Size = new System.Drawing.Size(973, 262);
+            this.flbTable.Size = new System.Drawing.Size(973, 240);
             this.flbTable.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Location = new System.Drawing.Point(358, 203);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(271, 25);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Danh sách sân bay trung gian";
             // 
             // fChiTietChuyenBay
             // 
@@ -220,8 +220,8 @@ namespace Quan_Ly_Chuyen_Bay
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(987, 526);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.flbTable);
-            this.Controls.Add(this.btnQuayLai);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btDatVe);
             this.Controls.Add(this.label1);
@@ -258,8 +258,8 @@ namespace Quan_Ly_Chuyen_Bay
         private System.Windows.Forms.TextBox txbMaChuyenBay;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btDatVe;
-        private System.Windows.Forms.Button btnQuayLai;
         private System.Windows.Forms.DateTimePicker dtimeNgayBay;
         private System.Windows.Forms.FlowLayoutPanel flbTable;
+        private System.Windows.Forms.Label label6;
     }
 }
