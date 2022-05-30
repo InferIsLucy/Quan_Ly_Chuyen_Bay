@@ -16,7 +16,7 @@ namespace Quan_Ly_Chuyen_Bay.DAO
         public bool Login(string userName, string password) 
         {
             string query = "EXEC USP_Login @UserName , @PassWord";
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, password });
+            DataTable result = DAO.DataProvider.Instance.ExecuteQuery(query, new object[] { userName, password });
             return result.Rows.Count > 0;
         }
     }
