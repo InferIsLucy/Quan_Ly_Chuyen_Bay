@@ -34,7 +34,7 @@ namespace Quan_Ly_Chuyen_Bay
             this.label5 = new System.Windows.Forms.Label();
             this.txbSanBayDen = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtimeNgayBay = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,39 +43,14 @@ namespace Quan_Ly_Chuyen_Bay
             this.label3 = new System.Windows.Forms.Label();
             this.txbMaChuyenBay = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btDatVe = new System.Windows.Forms.Button();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.lbGia = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.tgkhoihanh = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.lbSoGhe = new System.Windows.Forms.Label();
-            this.lbHangVe = new System.Windows.Forms.Label();
             this.btnQuayLai = new System.Windows.Forms.Button();
+            this.flbTable = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel17.SuspendLayout();
-            this.panel16.SuspendLayout();
-            this.panel15.SuspendLayout();
-            this.panel14.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -87,7 +62,7 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Location = new System.Drawing.Point(11, 33);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(973, 143);
+            this.panel1.Size = new System.Drawing.Size(973, 170);
             this.panel1.TabIndex = 1;
             // 
             // panel4
@@ -111,14 +86,14 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             // txbSanBayDen
             // 
-            this.txbSanBayDen.Location = new System.Drawing.Point(127, 17);
+            this.txbSanBayDen.Location = new System.Drawing.Point(163, 17);
             this.txbSanBayDen.Name = "txbSanBayDen";
             this.txbSanBayDen.Size = new System.Drawing.Size(222, 30);
             this.txbSanBayDen.TabIndex = 1;
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.dateTimePicker1);
+            this.panel6.Controls.Add(this.dtimeNgayBay);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel6.Location = new System.Drawing.Point(500, 3);
@@ -126,12 +101,12 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel6.Size = new System.Drawing.Size(454, 59);
             this.panel6.TabIndex = 10;
             // 
-            // dateTimePicker1
+            // dtimeNgayBay
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(95, 22);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(356, 30);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dtimeNgayBay.Location = new System.Drawing.Point(95, 22);
+            this.dtimeNgayBay.Name = "dtimeNgayBay";
+            this.dtimeNgayBay.Size = new System.Drawing.Size(356, 30);
+            this.dtimeNgayBay.TabIndex = 3;
             // 
             // label4
             // 
@@ -206,195 +181,15 @@ namespace Quan_Ly_Chuyen_Bay
             this.label1.TabIndex = 0;
             this.label1.Text = "THÔNG TIN CHUYẾN BAY";
             // 
-            // panel7
-            // 
-            this.panel7.Location = new System.Drawing.Point(235, 16);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(118, 118);
-            this.panel7.TabIndex = 3;
-            // 
-            // panel8
-            // 
-            this.panel8.Location = new System.Drawing.Point(359, 16);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(118, 118);
-            this.panel8.TabIndex = 3;
-            // 
-            // panel9
-            // 
-            this.panel9.Location = new System.Drawing.Point(483, 16);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(118, 118);
-            this.panel9.TabIndex = 4;
-            // 
-            // panel10
-            // 
-            this.panel10.Location = new System.Drawing.Point(607, 16);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(118, 118);
-            this.panel10.TabIndex = 5;
-            // 
-            // panel11
-            // 
-            this.panel11.Location = new System.Drawing.Point(730, 16);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(118, 118);
-            this.panel11.TabIndex = 6;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.SystemColors.Control;
-            this.panel12.Controls.Add(this.panel2);
-            this.panel12.Controls.Add(this.panel11);
-            this.panel12.Controls.Add(this.panel7);
-            this.panel12.Controls.Add(this.panel10);
-            this.panel12.Controls.Add(this.panel8);
-            this.panel12.Controls.Add(this.panel9);
-            this.panel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panel12.Location = new System.Drawing.Point(12, 182);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(972, 138);
-            this.panel12.TabIndex = 7;
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(111, 16);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(118, 118);
-            this.panel2.TabIndex = 2;
-            // 
             // btDatVe
             // 
             this.btDatVe.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btDatVe.Location = new System.Drawing.Point(838, 148);
+            this.btDatVe.Location = new System.Drawing.Point(859, 477);
             this.btDatVe.Name = "btDatVe";
             this.btDatVe.Size = new System.Drawing.Size(125, 46);
             this.btDatVe.TabIndex = 8;
             this.btDatVe.Text = "Đặt Vé";
             this.btDatVe.UseVisualStyleBackColor = false;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.SystemColors.Control;
-            this.panel13.Controls.Add(this.panel17);
-            this.panel13.Controls.Add(this.panel16);
-            this.panel13.Controls.Add(this.panel15);
-            this.panel13.Controls.Add(this.panel14);
-            this.panel13.Controls.Add(this.btDatVe);
-            this.panel13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panel13.Location = new System.Drawing.Point(12, 326);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(973, 201);
-            this.panel13.TabIndex = 9;
-            // 
-            // panel17
-            // 
-            this.panel17.Controls.Add(this.lbGia);
-            this.panel17.Controls.Add(this.label11);
-            this.panel17.Location = new System.Drawing.Point(407, 116);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(386, 65);
-            this.panel17.TabIndex = 11;
-            // 
-            // lbGia
-            // 
-            this.lbGia.AutoSize = true;
-            this.lbGia.Location = new System.Drawing.Point(126, 19);
-            this.lbGia.Name = "lbGia";
-            this.lbGia.Size = new System.Drawing.Size(68, 25);
-            this.lbGia.TabIndex = 1;
-            this.lbGia.Text = "Giá vé";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(21, 19);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 25);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Giá vé:";
-            // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.tgkhoihanh);
-            this.panel16.Controls.Add(this.label9);
-            this.panel16.Location = new System.Drawing.Point(407, 14);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(386, 96);
-            this.panel16.TabIndex = 11;
-            // 
-            // tgkhoihanh
-            // 
-            this.tgkhoihanh.AutoSize = true;
-            this.tgkhoihanh.Location = new System.Drawing.Point(237, 32);
-            this.tgkhoihanh.Name = "tgkhoihanh";
-            this.tgkhoihanh.Size = new System.Drawing.Size(93, 25);
-            this.tgkhoihanh.TabIndex = 1;
-            this.tgkhoihanh.Text = "Thời gian";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 32);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(189, 25);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Thời gian khởi hành:";
-            // 
-            // panel15
-            // 
-            this.panel15.Controls.Add(this.label6);
-            this.panel15.Controls.Add(this.label7);
-            this.panel15.Location = new System.Drawing.Point(28, 116);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(315, 65);
-            this.panel15.TabIndex = 10;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(169, 19);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 25);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Ngày đi ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 19);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 25);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Ngày bay:";
-            // 
-            // panel14
-            // 
-            this.panel14.Controls.Add(this.lbSoGhe);
-            this.panel14.Controls.Add(this.lbHangVe);
-            this.panel14.Location = new System.Drawing.Point(28, 14);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(315, 96);
-            this.panel14.TabIndex = 9;
-            // 
-            // lbSoGhe
-            // 
-            this.lbSoGhe.AutoSize = true;
-            this.lbSoGhe.Location = new System.Drawing.Point(178, 32);
-            this.lbSoGhe.Name = "lbSoGhe";
-            this.lbSoGhe.Size = new System.Drawing.Size(74, 25);
-            this.lbSoGhe.TabIndex = 1;
-            this.lbSoGhe.Text = "SốGhế";
-            // 
-            // lbHangVe
-            // 
-            this.lbHangVe.AutoSize = true;
-            this.lbHangVe.Location = new System.Drawing.Point(21, 32);
-            this.lbHangVe.Name = "lbHangVe";
-            this.lbHangVe.Size = new System.Drawing.Size(96, 25);
-            this.lbHangVe.TabIndex = 0;
-            this.lbHangVe.Text = "Hạng vé: ";
             // 
             // btnQuayLai
             // 
@@ -408,6 +203,16 @@ namespace Quan_Ly_Chuyen_Bay
             this.btnQuayLai.Text = "Quay Lại";
             this.btnQuayLai.UseVisualStyleBackColor = false;
             // 
+            // flbTable
+            // 
+            this.flbTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flbTable.AutoScroll = true;
+            this.flbTable.Location = new System.Drawing.Point(11, 209);
+            this.flbTable.Name = "flbTable";
+            this.flbTable.Size = new System.Drawing.Size(973, 262);
+            this.flbTable.TabIndex = 11;
+            // 
             // fChiTietChuyenBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -415,10 +220,10 @@ namespace Quan_Ly_Chuyen_Bay
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(987, 526);
+            this.Controls.Add(this.flbTable);
             this.Controls.Add(this.btnQuayLai);
-            this.Controls.Add(this.panel13);
-            this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btDatVe);
             this.Controls.Add(this.label1);
             this.Name = "fChiTietChuyenBay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -432,16 +237,6 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
-            this.panel17.PerformLayout();
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
-            this.panel15.ResumeLayout(false);
-            this.panel15.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -462,28 +257,9 @@ namespace Quan_Ly_Chuyen_Bay
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txbMaChuyenBay;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button btDatVe;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Label lbHangVe;
-        private System.Windows.Forms.Label lbSoGhe;
-        private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.Label lbGia;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Label tgkhoihanh;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnQuayLai;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtimeNgayBay;
+        private System.Windows.Forms.FlowLayoutPanel flbTable;
     }
 }
