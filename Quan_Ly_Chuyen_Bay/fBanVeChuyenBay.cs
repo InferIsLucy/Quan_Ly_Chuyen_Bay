@@ -32,9 +32,13 @@ namespace Quan_Ly_Chuyen_Bay
             foreach (DataRow item in data.Rows)
             {
                 txbSanBayDen.Text = item["MaSanBayDen"].ToString();
+                txbSanBayDen.Enabled = false;
                 txbSanBayDi.Text = item["MaSanBayDi"].ToString();
+                txbSanBayDi.Enabled = false;
                 txbThoIGianBay.Text = item["ThoiGianBay"].ToString();
+                txbThoIGianBay.Enabled = false;
                 dtimeNgayBay.Value = DateTime.Parse(item["NgayGioKhoiHanh"].ToString());
+                dtimeNgayBay.Enabled = false;
             }
         }
         #endregion
@@ -119,7 +123,7 @@ namespace Quan_Ly_Chuyen_Bay
         private void btnXemThongTinCB_Click(object sender, EventArgs e)
         {
             fChiTietChuyenBay Child = new fChiTietChuyenBay();
-            Child.Sender(txbMaChuyenBay.Text);
+            Child.Sender(txbMaChuyenBay.Text,"","","","",0);
             Child.Show();
         }
 

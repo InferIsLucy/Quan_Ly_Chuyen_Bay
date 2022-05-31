@@ -81,6 +81,7 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel3);
@@ -89,7 +90,7 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(984, 252);
+            this.panel1.Size = new System.Drawing.Size(984, 207);
             this.panel1.TabIndex = 0;
             // 
             // panel4
@@ -203,6 +204,7 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel2.Controls.Add(this.btnXem);
             this.panel2.Controls.Add(this.btnDatVe);
             this.panel2.Controls.Add(this.panel11);

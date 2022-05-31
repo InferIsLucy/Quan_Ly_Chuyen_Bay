@@ -24,6 +24,7 @@ namespace Quan_Ly_Chuyen_Bay
         private void GetMessage(string MaChuyenBay)
         {
             txbMaChuyenBay.Text = MaChuyenBay;
+            txbMaChuyenBay.Enabled = false;
             string query = string.Format("SELECT * FROM CHUYENBAY WHERE MaChuyenBay = '{0}'", MaChuyenBay);
             DataTable data = (DataTable)DAO.DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
@@ -31,6 +32,9 @@ namespace Quan_Ly_Chuyen_Bay
                 dtimeNgayBay.Value = DateTime.Parse(item["NgayGioKhoiHanh"].ToString());
                 txbSanBayDen.Text = item["MaSanBayDen"].ToString();
                 txbSanBayDi.Text = item["MaSanBayDi"].ToString();
+                dtimeNgayBay.Enabled = false;
+                txbSanBayDen.Enabled = false;
+                txbSanBayDi.Enabled = false;
             }
             listChuyenBay.DataSource = DAO.DataProvider.Instance.ExecuteQuery(query);
             LoadF();
@@ -46,12 +50,14 @@ namespace Quan_Ly_Chuyen_Bay
             getData(DataCollection1, "TenHangVe");
             txbHangVe.AutoCompleteCustomSource = DataCollection1;
         }
+        string mahangve;
         void LoadSLGheTongTien()
         {
             string query = string.Format("SELECT * FROM HANGVE where TenHangVe = '{0}' and MaChuyenBay = '{1}'", txbHangVe.Text, txbMaChuyenBay.Text);
             DataTable data = (DataTable)DAO.DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
+                mahangve = item["MaHangVe"].ToString();
                 string queryr = string.Format("SELECT * FROM CHUYENBAY where MaChuyenBay = '{0}'",txbMaChuyenBay.Text);
                 DataTable data1 = (DataTable)DAO.DataProvider.Instance.ExecuteQuery(queryr);
                 foreach (DataRow items in data1.Rows)
@@ -69,7 +75,6 @@ namespace Quan_Ly_Chuyen_Bay
 
             foreach (DataRow item in data.Rows)
             {
-                //txbMaChuyenBay.Text = item[name].ToString();
                 DataCollection.Add(item[name].ToString());
             }
         }
@@ -79,13 +84,47 @@ namespace Quan_Ly_Chuyen_Bay
             LoadSLGheTongTien();
         }
 
+        bool KiemTraCMND(string CMND)
+        {
+            if (txbSoDienThoai.Text == "" || txbHoTen.Text == "" || txbHangVe.Text == "" || txbCMND.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin");
+                return false;
+            }
+            string query = string.Format("SELECT * FROM VECHUYENBAY WHERE MaChuyenBay = '{0}'",txbMaChuyenBay.Text);
+            DataTable data = DAO.DataProvider.Instance.ExecuteQuery(query);
+            foreach(DataRow item in data.Rows)
+            {
+                if (CMND == item["CMND"].ToString())
+                {
+                    MessageBox.Show("Đã tồn tại CMND");
+                    return false;
+                }
+            }
+            return true;
+        }
+        string LayMaHangVe()
+        {
+            string query = string.Format("SELECT * FROM HANGVE where TenHangVe = '{0}' and MaChuyenBay = '{1}'", txbHangVe.Text, txbMaChuyenBay.Text);
+            DataTable data = (DataTable)DAO.DataProvider.Instance.ExecuteQuery(query);
+            foreach(DataRow item in data.Rows)
+            {
+                 mahangve = item["MaHangVe"].ToString();
+            }
+            return mahangve;
+        }
         private void btnDatVe_Click(object sender, EventArgs e)
         {
-            string query = string.Format("INSERT INTO KHACHHANG VALUES ('{0}','{1}','N{2}')", tbCMND.Text, txbSoDienThoai.Text, txbHoTen.Text);
-            DAO.DataProvider.Instance.ExecuteQuery(query);
-            fChiTietChuyenBay Child = new fChiTietChuyenBay();
-            Child.Sender(txbMaChuyenBay.Text);
-            Child.Show();
+            if (KiemTraCMND(tbCMND.Text) != false)
+            {
+                string query = string.Format("INSERT INTO KHACHHANG VALUES ('{0}','{1}',N'{2}')", tbCMND.Text, txbSoDienThoai.Text, txbHoTen.Text);
+                DAO.DataProvider.Instance.ExecuteQuery(query);
+                mahangve = LayMaHangVe();
+                fChiTietChuyenBay Child = new fChiTietChuyenBay();
+                Child.Sender(txbMaChuyenBay.Text,tbCMND.Text, txbHoTen.Text, txbSoDienThoai.Text, mahangve,float.Parse(lbTongTien.Text));
+                Child.Show();
+            }
+
         }
     }
 }
