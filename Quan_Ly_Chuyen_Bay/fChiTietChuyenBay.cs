@@ -23,24 +23,24 @@ namespace Quan_Ly_Chuyen_Bay
         private void GetMessage(string MaChuyenBay)
         {
             txbMaChuyenBay.Text = MaChuyenBay;
-            string query = string.Format("SELECT * FROM CHUYENBAYY WHERE MaChuyenBay = '{0}'", MaChuyenBay);
+            string query = string.Format("SELECT * FROM CHUYENBAY WHERE MaChuyenBay = '{0}'", MaChuyenBay);
             DataTable data = (DataTable)DAO.DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
-                dtimeNgayBay.Value = DateTime.Parse(item["NgayKhoiHanh"].ToString());
-                txbSanBayDen.Text = item["SanBayDen"].ToString();
-                txbSanBayDi.Text = item["SanBayDi"].ToString();
+                dtimeNgayBay.Value = DateTime.Parse(item["NgayGioKhoiHanh"].ToString());
+                txbSanBayDen.Text = item["MaSanBayDen"].ToString();
+                txbSanBayDi.Text = item["MaSanBayDi"].ToString();
             }
             listChuyenBay.DataSource = DAO.DataProvider.Instance.ExecuteQuery(query);
             LoadSanBayTrungGian(MaChuyenBay);
         }
         void LoadSanBayTrungGian(string MaChuyenBay)
         {
-            string query = string.Format("Select * from CT_CHUYENBAY WHERE MaChuyenBay = '{0}'", MaChuyenBay);
+            string query = string.Format("Select * from SANBAYTRUNGGIAN WHERE MaChuyenBay = '{0}'", MaChuyenBay);
             DataTable data = DAO.DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
-                string queryy = string.Format("Select * from SANBAYY WHERE MaSanBay = '{0}'", item["SanBayTrungGian"].ToString());
+                string queryy = string.Format("Select * from SANBAY WHERE MaSanBay = '{0}'", item["MaSanBay"].ToString());
                 DataTable data1 = DAO.DataProvider.Instance.ExecuteQuery(queryy);
                 foreach (DataRow items in data1.Rows)
                 {

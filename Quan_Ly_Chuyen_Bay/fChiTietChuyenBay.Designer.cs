@@ -197,7 +197,7 @@ namespace Quan_Ly_Chuyen_Bay
             this.flbTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flbTable.AutoScroll = true;
-            this.flbTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.flbTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.flbTable.Location = new System.Drawing.Point(11, 231);
             this.flbTable.Name = "flbTable";
             this.flbTable.Size = new System.Drawing.Size(973, 240);
