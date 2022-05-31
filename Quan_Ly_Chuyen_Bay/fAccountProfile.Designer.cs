@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbReWritePassword = new System.Windows.Forms.Label();
             this.txbReWritePassword = new System.Windows.Forms.TextBox();
@@ -47,36 +44,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnExit);
-            this.panel1.Controls.Add(this.btnUpdate);
-            this.panel1.Location = new System.Drawing.Point(15, 501);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(908, 98);
-            this.panel1.TabIndex = 8;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(690, 16);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(186, 64);
-            this.btnExit.TabIndex = 1;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(474, 16);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(186, 64);
-            this.btnUpdate.TabIndex = 0;
-            this.btnUpdate.Text = "Cập nhật";
-            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -201,7 +169,6 @@
             this.txbDisplayName.Location = new System.Drawing.Point(273, 106);
             this.txbDisplayName.Margin = new System.Windows.Forms.Padding(6);
             this.txbDisplayName.Name = "txbDisplayName";
-            this.txbDisplayName.PasswordChar = '*';
             this.txbDisplayName.Size = new System.Drawing.Size(603, 44);
             this.txbDisplayName.TabIndex = 1;
             // 
@@ -232,6 +199,7 @@
             this.btnUpdate.TabIndex = 0;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // fAccountProfile
             // 

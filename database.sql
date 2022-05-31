@@ -75,7 +75,6 @@ CREATE TABLE VECHUYENBAY
    MaHangVe varchar(50) NOT NULL, --khoangoai
    GiaTien money NOT NULL,
    MaGhe INT NOT NULL, --ngoai
-   TrangThai INT DEFAULT 0, --------1 là thanh toán rồi, 0 là chưa thanh toán
    NgayThanhToan SMALLDATETIME NOT NULL,
    CONSTRAINT PK_VECHUYENBAY PRIMARY KEY(MaChuyenBay, CMND)
 )
@@ -109,7 +108,7 @@ GO
 CREATE TABLE VITRIGHE
 (
    MaGhe INT IDENTITY PRIMARY KEY NOT NULL,
-   TinhTrang INT DEFAULT 0 NOT NULL, ---
+   TinhTrang INT DEFAULT 0 NOT NULL, ---A 0: GHẾ TRỐNG, 1: GHẾ CÓ NGƯỜI (ĐÃ THANH TOÁN)
 )
 GO
  
@@ -120,9 +119,12 @@ CREATE TABLE PHIEUDATCHO
    MaHangVe INT NOT NULL, --NGOAI
    CMND varchar(10) NOT NULL, --NGOAI
    MaChuyenBay INT NOT NULL, --NGOAI
+   TrangThai INT DEFAULT 0 NOT NULL, --- 0: CHƯA THANH TOÁN, 1: ĐÃ THANH TOÁN
    GiaTien money NOT NULL,
    NgayDat date NOT NULL,
 )
+
+---DROP TABLE PHIEUDATCHO
  
 --Bang THAMSO
 CREATE TABLE THAMSO
@@ -222,6 +224,30 @@ BEGIN
 END
 GO
 --DROP PROC [USP_ChartByYear]
+
+---PROC LẤY TÊN KHÁCH HÀNG---
+CREATE PROC USP_GetListCustomInForByName
+@name varchar(100)
+AS
+BEGIN
+	SELECT * 
+	FROM dbo.KHACHHANG 
+	WHERE TenKH like @name
+END
+GO
+
+--DROP PROC USP_GetListCustomInForByName
+CREATE PROC USP_GetStatusByCMND
+@id varchar(10)
+AS
+BEGIN
+	SELECT TrangThai
+	FROM dbo.PHIEUDATCHO
+	WHERE CMND = @id
+END
+GO
+
+--DROP PROC USP_GetStatusByCMND
 
 
 
@@ -400,4 +426,149 @@ VALUES								(	8,
 									)
 
 ---SELECT * FROM dbo.DOANHTHUCHUYENBAY
+---- INSERT KHACHHANG
+INSERT INTO dbo.KHACHHANG			(	CMND,
+										DienThoai, --ngoai
+										TenKH
+									)
+VALUES								(
+										'0123456789',
+										'0123456789',
+										'Bui Hai Dang'
+									)
 
+INSERT INTO dbo.KHACHHANG			(	CMND,
+										DienThoai, --ngoai
+										TenKH
+									)
+VALUES								(
+										'1010101010',
+										'1010101010',
+										'Bui Hai Dang'
+									)
+
+INSERT INTO dbo.KHACHHANG			(	CMND,
+										DienThoai, --ngoai
+										TenKH
+									)
+VALUES								(
+										'1111111111',
+										'1111111111',
+										'Nguyen Ngoc Han'
+									)
+
+INSERT INTO dbo.KHACHHANG			(	CMND,
+										DienThoai, --ngoai
+										TenKH
+									)
+VALUES								(
+										'9876543210',
+										'9876543210',
+										'Nguyen Hoang Long'
+									)
+
+INSERT INTO dbo.KHACHHANG			(	CMND,
+										DienThoai, --ngoai
+										TenKH
+									)
+VALUES								(
+										'2222222222',
+										'2222222222',
+										'Nguyen Thi Tra Giang'
+									)
+---SELECT * FROM dbo.KHACHHANG
+
+---- INSERT PHIEUDATCHO
+INSERT INTO dbo.PHIEUDATCHO			(
+										MaHangVe,
+										CMND, 
+										MaChuyenBay, 
+										TrangThai,
+										GiaTien,
+										NgayDat
+									)
+VALUES								(
+										1,
+										'9876543210',
+										1,
+										0,
+										3000,
+										'20220530'
+									)
+
+INSERT INTO dbo.PHIEUDATCHO			(
+										MaHangVe,
+										CMND, 
+										MaChuyenBay, 
+										TrangThai,
+										GiaTien,
+										NgayDat
+									)
+VALUES								(
+										2,
+										'2222222222',
+										2,
+										0,
+										4000,
+										'20220531'
+									)
+
+---DELETE FROM dbo.PHIEUDATCHO WHERE condition
+
+
+INSERT INTO dbo.PHIEUDATCHO			(
+										MaHangVe,
+										CMND, 
+										MaChuyenBay, 
+										TrangThai,
+										GiaTien,
+										NgayDat
+									)
+VALUES								(
+										1,
+										'0123456789',
+										1,
+										1,
+										3000,
+										'20220530'
+									)
+
+INSERT INTO dbo.PHIEUDATCHO			(
+										MaHangVe,
+										CMND, 
+										MaChuyenBay, 
+										TrangThai,
+										GiaTien,
+										NgayDat
+									)
+VALUES								(
+										2,
+										'1111111111',
+										2,
+										1,
+										4000,
+										'20220530'
+									)
+
+INSERT INTO dbo.PHIEUDATCHO			(
+										MaHangVe,
+										CMND, 
+										MaChuyenBay, 
+										TrangThai,
+										GiaTien,
+										NgayDat
+									)
+VALUES								(
+										1,
+										'1010101010',
+										1,
+										1,
+										3000,
+										'20220529'
+									)
+
+GO
+----select * from dbo.PHIEUDATCHO
+
+
+select * from dbo.ACCOUNT

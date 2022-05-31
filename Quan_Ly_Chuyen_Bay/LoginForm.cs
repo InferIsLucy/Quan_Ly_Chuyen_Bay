@@ -21,9 +21,11 @@ namespace Quan_Ly_Chuyen_Bay
         {
             string userName = txbUsername.Text;
             string password = txbPassword.Text;
+            
             if (Login(userName, password))
             {
-                fTableManager form = new fTableManager();
+                DTO.AccountDTO Acc = DAO.AccountDAO.Instance.GetAccountByUserName(userName);
+                fTableManager form = new fTableManager(Acc);
                 this.Hide();
                 form.ShowDialog();
                 this.Show();

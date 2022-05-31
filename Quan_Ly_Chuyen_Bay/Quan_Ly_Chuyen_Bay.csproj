@@ -51,6 +51,8 @@
     <Compile Include="DAO\BillDAO.cs" />
     <Compile Include="DAO\CustomersDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\ReverseOrderDAO.cs" />
+    <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="fAccountProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,8 +228,6 @@
   <ItemGroup>
     <None Include="Resources\pngtree-cute-cartoon-plane-vector-png-image_1693531.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTO\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

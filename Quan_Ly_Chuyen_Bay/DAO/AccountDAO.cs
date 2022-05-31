@@ -19,5 +19,26 @@ namespace Quan_Ly_Chuyen_Bay.DAO
             DataTable result = DAO.DataProvider.Instance.ExecuteQuery(query, new object[] { userName, password });
             return result.Rows.Count > 0;
         }
+
+        public DTO.AccountDTO GetAccountByUserName(string userName)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.ACCOUNT WHERE USERNAME = '" + userName + "'");
+
+            foreach(DataRow item in data.Rows)
+            {
+                return new DTO.AccountDTO(item);
+            }
+
+            return null;
+        }
+
+        public bool UpdateAccount(string username, string displayname, string pass, string newpass)
+        {
+            string query = "EXEC USP_UpdateAccount @userName , @displayName , @password , @newPassword";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { username, displayname, pass, newpass });
+
+            return result > 0;
+            
+        }
     }
 }
