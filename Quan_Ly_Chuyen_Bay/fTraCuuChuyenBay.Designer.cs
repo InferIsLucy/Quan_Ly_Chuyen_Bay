@@ -33,6 +33,8 @@ namespace Quan_Ly_Chuyen_Bay
             this.btnXemThongTin = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnThongTin = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txbSanBayDen = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,15 +51,13 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel6 = new System.Windows.Forms.Panel();
             this.dtgvTraCuuChuyenBay = new System.Windows.Forms.DataGridView();
             this.txbMaChuyenBay = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnThongTin = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvFlight)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTraCuuChuyenBay)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDatVe
@@ -108,6 +108,28 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel2.Size = new System.Drawing.Size(842, 144);
             this.panel2.TabIndex = 0;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.btnDatVe);
+            this.flowLayoutPanel1.Controls.Add(this.btnXemThongTin);
+            this.flowLayoutPanel1.Controls.Add(this.btnTimKiem);
+            this.flowLayoutPanel1.Controls.Add(this.btnThongTin);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(335, 84);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(498, 57);
+            this.flowLayoutPanel1.TabIndex = 3;
+            // 
+            // btnThongTin
+            // 
+            this.btnThongTin.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnThongTin.Location = new System.Drawing.Point(366, 3);
+            this.btnThongTin.Name = "btnThongTin";
+            this.btnThongTin.Size = new System.Drawing.Size(127, 54);
+            this.btnThongTin.TabIndex = 3;
+            this.btnThongTin.Text = "Thông Tin";
+            this.btnThongTin.UseVisualStyleBackColor = false;
+            this.btnThongTin.Click += new System.EventHandler(this.btnThongTin_Click);
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.txbSanBayDen);
@@ -120,6 +142,7 @@ namespace Quan_Ly_Chuyen_Bay
             // txbSanBayDen
             // 
             this.txbSanBayDen.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txbSanBayDen.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txbSanBayDen.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txbSanBayDen.Location = new System.Drawing.Point(148, 19);
             this.txbSanBayDen.Name = "txbSanBayDen";
@@ -148,6 +171,7 @@ namespace Quan_Ly_Chuyen_Bay
             // txbSanBayDi
             // 
             this.txbSanBayDi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txbSanBayDi.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txbSanBayDi.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txbSanBayDi.Location = new System.Drawing.Point(130, 17);
             this.txbSanBayDi.Name = "txbSanBayDi";
@@ -205,14 +229,14 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             this.cmbFromAirPort.Location = new System.Drawing.Point(0, 0);
             this.cmbFromAirPort.Name = "cmbFromAirPort";
-            this.cmbFromAirPort.Size = new System.Drawing.Size(121, 24);
+            this.cmbFromAirPort.Size = new System.Drawing.Size(121, 25);
             this.cmbFromAirPort.TabIndex = 0;
             // 
             // cmbToAirPort
             // 
             this.cmbToAirPort.Location = new System.Drawing.Point(0, 0);
             this.cmbToAirPort.Name = "cmbToAirPort";
-            this.cmbToAirPort.Size = new System.Drawing.Size(121, 24);
+            this.cmbToAirPort.Size = new System.Drawing.Size(121, 25);
             this.cmbToAirPort.TabIndex = 0;
             // 
             // panel6
@@ -242,28 +266,6 @@ namespace Quan_Ly_Chuyen_Bay
             this.txbMaChuyenBay.Size = new System.Drawing.Size(100, 30);
             this.txbMaChuyenBay.TabIndex = 4;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.btnDatVe);
-            this.flowLayoutPanel1.Controls.Add(this.btnXemThongTin);
-            this.flowLayoutPanel1.Controls.Add(this.btnTimKiem);
-            this.flowLayoutPanel1.Controls.Add(this.btnThongTin);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(335, 84);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(498, 57);
-            this.flowLayoutPanel1.TabIndex = 3;
-            // 
-            // btnThongTin
-            // 
-            this.btnThongTin.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnThongTin.Location = new System.Drawing.Point(366, 3);
-            this.btnThongTin.Name = "btnThongTin";
-            this.btnThongTin.Size = new System.Drawing.Size(127, 54);
-            this.btnThongTin.TabIndex = 3;
-            this.btnThongTin.Text = "Thông Tin";
-            this.btnThongTin.UseVisualStyleBackColor = false;
-            this.btnThongTin.Click += new System.EventHandler(this.btnThongTin_Click);
-            // 
             // fTraCuuChuyenBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -275,6 +277,7 @@ namespace Quan_Ly_Chuyen_Bay
             this.Name = "fTraCuuChuyenBay";
             this.Text = "fTraCuuChuyenBay";
             this.panel2.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -283,7 +286,6 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTraCuuChuyenBay)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

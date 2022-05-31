@@ -57,10 +57,10 @@ namespace Quan_Ly_Chuyen_Bay
             this.label9 = new System.Windows.Forms.Label();
             this.txbSDT = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txbSoDienThoai = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.txbCMND = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbCMND = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.txbHoTen = new System.Windows.Forms.TextBox();
@@ -324,7 +324,7 @@ namespace Quan_Ly_Chuyen_Bay
             // txbSDT
             // 
             this.txbSDT.Controls.Add(this.label8);
-            this.txbSDT.Controls.Add(this.textBox2);
+            this.txbSDT.Controls.Add(this.txbSoDienThoai);
             this.txbSDT.Location = new System.Drawing.Point(11, 182);
             this.txbSDT.Name = "txbSDT";
             this.txbSDT.Size = new System.Drawing.Size(357, 59);
@@ -339,17 +339,17 @@ namespace Quan_Ly_Chuyen_Bay
             this.label8.TabIndex = 2;
             this.label8.Text = "Số điện thoại: ";
             // 
-            // textBox2
+            // txbSoDienThoai
             // 
-            this.textBox2.Location = new System.Drawing.Point(133, 14);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(190, 30);
-            this.textBox2.TabIndex = 1;
+            this.txbSoDienThoai.Location = new System.Drawing.Point(146, 17);
+            this.txbSoDienThoai.Name = "txbSoDienThoai";
+            this.txbSoDienThoai.Size = new System.Drawing.Size(190, 30);
+            this.txbSoDienThoai.TabIndex = 1;
             // 
             // panel8
             // 
             this.panel8.Controls.Add(this.txbCMND);
-            this.panel8.Controls.Add(this.textBox1);
+            this.panel8.Controls.Add(this.tbCMND);
             this.panel8.Location = new System.Drawing.Point(11, 117);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(357, 59);
@@ -364,12 +364,12 @@ namespace Quan_Ly_Chuyen_Bay
             this.txbCMND.TabIndex = 2;
             this.txbCMND.Text = "CMND: ";
             // 
-            // textBox1
+            // tbCMND
             // 
-            this.textBox1.Location = new System.Drawing.Point(133, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 30);
-            this.textBox1.TabIndex = 1;
+            this.tbCMND.Location = new System.Drawing.Point(146, 17);
+            this.tbCMND.Name = "tbCMND";
+            this.tbCMND.Size = new System.Drawing.Size(190, 30);
+            this.tbCMND.TabIndex = 1;
             // 
             // panel7
             // 
@@ -391,7 +391,7 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             // txbHoTen
             // 
-            this.txbHoTen.Location = new System.Drawing.Point(133, 19);
+            this.txbHoTen.Location = new System.Drawing.Point(146, 19);
             this.txbHoTen.Name = "txbHoTen";
             this.txbHoTen.Size = new System.Drawing.Size(190, 30);
             this.txbHoTen.TabIndex = 1;
@@ -461,10 +461,10 @@ namespace Quan_Ly_Chuyen_Bay
         private System.Windows.Forms.TextBox txbSanBayDen;
         private System.Windows.Forms.Panel txbSDT;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txbSoDienThoai;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label txbCMND;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbCMND;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txbHoTen;

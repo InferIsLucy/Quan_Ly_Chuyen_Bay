@@ -38,10 +38,10 @@ namespace Quan_Ly_Chuyen_Bay
             this.btnDatVe = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.lbSoGheTrong = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txbSoDienThoai = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.txbCMND = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbcmnd = new System.Windows.Forms.TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -96,6 +96,7 @@ namespace Quan_Ly_Chuyen_Bay
             this.btnXem.TabIndex = 2;
             this.btnXem.Text = "Xem hạng vé";
             this.btnXem.UseVisualStyleBackColor = true;
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click_1);
             // 
             // lbTongTien
             // 
@@ -143,6 +144,7 @@ namespace Quan_Ly_Chuyen_Bay
             this.btnDatVe.TabIndex = 17;
             this.btnDatVe.Text = "Đặt Chỗ";
             this.btnDatVe.UseVisualStyleBackColor = false;
+            this.btnDatVe.Click += new System.EventHandler(this.btnDatVe_Click_1);
             // 
             // panel11
             // 
@@ -162,17 +164,17 @@ namespace Quan_Ly_Chuyen_Bay
             this.lbSoGheTrong.TabIndex = 3;
             this.lbSoGheTrong.Text = "0";
             // 
-            // textBox2
+            // txbSoDienThoai
             // 
-            this.textBox2.Location = new System.Drawing.Point(133, 14);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(190, 30);
-            this.textBox2.TabIndex = 1;
+            this.txbSoDienThoai.Location = new System.Drawing.Point(133, 14);
+            this.txbSoDienThoai.Name = "txbSoDienThoai";
+            this.txbSoDienThoai.Size = new System.Drawing.Size(190, 30);
+            this.txbSoDienThoai.TabIndex = 1;
             // 
             // panel8
             // 
             this.panel8.Controls.Add(this.txbCMND);
-            this.panel8.Controls.Add(this.textBox1);
+            this.panel8.Controls.Add(this.tbcmnd);
             this.panel8.Location = new System.Drawing.Point(11, 117);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(357, 59);
@@ -187,12 +189,12 @@ namespace Quan_Ly_Chuyen_Bay
             this.txbCMND.TabIndex = 2;
             this.txbCMND.Text = "CMND: ";
             // 
-            // textBox1
+            // tbcmnd
             // 
-            this.textBox1.Location = new System.Drawing.Point(133, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 30);
-            this.textBox1.TabIndex = 1;
+            this.tbcmnd.Location = new System.Drawing.Point(133, 15);
+            this.tbcmnd.Name = "tbcmnd";
+            this.tbcmnd.Size = new System.Drawing.Size(190, 30);
+            this.tbcmnd.TabIndex = 1;
             // 
             // panel10
             // 
@@ -249,7 +251,7 @@ namespace Quan_Ly_Chuyen_Bay
             // txbSDT
             // 
             this.txbSDT.Controls.Add(this.label8);
-            this.txbSDT.Controls.Add(this.textBox2);
+            this.txbSDT.Controls.Add(this.txbSoDienThoai);
             this.txbSDT.Location = new System.Drawing.Point(11, 182);
             this.txbSDT.Name = "txbSDT";
             this.txbSDT.Size = new System.Drawing.Size(357, 59);
@@ -272,9 +274,9 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panel1.Location = new System.Drawing.Point(12, 7);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(984, 193);
+            this.panel1.Size = new System.Drawing.Size(984, 188);
             this.panel1.TabIndex = 2;
             // 
             // panel4
@@ -313,6 +315,8 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             // dtimeNgayBay
             // 
+            this.dtimeNgayBay.CustomFormat = "yyyy/MM/dd";
+            this.dtimeNgayBay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtimeNgayBay.Location = new System.Drawing.Point(98, 19);
             this.dtimeNgayBay.Name = "dtimeNgayBay";
             this.dtimeNgayBay.Size = new System.Drawing.Size(370, 30);
@@ -451,10 +455,10 @@ namespace Quan_Ly_Chuyen_Bay
         private System.Windows.Forms.Button btnDatVe;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label lbSoGheTrong;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txbSoDienThoai;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label txbCMND;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbcmnd;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel7;

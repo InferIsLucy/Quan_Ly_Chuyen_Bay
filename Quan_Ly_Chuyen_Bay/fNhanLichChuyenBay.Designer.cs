@@ -30,7 +30,6 @@ namespace Quan_Ly_Chuyen_Bay
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txbGioBay = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lbSLHangVe = new System.Windows.Forms.Label();
             this.txbGheTungHangVe = new System.Windows.Forms.TextBox();
@@ -50,16 +49,16 @@ namespace Quan_Ly_Chuyen_Bay
             this.label6 = new System.Windows.Forms.Label();
             this.txbGiaVe = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txbSanBayDen = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txbMaChuyenBay = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvDSChuyenBay = new System.Windows.Forms.DataGridView();
+            this.txbSanBayDi = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -75,7 +74,6 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.txbGioBay);
             this.panel3.Controls.Add(this.flowLayoutPanel1);
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.panel12);
@@ -91,18 +89,12 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel3.Size = new System.Drawing.Size(1000, 243);
             this.panel3.TabIndex = 2;
             // 
-            // txbGioBay
-            // 
-            this.txbGioBay.Location = new System.Drawing.Point(10, 199);
-            this.txbGioBay.Name = "txbGioBay";
-            this.txbGioBay.Size = new System.Drawing.Size(100, 30);
-            this.txbGioBay.TabIndex = 9;
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.lbSLHangVe);
             this.flowLayoutPanel1.Controls.Add(this.txbGheTungHangVe);
             this.flowLayoutPanel1.Controls.Add(this.label4);
+            this.flowLayoutPanel1.Enabled = false;
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.flowLayoutPanel1.Location = new System.Drawing.Point(777, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -268,7 +260,7 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             // txbGiaVe
             // 
-            this.txbGiaVe.Location = new System.Drawing.Point(132, 11);
+            this.txbGiaVe.Location = new System.Drawing.Point(143, 12);
             this.txbGiaVe.Margin = new System.Windows.Forms.Padding(2);
             this.txbGiaVe.Name = "txbGiaVe";
             this.txbGiaVe.Size = new System.Drawing.Size(184, 30);
@@ -276,7 +268,7 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             // panel7
             // 
-            this.panel7.Controls.Add(this.comboBox2);
+            this.panel7.Controls.Add(this.txbSanBayDen);
             this.panel7.Controls.Add(this.label3);
             this.panel7.Location = new System.Drawing.Point(425, 82);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
@@ -284,15 +276,14 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel7.Size = new System.Drawing.Size(352, 50);
             this.panel7.TabIndex = 6;
             // 
-            // comboBox2
+            // txbSanBayDen
             // 
-            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(151, 11);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(195, 33);
-            this.comboBox2.TabIndex = 10;
+            this.txbSanBayDen.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txbSanBayDen.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txbSanBayDen.Location = new System.Drawing.Point(143, 11);
+            this.txbSanBayDen.Name = "txbSanBayDen";
+            this.txbSanBayDen.Size = new System.Drawing.Size(187, 30);
+            this.txbSanBayDen.TabIndex = 3;
             // 
             // label3
             // 
@@ -305,23 +296,13 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.comboBox1);
+            this.panel6.Controls.Add(this.txbSanBayDi);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Location = new System.Drawing.Point(2, 82);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(413, 50);
             this.panel6.TabIndex = 5;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(170, 8);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(240, 33);
-            this.comboBox1.TabIndex = 9;
             // 
             // label2
             // 
@@ -355,12 +336,12 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             // txbMaChuyenBay
             // 
+            this.txbMaChuyenBay.Enabled = false;
             this.txbMaChuyenBay.Location = new System.Drawing.Point(170, 11);
             this.txbMaChuyenBay.Margin = new System.Windows.Forms.Padding(2);
             this.txbMaChuyenBay.Name = "txbMaChuyenBay";
             this.txbMaChuyenBay.Size = new System.Drawing.Size(243, 30);
             this.txbMaChuyenBay.TabIndex = 1;
-            this.txbMaChuyenBay.TextChanged += new System.EventHandler(this.txbMaChuyenBay_TextChanged);
             // 
             // panel2
             // 
@@ -380,6 +361,15 @@ namespace Quan_Ly_Chuyen_Bay
             this.dtgvDSChuyenBay.Size = new System.Drawing.Size(992, 227);
             this.dtgvDSChuyenBay.TabIndex = 0;
             // 
+            // txbSanBayDi
+            // 
+            this.txbSanBayDi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txbSanBayDi.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txbSanBayDi.Location = new System.Drawing.Point(170, 9);
+            this.txbSanBayDi.Name = "txbSanBayDi";
+            this.txbSanBayDi.Size = new System.Drawing.Size(240, 30);
+            this.txbSanBayDi.TabIndex = 3;
+            // 
             // fNhanLichChuyenBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -393,7 +383,6 @@ namespace Quan_Ly_Chuyen_Bay
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nhận lịch chuyến bay";
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -441,11 +430,10 @@ namespace Quan_Ly_Chuyen_Bay
         private System.Windows.Forms.Label lbSLHangVe;
         private System.Windows.Forms.TextBox txbGheTungHangVe;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txbGioBay;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txbSanBayDen;
+        private System.Windows.Forms.TextBox txbSanBayDi;
     }
 }

@@ -27,16 +27,15 @@ namespace Quan_Ly_Chuyen_Bay
         private void GetMessage(string MaChuyenBay)
         {
             txbMaChuyenBay.Text = MaChuyenBay;
-            string query = string.Format("SELECT * FROM CHUYENBAYY WHERE MaChuyenBay = '{0}'", MaChuyenBay);
+            string query = string.Format("SELECT * FROM CHUYENBAY WHERE MaChuyenBay = '{0}'", MaChuyenBay);
             DataTable data = (DataTable)DAO.DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
-                txbSanBayDen.Text = item["SanBayDen"].ToString();
-                txbSanBayDi.Text = item["SanBayDi"].ToString();
+                txbSanBayDen.Text = item["MaSanBayDen"].ToString();
+                txbSanBayDi.Text = item["MaSanBayDi"].ToString();
                 txbThoIGianBay.Text = item["ThoiGianBay"].ToString();
-                dtimeNgayBay.Value = DateTime.Parse(item["NgayKhoiHanh"].ToString());
+                dtimeNgayBay.Value = DateTime.Parse(item["NgayGioKhoiHanh"].ToString());
             }
-            listChuyenBay.DataSource = DAO.DataProvider.Instance.ExecuteQuery(query);
         }
         #endregion
 
@@ -51,17 +50,19 @@ namespace Quan_Ly_Chuyen_Bay
         {
             txbMaChuyenBay.DataBindings.Add(new Binding("Text", dtgvDSChuyenBay.DataSource, "MaChuyenBay", true, DataSourceUpdateMode.Never));
             txbThoIGianBay.DataBindings.Add(new Binding("Text", dtgvDSChuyenBay.DataSource, "ThoiGianBay", true, DataSourceUpdateMode.Never));
-            dtimeNgayBay.DataBindings.Add(new Binding("Value", dtgvDSChuyenBay.DataSource, "NgayKhoiHanh", true, DataSourceUpdateMode.Never));
-            txbSanBayDen.DataBindings.Add(new Binding("Text", dtgvDSChuyenBay.DataSource, "SanBayDen", true, DataSourceUpdateMode.Never));
-            txbSanBayDi.DataBindings.Add(new Binding("Text", dtgvDSChuyenBay.DataSource, "SanBayDi", true, DataSourceUpdateMode.Never));
+            dtimeNgayBay.DataBindings.Add(new Binding("Value", dtgvDSChuyenBay.DataSource, "NgayGioKhoiHanh", true, DataSourceUpdateMode.Never));
+            txbSanBayDen.DataBindings.Add(new Binding("Text", dtgvDSChuyenBay.DataSource, "MaSanBayDi", true, DataSourceUpdateMode.Never));
+            txbSanBayDi.DataBindings.Add(new Binding("Text", dtgvDSChuyenBay.DataSource, "MaSanBayDen", true, DataSourceUpdateMode.Never));
         }
         void LoadDSChuyenBay()
         {
-            string query = "Select * from CHUYENBAYY";
+            string query = "Select * from CHUYENBAY";
             listChuyenBay.DataSource = DAO.DataProvider.Instance.ExecuteQuery(query);
             AutoCompleteStringCollection DataCollection = new AutoCompleteStringCollection();
             getData(DataCollection,"MaChuyenBay");
             txbMaChuyenBay.AutoCompleteCustomSource = DataCollection;
+            listChuyenBay.DataSource = DAO.DataProvider.Instance.ExecuteQuery(query);
+
         }
         void LoadDataForTextBox()
         {
@@ -70,11 +71,11 @@ namespace Quan_Ly_Chuyen_Bay
             txbMaChuyenBay.AutoCompleteCustomSource = DataCollection1;
 
             AutoCompleteStringCollection DataCollection2 = new AutoCompleteStringCollection();
-            getData(DataCollection2, "SanBayDi");
+            getData(DataCollection2, "MaSanBayDi");
             txbSanBayDi.AutoCompleteCustomSource = DataCollection2;
 
             AutoCompleteStringCollection DataCollection3 = new AutoCompleteStringCollection();
-            getData(DataCollection3, "SanBayDen");
+            getData(DataCollection3, "MaSanBayDen");
             txbSanBayDen.AutoCompleteCustomSource = DataCollection3;
 
             AutoCompleteStringCollection DataCollection4 = new AutoCompleteStringCollection();
@@ -83,7 +84,7 @@ namespace Quan_Ly_Chuyen_Bay
         }
         void getData(AutoCompleteStringCollection DataCollection,string name)
         {
-            string query = string.Format(" Select * from CHUYENBAYY ");
+            string query = string.Format(" Select * from CHUYENBAY ");
             DataTable data = (DataTable)DAO.DataProvider.Instance.ExecuteQuery(query);
 
             foreach (DataRow item in data.Rows)
@@ -95,7 +96,7 @@ namespace Quan_Ly_Chuyen_Bay
 
         void SearchChuyenBay(string machuyenbay, string sanbaydi, string sanbayden)
         {
-            string query = string.Format(" Select * from CHUYENBAYY WHERE DBO.fuConvertToUnsign1(SanBayDi) Like '%' + dbo.fuConvertToUnsign1 ('{0}') + '%'  and   DBO.fuConvertToUnsign1(SanBayDen) Like '%' + dbo.fuConvertToUnsign1 ('{1}') + '%' and DBO.fuConvertToUnsign1(MaChuyenBay) Like '%' + dbo.fuConvertToUnsign1 ('{2}') + '%'", sanbaydi, sanbayden, machuyenbay);
+            string query = string.Format(" Select * from CHUYENBAY WHERE DBO.fuConvertToUnsign1(MaSanBayDi) Like '%' + dbo.fuConvertToUnsign1 ('{0}') + '%'  and   DBO.fuConvertToUnsign1(MaSanBayDen) Like '%' + dbo.fuConvertToUnsign1 ('{1}') + '%' and DBO.fuConvertToUnsign1(MaChuyenBay) Like '%' + dbo.fuConvertToUnsign1 ('{2}') + '%'", sanbaydi, sanbayden, machuyenbay);
             listChuyenBay.DataSource = DAO.DataProvider.Instance.ExecuteQuery(query);
         }
         private void btnTim_Click(object sender, EventArgs e)

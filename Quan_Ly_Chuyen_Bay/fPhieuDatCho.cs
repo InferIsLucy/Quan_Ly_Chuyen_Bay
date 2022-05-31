@@ -24,20 +24,19 @@ namespace Quan_Ly_Chuyen_Bay
         private void GetMessage(string MaChuyenBay)
         {
             txbMaChuyenBay.Text = MaChuyenBay;
-            string query = string.Format("SELECT * FROM CHUYENBAYY WHERE MaChuyenBay = '{0}'", MaChuyenBay);
+            string query = string.Format("SELECT * FROM CHUYENBAY WHERE MaChuyenBay = '{0}'", MaChuyenBay);
             DataTable data = (DataTable)DAO.DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
-                dtimeNgayBay.Value = DateTime.Parse(item["NgayKhoiHanh"].ToString());
-                txbSanBayDen.Text = item["SanBayDen"].ToString();
-                txbSanBayDi.Text = item["SanBayDi"].ToString();
+                dtimeNgayBay.Value = DateTime.Parse(item["NgayGioKhoiHanh"].ToString());
+                txbSanBayDen.Text = item["MaSanBayDen"].ToString();
+                txbSanBayDi.Text = item["MaSanBayDi"].ToString();
             }
             listChuyenBay.DataSource = DAO.DataProvider.Instance.ExecuteQuery(query);
         }
         void LoadF()
         {
             LoadHangVe();
-            LoadSLGheTongTien();
         }
         void ThongTinKhachHang()
         {
@@ -71,16 +70,41 @@ namespace Quan_Ly_Chuyen_Bay
             }
         }
 
-        private void btnXem_Click(object sender, EventArgs e)
-        {
-            LoadSLGheTongTien();
-        }
+
 
         private void btnDatVe_Click(object sender, EventArgs e)
         {
             fChiTietChuyenBay Child = new fChiTietChuyenBay();
             Child.Sender(txbMaChuyenBay.Text);
             Child.Show();
+        }
+
+        private void btnXem_Click_1(object sender, EventArgs e)
+        {
+            LoadSLGheTongTien();
+        }
+        bool AddPhieuDatCho(string mahangve, string cmnd, string machuyenbay, float giatien, DateTime ngaydat)
+        {
+            string query = string.Format("INSERT INTO dbo.PHIEUDATCHO(MaHangVe,CMND,MaChuyenBay,GiaTien,NgayDat) VALUES('{0}','{1}','{2}',{3} ,'{4}')", mahangve, cmnd, machuyenbay, giatien, ngaydat.ToString());
+            int result = DAO.DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        private void btnDatVe_Click_1(object sender, EventArgs e)
+        {
+            string machuyenbay = txbMaChuyenBay.Text;
+            string cmnd = tbcmnd.Text;
+            float giave = int.Parse(lbTongTien.Text);
+            string mahangve = "1";
+            if(AddPhieuDatCho(mahangve,cmnd,machuyenbay,giave, DateTime.Now))
+            {
+                MessageBox.Show("Đặt chỗ thành công");
+                fThanhToanPhieuDatCho Child = new fThanhToanPhieuDatCho();
+                Child.Sender(txbMaChuyenBay.Text,tbcmnd.Text);
+                Child.Show();
+            }
+            else
+                MessageBox.Show("Đặt chỗ không thành công");
+
         }
     }
 }
