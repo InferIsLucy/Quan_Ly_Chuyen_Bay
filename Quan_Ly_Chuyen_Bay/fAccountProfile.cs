@@ -17,6 +17,7 @@ namespace Quan_Ly_Chuyen_Bay
         private AccountDTO Acc;
 
         public AccountDTO Acc1 { get => Acc; set { Acc = value; } }
+
         public fAccountProfile(AccountDTO acc)
         {
             InitializeComponent();

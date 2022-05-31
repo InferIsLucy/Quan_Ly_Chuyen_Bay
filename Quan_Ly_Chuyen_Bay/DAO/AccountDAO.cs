@@ -40,5 +40,41 @@ namespace Quan_Ly_Chuyen_Bay.DAO
             return result > 0;
             
         }
+
+        public DataTable GetListAccount()
+        {
+            return DataProvider.Instance.ExecuteQuery("SELECT UserName, DisplayName, Type FROM dbo.ACCOUNT");
+        }
+
+        public int GetTypeAccount(string username)
+        {
+            if(DataProvider.Instance.ExecuteScalar("SELECT Type FROM dbo.ACCOUNT WHERE UserName = '" + username + "'") == null)
+                return 0;
+            return (int)DataProvider.Instance.ExecuteScalar("SELECT Type FROM dbo.ACCOUNT WHERE UserName = '" + username + "'");
+        }
+
+        public bool InsertAccount(string username, string displayname, int type)
+        {
+            string query = string.Format("INSERT dbo.ACCOUNT (UserName, DisplayName, Type) VALUES (N'{0}', N'{1}', {2})", username, displayname, type);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool UpdateAccount(string username, string displayname, int type)
+        {
+            string query = string.Format("UPDATE dbo.ACCOUNT SET DisplayName = N'{1}' , Type = {2} WHERE UserName = '{0}'", username, displayname, type);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool DeleteAccount(string userName)
+        {
+            string query = string.Format("DELETE dbo.ACCOUNT WHERE UserName = N'{0}'", userName);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
     }
 }
