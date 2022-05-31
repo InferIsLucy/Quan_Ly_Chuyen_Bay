@@ -36,7 +36,6 @@ namespace Quan_Ly_Chuyen_Bay
             this.label3 = new System.Windows.Forms.Label();
             this.txbMaChuyenBay = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.flbTable = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txbSanBayDi = new System.Windows.Forms.TextBox();
@@ -49,11 +48,19 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbClock = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dtgvSanBayTG = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txbSanBayTrungGian = new System.Windows.Forms.TextBox();
+            this.txbMaSanBayTrungGian = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvSanBayTG)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -115,17 +122,6 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(452, 59);
             this.panel5.TabIndex = 8;
-            // 
-            // flbTable
-            // 
-            this.flbTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flbTable.AutoScroll = true;
-            this.flbTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.flbTable.Location = new System.Drawing.Point(3, 239);
-            this.flbTable.Name = "flbTable";
-            this.flbTable.Size = new System.Drawing.Size(953, 240);
-            this.flbTable.TabIndex = 16;
             // 
             // label2
             // 
@@ -207,7 +203,7 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel3);
@@ -233,16 +229,73 @@ namespace Quan_Ly_Chuyen_Bay
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.Controls.Add(this.dtgvSanBayTG);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.txbSanBayTrungGian);
+            this.panel2.Controls.Add(this.txbMaSanBayTrungGian);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.panel2.Location = new System.Drawing.Point(11, 242);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(943, 237);
+            this.panel2.TabIndex = 18;
+            // 
+            // dtgvSanBayTG
+            // 
+            this.dtgvSanBayTG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvSanBayTG.Location = new System.Drawing.Point(3, 76);
+            this.dtgvSanBayTG.Name = "dtgvSanBayTG";
+            this.dtgvSanBayTG.RowHeadersWidth = 51;
+            this.dtgvSanBayTG.RowTemplate.Height = 24;
+            this.dtgvSanBayTG.Size = new System.Drawing.Size(937, 158);
+            this.dtgvSanBayTG.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(4, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(187, 25);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Sân bay trung gian: ";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txbSanBayTrungGian
+            // 
+            this.txbSanBayTrungGian.Location = new System.Drawing.Point(236, 6);
+            this.txbSanBayTrungGian.Name = "txbSanBayTrungGian";
+            this.txbSanBayTrungGian.Size = new System.Drawing.Size(334, 30);
+            this.txbSanBayTrungGian.TabIndex = 1;
+            // 
+            // txbMaSanBayTrungGian
+            // 
+            this.txbMaSanBayTrungGian.Location = new System.Drawing.Point(236, 40);
+            this.txbMaSanBayTrungGian.Name = "txbMaSanBayTrungGian";
+            this.txbMaSanBayTrungGian.Size = new System.Drawing.Size(334, 30);
+            this.txbMaSanBayTrungGian.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(4, 45);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(216, 25);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Mã sân bay trung gian: ";
+            // 
             // fThanhToanPhieuDatCho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 546);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.lbClock);
             this.Controls.Add(this.btDatVe);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.flbTable);
             this.Controls.Add(this.panel1);
             this.Name = "fThanhToanPhieuDatCho";
             this.Text = "fThanhToanPhieuDatCho";
@@ -255,6 +308,9 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvSanBayTG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,7 +324,6 @@ namespace Quan_Ly_Chuyen_Bay
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txbMaChuyenBay;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.FlowLayoutPanel flbTable;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txbSanBayDi;
@@ -281,5 +336,11 @@ namespace Quan_Ly_Chuyen_Bay
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbClock;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dtgvSanBayTG;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txbSanBayTrungGian;
+        private System.Windows.Forms.TextBox txbMaSanBayTrungGian;
+        private System.Windows.Forms.Label label8;
     }
 }

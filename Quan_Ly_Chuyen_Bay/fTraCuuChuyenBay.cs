@@ -77,7 +77,7 @@ namespace Quan_Ly_Chuyen_Bay
         private void btnThongTin_Click(object sender, EventArgs e)
         {
             fChiTietChuyenBay Child = new fChiTietChuyenBay();
-            Child.Sender(txbMaChuyenBay.Text);
+            Child.Sender(txbMaChuyenBay.Text,"","","","",0);
             Child.Show();
         }
     }

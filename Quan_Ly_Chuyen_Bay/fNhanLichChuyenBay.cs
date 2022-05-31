@@ -27,7 +27,7 @@ namespace Quan_Ly_Chuyen_Bay
         {
             dtgvDSChuyenBay.DataSource = listChuyenBay;
             LoadFlightSchedule();
-            LoadSLGhe();
+
             LoadSanBay();
         }
         void LoadFlightSchedule()
@@ -36,11 +36,6 @@ namespace Quan_Ly_Chuyen_Bay
             listChuyenBay.DataSource = DAO.DataProvider.Instance.ExecuteQuery(query);
         }
         
-        void LoadSLGhe()
-        {
-            int n = 4;
-            lbSLHangVe.Text = "Số lượng hạng vé: " + n + " hạng vé";
-        }
         void AddPlaneBinding()
         {
             txbMaChuyenBay.DataBindings.Add(new Binding("Text", dtgvDSChuyenBay.DataSource, "MaChuyenBay",true,DataSourceUpdateMode.Never));
