@@ -189,7 +189,7 @@ namespace Quan_Ly_Chuyen_Bay
             }
             if (DateTime.Compare(dateTime.Value, DateTime.Now) == -1)
                 return false;
-            if (int.Parse(txbThoiGianBay.Text) <= sbmax || int.Parse(txbGiaVe.Text) < 0)
+            if (float.Parse(txbThoiGianBay.Text) <= sbmax || float.Parse(txbGiaVe.Text) < 0)
                 return false;
             return true;
         }

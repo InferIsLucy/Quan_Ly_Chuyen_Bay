@@ -197,7 +197,17 @@ namespace Quan_Ly_Chuyen_Bay
             }
             else return;
         }
+        void UpDateMin(string mincancel, string minpayment)
+        {
+            string query = string.Format("Update THAMSO Set TGChamNhatHuyDatVe = '{0}', TGChamNhatDatVe = '{1}'",mincancel,minpayment);
+            DAO.DataProvider.Instance.ExecuteQuery(query);
 
+        }
+        void AddSanBay(string masanbay, string tensanbay)
+        {
+            string query = string.Format("INSERT INTO SANBAY VALUES('{0}','{1}') ", masanbay, tensanbay);
+            DAO.DataProvider.Instance.ExecuteQuery(query);
+        }
         void LoadListAirport()
         {
             cmbListAirport.DataSource = ThamSoDAO.Instance.GetListAirport();
@@ -306,8 +316,19 @@ namespace Quan_Ly_Chuyen_Bay
 
 
 
+
         #endregion
 
-        
+        private void btnUpdateBookTicket_Click(object sender, EventArgs e)
+        {
+            UpDateMin(txbMinTimeCancelTicket.Text, txbMinTimePayment.Text);
+            MessageBox.Show("Thay đổi quy định đặt vé thành công");
+        }
+
+        private void btnAddAirPort_Click(object sender, EventArgs e)
+        {
+            AddSanBay(txbMaSanBay.Text, txbTenSanBay.Text);
+            MessageBox.Show("Thêm sân bay thành công");
+        }
     }
 }

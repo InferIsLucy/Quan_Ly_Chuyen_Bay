@@ -16,7 +16,7 @@ namespace Quan_Ly_Chuyen_Bay
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fTraCuuChuyenBay());
+            Application.Run(new fNhanLichChuyenBay());
         }
     }
 }
