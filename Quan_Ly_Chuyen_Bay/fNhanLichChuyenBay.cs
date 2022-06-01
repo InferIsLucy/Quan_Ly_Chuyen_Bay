@@ -120,49 +120,63 @@ namespace Quan_Ly_Chuyen_Bay
         private void nutThem_Click(object sender, EventArgs e)
         {
             string machuyenbay = txbMaChuyenBay.Text;
-            float giave = float.Parse(txbGiaVe.Text);
             string sanbaydi = txbSanBayDi.Text;
             string sanbayden = txbSanBayDen.Text;
-            int thoigianbay = int.Parse(txbThoiGianBay.Text);
-            if (KiemTraTuNhien())
+            int thoigianbay;
+            float giave;
+            if (!float.TryParse(txbGiaVe.Text, out giave) || !int.TryParse(txbThoiGianBay.Text, out thoigianbay))
             {
-                if (InsertChuyenBay(machuyenbay, giave, sanbaydi, sanbayden, dateTime.Value, thoigianbay))
-                {
-                    MessageBox.Show("Thêm chuyến bay thành công");
-                    LoadFlightSchedule();
-
-                }
-                else
-                {
-                    MessageBox.Show("Có lỗi khi thêm chuyến bay");
-                }
+                MessageBox.Show("Kiểm tra lại thông tin");
             }
             else
-                MessageBox.Show("Nhập lại dữ liệu chuyến bay");
+            {
+                if (KiemTraTuNhien())
+                {
+                    if (InsertChuyenBay(machuyenbay, giave, sanbaydi, sanbayden, dateTime.Value, thoigianbay))
+                    {
+                        MessageBox.Show("Thêm chuyến bay thành công");
+                        LoadFlightSchedule();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Có lỗi khi thêm chuyến bay");
+                    }
+                }
+                else
+                    MessageBox.Show("Nhập lại dữ liệu chuyến bay");
+            }
         }
         #endregion
 
         private void nutSua_Click(object sender, EventArgs e)
         {
             string machuyenbay = txbMaChuyenBay.Text;
-            float giave = float.Parse(txbGiaVe.Text);
             string sanbaydi = txbSanBayDi.Text;
             string sanbayden = txbSanBayDen.Text;
-            int thoigianbay = int.Parse(txbThoiGianBay.Text);
-            if (KiemTraTuNhien())
+            int thoigianbay;
+            float giave;
+            if (!float.TryParse(txbGiaVe.Text, out giave) || !int.TryParse(txbThoiGianBay.Text, out thoigianbay))
             {
-                if (UpdateChuyeBay(machuyenbay, giave, sanbaydi, sanbayden, dateTime.Value, thoigianbay))
-                {
-                    MessageBox.Show("Sửa chuyến bay thành công");
-                    LoadFlightSchedule();
-                }
-                else
-                {
-                    MessageBox.Show("Có lỗi khi sửa chuyến bay");
-                }
+                MessageBox.Show("Kiểm tra lại thông tin");
             }
             else
-                MessageBox.Show("Nhập lại dữ liệu chuyến bay");
+            {
+                if (KiemTraTuNhien() == true)
+                {
+                    if (UpdateChuyeBay(machuyenbay, giave, sanbaydi, sanbayden, dateTime.Value, thoigianbay))
+                    {
+                        MessageBox.Show("Sửa chuyến bay thành công");
+                        LoadFlightSchedule();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Có lỗi khi sửa chuyến bay");
+                    }
+                }
+                else
+                    MessageBox.Show("Nhập lại dữ liệu chuyến bay");
+            }
         }
         bool KiemTraTuNhien()
         {
@@ -175,7 +189,7 @@ namespace Quan_Ly_Chuyen_Bay
             }
             if (DateTime.Compare(dateTime.Value, DateTime.Now) == -1)
                 return false;
-            if (int.Parse(txbThoiGianBay.Text) <= sbmax && int.Parse(txbGiaVe.Text) < 0)
+            if (int.Parse(txbThoiGianBay.Text) <= sbmax || int.Parse(txbGiaVe.Text) < 0)
                 return false;
             return true;
         }
@@ -217,27 +231,25 @@ namespace Quan_Ly_Chuyen_Bay
         private void btnThemSanBayTG_Click(object sender, EventArgs e)
         {
             string machuyenbay = txbMaChuyenBay.Text;
-            float giave = float.Parse(txbGiaVe.Text);
             string sanbaydi = txbSanBayDi.Text;
             string sanbayden = txbSanBayDen.Text;
-            int thoigianbay = int.Parse(txbThoiGianBay.Text);
-            if (KiemTraSoSanBayTG(txbMaChuyenBay.Text))
-            {
-                if (txbThoiGianDung.Text == "")
-                    MessageBox.Show("Nhập lại thời gian dừng");
-                else
+                if (KiemTraSoSanBayTG(txbMaChuyenBay.Text))
                 {
-                    if (int.Parse(txbThoiGianDung.Text) >= 10 && int.Parse(txbThoiGianDung.Text) < 21)
-                    {
-                        NhapSanBayTrungGian(machuyenbay, txbSanBayTrungGian.Text, txbTenSanBay.Text, sanbaydi, sanbayden, txbThoiGianDung.Text);
-                        MessageBox.Show("Nhập sân bay trung gian thành công");
-                    }
-                    else
+                    if (txbThoiGianDung.Text == "")
                         MessageBox.Show("Nhập lại thời gian dừng");
+                    else
+                    {
+                        if (int.Parse(txbThoiGianDung.Text) >= 10 && int.Parse(txbThoiGianDung.Text) < 21)
+                        {
+                            NhapSanBayTrungGian(machuyenbay, txbSanBayTrungGian.Text, txbTenSanBay.Text, sanbaydi, sanbayden, txbThoiGianDung.Text);
+                            MessageBox.Show("Nhập sân bay trung gian thành công");
+                        }
+                        else
+                            MessageBox.Show("Nhập lại thời gian dừng");
+                    }
                 }
-            }
-            else
-                MessageBox.Show("Không thể thêm sân bay mới");
+                else
+                    MessageBox.Show("Không thể thêm sân bay mới");
         }
         bool KiemTraTonTaiHangVe(string tenhangve)
         {
