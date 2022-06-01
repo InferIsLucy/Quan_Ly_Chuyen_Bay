@@ -30,10 +30,6 @@ namespace Quan_Ly_Chuyen_Bay
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.lbSLHangVe = new System.Windows.Forms.Label();
-            this.txbGheTungHangVe = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.nutSua = new System.Windows.Forms.Button();
             this.nutXoa = new System.Windows.Forms.Button();
@@ -52,15 +48,31 @@ namespace Quan_Ly_Chuyen_Bay
             this.txbSanBayDen = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.txbSanBayDi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txbMaChuyenBay = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvDSChuyenBay = new System.Windows.Forms.DataGridView();
-            this.txbSanBayDi = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.txbHangVe = new System.Windows.Forms.TextBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.txbSanBayTrungGian = new System.Windows.Forms.TextBox();
+            this.dtgvHangVe = new System.Windows.Forms.DataGridView();
+            this.dtgvSBTG = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labdel9 = new System.Windows.Forms.Label();
+            this.txbTenSanBay = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txbThoiGianDung = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnThemSanBayTG = new System.Windows.Forms.Button();
+            this.btnThemHangVe = new System.Windows.Forms.Button();
+            this.txbTenHangVe = new System.Windows.Forms.TextBox();
+            this.txbPhanTramDonGia = new System.Windows.Forms.TextBox();
+            this.txbSLGhe = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -70,11 +82,16 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSChuyenBay)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvHangVe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvSBTG)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.flowLayoutPanel1);
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.panel12);
             this.panel3.Controls.Add(this.panel11);
@@ -86,47 +103,8 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel3.Location = new System.Drawing.Point(11, 1);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1000, 243);
+            this.panel3.Size = new System.Drawing.Size(781, 243);
             this.panel3.TabIndex = 2;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.lbSLHangVe);
-            this.flowLayoutPanel1.Controls.Add(this.txbGheTungHangVe);
-            this.flowLayoutPanel1.Controls.Add(this.label4);
-            this.flowLayoutPanel1.Enabled = false;
-            this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(777, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(220, 236);
-            this.flowLayoutPanel1.TabIndex = 8;
-            // 
-            // lbSLHangVe
-            // 
-            this.lbSLHangVe.AutoSize = true;
-            this.lbSLHangVe.Location = new System.Drawing.Point(3, 0);
-            this.lbSLHangVe.Name = "lbSLHangVe";
-            this.lbSLHangVe.Size = new System.Drawing.Size(165, 25);
-            this.lbSLHangVe.TabIndex = 0;
-            this.lbSLHangVe.Text = "Số lượng hạng vé";
-            // 
-            // txbGheTungHangVe
-            // 
-            this.txbGheTungHangVe.Location = new System.Drawing.Point(3, 28);
-            this.txbGheTungHangVe.Name = "txbGheTungHangVe";
-            this.txbGheTungHangVe.Size = new System.Drawing.Size(165, 30);
-            this.txbGheTungHangVe.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(3, 61);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(212, 125);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Ghi chú: Nhập theo thứ tự số lượng ghế của từng hạng vé được cách nhau bởi dấu ph" +
-    "ẩy.";
             // 
             // panel1
             // 
@@ -304,6 +282,15 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel6.Size = new System.Drawing.Size(413, 50);
             this.panel6.TabIndex = 5;
             // 
+            // txbSanBayDi
+            // 
+            this.txbSanBayDi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txbSanBayDi.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txbSanBayDi.Location = new System.Drawing.Point(170, 9);
+            this.txbSanBayDi.Name = "txbSanBayDi";
+            this.txbSanBayDi.Size = new System.Drawing.Size(240, 30);
+            this.txbSanBayDi.TabIndex = 3;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -346,36 +333,192 @@ namespace Quan_Ly_Chuyen_Bay
             // panel2
             // 
             this.panel2.Controls.Add(this.dtgvDSChuyenBay);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.panel2.Location = new System.Drawing.Point(11, 249);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1000, 245);
+            this.panel2.Size = new System.Drawing.Size(781, 345);
             this.panel2.TabIndex = 3;
             // 
             // dtgvDSChuyenBay
             // 
+            this.dtgvDSChuyenBay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dtgvDSChuyenBay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvDSChuyenBay.Location = new System.Drawing.Point(5, 3);
+            this.dtgvDSChuyenBay.Location = new System.Drawing.Point(3, 3);
             this.dtgvDSChuyenBay.Name = "dtgvDSChuyenBay";
             this.dtgvDSChuyenBay.RowHeadersWidth = 51;
             this.dtgvDSChuyenBay.RowTemplate.Height = 24;
-            this.dtgvDSChuyenBay.Size = new System.Drawing.Size(992, 227);
+            this.dtgvDSChuyenBay.Size = new System.Drawing.Size(778, 339);
             this.dtgvDSChuyenBay.TabIndex = 0;
             // 
-            // txbSanBayDi
+            // flowLayoutPanel1
             // 
-            this.txbSanBayDi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txbSanBayDi.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txbSanBayDi.Location = new System.Drawing.Point(170, 9);
-            this.txbSanBayDi.Name = "txbSanBayDi";
-            this.txbSanBayDi.Size = new System.Drawing.Size(240, 30);
-            this.txbSanBayDi.TabIndex = 3;
+            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.flowLayoutPanel1.Controls.Add(this.label4);
+            this.flowLayoutPanel1.Controls.Add(this.txbHangVe);
+            this.flowLayoutPanel1.Controls.Add(this.btnThemHangVe);
+            this.flowLayoutPanel1.Controls.Add(this.txbTenHangVe);
+            this.flowLayoutPanel1.Controls.Add(this.txbPhanTramDonGia);
+            this.flowLayoutPanel1.Controls.Add(this.txbSLGhe);
+            this.flowLayoutPanel1.Controls.Add(this.dtgvHangVe);
+            this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(797, 1);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(439, 242);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
+            // txbHangVe
+            // 
+            this.txbHangVe.Location = new System.Drawing.Point(147, 3);
+            this.txbHangVe.Name = "txbHangVe";
+            this.txbHangVe.Size = new System.Drawing.Size(126, 30);
+            this.txbHangVe.TabIndex = 0;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.flowLayoutPanel2.Controls.Add(this.btnThemSanBayTG);
+            this.flowLayoutPanel2.Controls.Add(this.labdel9);
+            this.flowLayoutPanel2.Controls.Add(this.txbSanBayTrungGian);
+            this.flowLayoutPanel2.Controls.Add(this.txbTenSanBay);
+            this.flowLayoutPanel2.Controls.Add(this.dtgvSBTG);
+            this.flowLayoutPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(798, 252);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(438, 342);
+            this.flowLayoutPanel2.TabIndex = 5;
+            // 
+            // txbSanBayTrungGian
+            // 
+            this.txbSanBayTrungGian.Location = new System.Drawing.Point(3, 44);
+            this.txbSanBayTrungGian.Name = "txbSanBayTrungGian";
+            this.txbSanBayTrungGian.Size = new System.Drawing.Size(89, 30);
+            this.txbSanBayTrungGian.TabIndex = 0;
+            // 
+            // dtgvHangVe
+            // 
+            this.dtgvHangVe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgvHangVe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvHangVe.Location = new System.Drawing.Point(3, 75);
+            this.dtgvHangVe.Name = "dtgvHangVe";
+            this.dtgvHangVe.RowHeadersWidth = 51;
+            this.dtgvHangVe.RowTemplate.Height = 24;
+            this.dtgvHangVe.Size = new System.Drawing.Size(428, 152);
+            this.dtgvHangVe.TabIndex = 1;
+            // 
+            // dtgvSBTG
+            // 
+            this.dtgvSBTG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgvSBTG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvSBTG.Location = new System.Drawing.Point(3, 80);
+            this.dtgvSBTG.Name = "dtgvSBTG";
+            this.dtgvSBTG.RowHeadersWidth = 51;
+            this.dtgvSBTG.RowTemplate.Height = 24;
+            this.dtgvSBTG.Size = new System.Drawing.Size(435, 257);
+            this.dtgvSBTG.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(138, 25);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Thêm hạng vé";
+            // 
+            // labdel9
+            // 
+            this.labdel9.AutoSize = true;
+            this.labdel9.Location = new System.Drawing.Point(146, 0);
+            this.labdel9.Name = "labdel9";
+            this.labdel9.Size = new System.Drawing.Size(237, 25);
+            this.labdel9.TabIndex = 2;
+            this.labdel9.Text = "Thêm Sân bay trung gian ";
+            // 
+            // txbTenSanBay
+            // 
+            this.txbTenSanBay.Location = new System.Drawing.Point(98, 44);
+            this.txbTenSanBay.Name = "txbTenSanBay";
+            this.txbTenSanBay.Size = new System.Drawing.Size(332, 30);
+            this.txbTenSanBay.TabIndex = 3;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.txbThoiGianDung);
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Location = new System.Drawing.Point(2, 193);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(413, 50);
+            this.panel4.TabIndex = 8;
+            // 
+            // txbThoiGianDung
+            // 
+            this.txbThoiGianDung.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txbThoiGianDung.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txbThoiGianDung.Location = new System.Drawing.Point(170, 9);
+            this.txbThoiGianDung.Name = "txbThoiGianDung";
+            this.txbThoiGianDung.Size = new System.Drawing.Size(240, 30);
+            this.txbThoiGianDung.TabIndex = 3;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(2, 14);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(148, 25);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Thời gian dừng:";
+            // 
+            // btnThemSanBayTG
+            // 
+            this.btnThemSanBayTG.Location = new System.Drawing.Point(3, 3);
+            this.btnThemSanBayTG.Name = "btnThemSanBayTG";
+            this.btnThemSanBayTG.Size = new System.Drawing.Size(137, 35);
+            this.btnThemSanBayTG.TabIndex = 4;
+            this.btnThemSanBayTG.Text = "Thêm";
+            this.btnThemSanBayTG.UseVisualStyleBackColor = true;
+            this.btnThemSanBayTG.Click += new System.EventHandler(this.btnThemSanBayTG_Click);
+            // 
+            // btnThemHangVe
+            // 
+            this.btnThemHangVe.Location = new System.Drawing.Point(279, 3);
+            this.btnThemHangVe.Name = "btnThemHangVe";
+            this.btnThemHangVe.Size = new System.Drawing.Size(126, 30);
+            this.btnThemHangVe.TabIndex = 3;
+            this.btnThemHangVe.Text = "Thêm";
+            this.btnThemHangVe.UseVisualStyleBackColor = true;
+            this.btnThemHangVe.Click += new System.EventHandler(this.btnThemHangVe_Click);
+            // 
+            // txbTenHangVe
+            // 
+            this.txbTenHangVe.Location = new System.Drawing.Point(3, 39);
+            this.txbTenHangVe.Name = "txbTenHangVe";
+            this.txbTenHangVe.Size = new System.Drawing.Size(222, 30);
+            this.txbTenHangVe.TabIndex = 4;
+            // 
+            // txbPhanTramDonGia
+            // 
+            this.txbPhanTramDonGia.Location = new System.Drawing.Point(231, 39);
+            this.txbPhanTramDonGia.Name = "txbPhanTramDonGia";
+            this.txbPhanTramDonGia.Size = new System.Drawing.Size(100, 30);
+            this.txbPhanTramDonGia.TabIndex = 5;
+            // 
+            // txbSLGhe
+            // 
+            this.txbSLGhe.Location = new System.Drawing.Point(337, 39);
+            this.txbSLGhe.Name = "txbSLGhe";
+            this.txbSLGhe.Size = new System.Drawing.Size(90, 30);
+            this.txbSLGhe.TabIndex = 6;
             // 
             // fNhanLichChuyenBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1023, 491);
+            this.ClientSize = new System.Drawing.Size(1248, 596);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -383,8 +526,6 @@ namespace Quan_Ly_Chuyen_Bay
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nhận lịch chuyến bay";
             this.panel3.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
@@ -400,6 +541,14 @@ namespace Quan_Ly_Chuyen_Bay
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSChuyenBay)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvHangVe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvSBTG)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -426,14 +575,27 @@ namespace Quan_Ly_Chuyen_Bay
         private System.Windows.Forms.DateTimePicker dateTime;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dtgvDSChuyenBay;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label lbSLHangVe;
-        private System.Windows.Forms.TextBox txbGheTungHangVe;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txbSanBayDen;
         private System.Windows.Forms.TextBox txbSanBayDi;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txbHangVe;
+        private System.Windows.Forms.DataGridView dtgvHangVe;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label labdel9;
+        private System.Windows.Forms.TextBox txbSanBayTrungGian;
+        private System.Windows.Forms.DataGridView dtgvSBTG;
+        private System.Windows.Forms.TextBox txbTenSanBay;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox txbThoiGianDung;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnThemSanBayTG;
+        private System.Windows.Forms.Button btnThemHangVe;
+        private System.Windows.Forms.TextBox txbTenHangVe;
+        private System.Windows.Forms.TextBox txbPhanTramDonGia;
+        private System.Windows.Forms.TextBox txbSLGhe;
     }
 }

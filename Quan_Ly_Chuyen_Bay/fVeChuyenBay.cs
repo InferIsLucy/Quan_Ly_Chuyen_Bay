@@ -53,7 +53,7 @@ namespace Quan_Ly_Chuyen_Bay
         string mahangve;
         void LoadSLGheTongTien()
         {
-            string query = string.Format("SELECT * FROM HANGVE where TenHangVe = '{0}' and MaChuyenBay = '{1}'", txbHangVe.Text, txbMaChuyenBay.Text);
+            string query = string.Format("SELECT * FROM HANGVE where TenHangVe = N'{0}' and MaChuyenBay = '{1}'", txbHangVe.Text, txbMaChuyenBay.Text);
             DataTable data = (DataTable)DAO.DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {

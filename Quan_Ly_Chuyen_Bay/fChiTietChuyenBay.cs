@@ -34,7 +34,7 @@ namespace Quan_Ly_Chuyen_Bay
         {
             if (KiemTraTinhTrangGhe() == true)
             {
-                string query = string.Format("INSERT INTO VECHUYENBAY VALUES('{0}','{8}','{1}','{2}','{3}','{4}' ,'{5}' ,'{6}','{7}')",txbMaChuyenBay.Text,CMND,TenKH,SDT,MaHangVe,GiaVe,txbViTriGhe.Text,DateTime.Now,txbMaSanBayTrungGian.Text);
+                string query = string.Format("INSERT INTO VECHUYENBAY VALUES('{0}','{1}','{2}','{3}','{4}' ,'{5}' ,'{6}','{7}')",txbMaChuyenBay.Text,CMND,TenKH,SDT,MaHangVe,GiaVe,txbViTriGhe.Text,DateTime.Now);
                 DAO.DataProvider.Instance.ExecuteQuery(query);
                 MessageBox.Show("Đặt vé thành công");
                 UpdateGhe();
