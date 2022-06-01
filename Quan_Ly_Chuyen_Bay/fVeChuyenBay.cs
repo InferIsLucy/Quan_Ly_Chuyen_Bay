@@ -113,16 +113,33 @@ namespace Quan_Ly_Chuyen_Bay
             }
             return mahangve;
         }
+        bool KiemTraTrungCMND(string cmnd)
+        {
+            string query = string.Format("SELECT * FROM KHACHHANG");
+            DataTable data = (DataTable)DAO.DataProvider.Instance.ExecuteQuery(query);
+            foreach(DataRow item in data.Rows)
+            {
+                if (cmnd == item["CMND"].ToString())
+                {
+                    MessageBox.Show("Đã tồn tại CMND");
+                    return false;
+                }
+            }
+            return true;
+        }
         private void btnDatVe_Click(object sender, EventArgs e)
         {
             if (KiemTraCMND(tbCMND.Text) != false)
             {
-                string query = string.Format("INSERT INTO KHACHHANG VALUES ('{0}','{1}',N'{2}')", tbCMND.Text, txbSoDienThoai.Text, txbHoTen.Text);
-                DAO.DataProvider.Instance.ExecuteQuery(query);
-                mahangve = LayMaHangVe();
-                fChiTietChuyenBay Child = new fChiTietChuyenBay();
-                Child.Sender(txbMaChuyenBay.Text,tbCMND.Text, txbHoTen.Text, txbSoDienThoai.Text, mahangve,float.Parse(lbTongTien.Text));
-                Child.Show();
+                if (KiemTraTrungCMND(txbCMND.Text) != false)
+                {
+                    //string query = string.Format("INSERT INTO KHACHHANG VALUES ('{0}','{1}',N'{2}')", tbCMND.Text, txbSoDienThoai.Text, txbHoTen.Text);
+                    //DAO.DataProvider.Instance.ExecuteQuery(query);
+                    mahangve = LayMaHangVe();
+                    fChiTietChuyenBay Child = new fChiTietChuyenBay();
+                    Child.Sender(txbMaChuyenBay.Text, tbCMND.Text, txbHoTen.Text, txbSoDienThoai.Text, mahangve, float.Parse(lbTongTien.Text));
+                    Child.Show();
+                }
             }
 
         }
