@@ -76,5 +76,10 @@ namespace Quan_Ly_Chuyen_Bay.DAO
 
             return result > 0;
         }
+
+        public DataTable GetAllUserName()
+        {
+            return DataProvider.Instance.ExecuteQuery("SELECT UserName FROM dbo.ACCOUNT");
+        }
     }
 }

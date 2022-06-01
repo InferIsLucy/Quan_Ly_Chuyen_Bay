@@ -61,6 +61,7 @@ namespace Quan_Ly_Chuyen_Bay
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fAdmin f = new fAdmin();
+            f.loginAcc = Acc;
             f.ShowDialog();
             this.Show();
         }

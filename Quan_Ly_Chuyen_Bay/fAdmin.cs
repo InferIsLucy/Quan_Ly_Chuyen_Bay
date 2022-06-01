@@ -16,6 +16,7 @@ namespace Quan_Ly_Chuyen_Bay
     public partial class fAdmin : Form
     {
         BindingSource listAccount = new BindingSource();
+        public AccountDTO loginAcc;
         public fAdmin()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace Quan_Ly_Chuyen_Bay
         void LoadFunction()
         {
             LoadYearForTurnoverByYear();
-            
+            LoadListAirport();
         }
 
         void AddAccountBinding()
@@ -63,6 +64,16 @@ namespace Quan_Ly_Chuyen_Bay
 
         void AddAccount(string userName, string displayName, int type)
         {
+            DataTable data = AccountDAO.Instance.GetAllUserName();
+            foreach (DataRow row in data.Rows)
+            {
+                if (txbUserName.Text.Equals(row["UserName"].ToString()))
+                {
+                    MessageBox.Show("Tên này đã tồn tại!");
+                    return;
+                }
+            }
+
             if (AccountDAO.Instance.InsertAccount(userName, displayName, type))
                 MessageBox.Show("Thêm tài khoản thành công!", "Thông báo");
             else
@@ -73,6 +84,16 @@ namespace Quan_Ly_Chuyen_Bay
 
         void EditAccount(string userName, string displayName, int type)
         {
+            DataTable data = AccountDAO.Instance.GetAllUserName();
+            foreach (DataRow row in data.Rows)
+            {
+                if (txbUserName.Text.Equals(row["UserName"].ToString()))
+                {
+                    MessageBox.Show("Tên này đã tồn tại!");
+                    return;
+                }
+            }
+
             if (AccountDAO.Instance.UpdateAccount(userName, displayName, type))
                 MessageBox.Show("Cập nhật tài khoản thành công!", "Thông báo");
             else
@@ -83,12 +104,104 @@ namespace Quan_Ly_Chuyen_Bay
 
         void DeleteAccount(string userName)
         {
+            if (loginAcc.UserName.Equals(txbUserName.Text))
+            {
+                MessageBox.Show("Không thể xóa tài khoản hiện hành!");
+                return;
+            }
             if (AccountDAO.Instance.DeleteAccount(userName))
                 MessageBox.Show("Xóa tài khoản thành công!", "Thông báo");
             else
                 MessageBox.Show("Xóa tài khoản thất bại!", "Thông báo");
 
             LoadAccount();
+        }
+
+        void CheckInt(string data, ref int result)
+        {
+            if(data != "")
+            {
+                if (!Int32.TryParse(data, out result))
+                {
+                    MessageBox.Show("Vui lòng chỉ nhập số!");
+                }
+            }
+        }
+
+        void updateMinFlightTime(string data)
+        {
+            int result = 0;
+
+            if (data != "")
+            {
+                CheckInt(data, ref result);
+                if (ThamSoDAO.Instance.UpdateMinFlightTime(result))
+                {
+                    MessageBox.Show("Cập nhật thời gian bay tối thiểu thành công!");
+                }
+                else
+                    MessageBox.Show("Không cập nhật thành công thời gian bay tối thiểu!");
+            }
+            else
+                return;
+
+        }
+
+        void updateMaxBreakAirport(string data)
+        {
+            int result = 0;
+            if (data != "")
+            {
+                CheckInt(data, ref result);
+                if (ThamSoDAO.Instance.UpdateMaxBreakAirport(result))
+                {
+                    MessageBox.Show("Cập nhật số sân bay trung gian tối đa thành công!");
+                }
+                else
+                    MessageBox.Show("Không cập nhật thành công số sân bay trung gian tối đa!");
+            }
+            else
+                return;
+
+        }
+
+        void updateBreakTimeMin(string data)
+        {
+            int result = 0;
+            if(data != "")
+            {
+                CheckInt(data, ref result);
+                if (ThamSoDAO.Instance.UpdateBreakTimeMin(result))
+                {
+                    MessageBox.Show("Cập nhật thời gian dừng tối thiếu thành công!");
+                }
+                else
+                    MessageBox.Show("Không cập nhật thành công thời gian dừng tối thiểu!");
+            }
+            else return;
+
+        }
+
+        void updateBreakTimeMax(string data)
+        {
+            int result = 0;
+            if (data != "")
+            {
+                CheckInt(data, ref result);
+                if (ThamSoDAO.Instance.UpdateBreakTimeMax(result))
+                {
+                    MessageBox.Show("Cập nhật thời gian dừng tối đa thành công!");
+                }
+                else
+                    MessageBox.Show("Không cập nhật thành công thời gian dừng tối đa!");
+            }
+            else return;
+        }
+
+        void LoadListAirport()
+        {
+            cmbListAirport.DataSource = ThamSoDAO.Instance.GetListAirport();
+            cmbListAirport.ValueMember = "TenSanBay";
         }
         #endregion
 
@@ -165,6 +278,22 @@ namespace Quan_Ly_Chuyen_Bay
 
             EditAccount(userName, displayName, type);
         }
+
+        private void btnResetPassword_Click(object sender, EventArgs e)
+        {
+            AccountDTO acc = AccountDAO.Instance.GetAccountByUserName(txbUserName.Text);
+            fAccountProfile f = new fAccountProfile(acc);
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void btnUpdateAirport_Click(object sender, EventArgs e)
+        {
+            updateBreakTimeMax(txbBreakTimeTo.Text);
+            updateBreakTimeMin(txbBreakTimeFrom.Text);
+            updateMaxBreakAirport(txbMaxBreakAirport.Text);
+            updateMinFlightTime(txbMinFlightTime.Text);
+        }
         #endregion
 
         #region GETSET FUNCTION
@@ -176,14 +305,9 @@ namespace Quan_Ly_Chuyen_Bay
 
 
 
+
         #endregion
 
-        private void btnResetPassword_Click(object sender, EventArgs e)
-        {
-            AccountDTO acc = AccountDAO.Instance.GetAccountByUserName(txbUserName.Text);
-            fAccountProfile f = new fAccountProfile(acc);
-            f.ShowDialog();
-            this.Show();
-        }
+        
     }
 }
