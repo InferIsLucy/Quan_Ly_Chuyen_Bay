@@ -133,8 +133,8 @@ namespace Quan_Ly_Chuyen_Bay
             {
                 if (KiemTraTrungCMND(txbCMND.Text) != false)
                 {
-                    //string query = string.Format("INSERT INTO KHACHHANG VALUES ('{0}','{1}',N'{2}')", tbCMND.Text, txbSoDienThoai.Text, txbHoTen.Text);
-                    //DAO.DataProvider.Instance.ExecuteQuery(query);
+                    string query = string.Format("INSERT INTO KHACHHANG VALUES ('{0}','{1}',N'{2}')", tbCMND.Text, txbSoDienThoai.Text, txbHoTen.Text);
+                    DAO.DataProvider.Instance.ExecuteQuery(query);
                     mahangve = LayMaHangVe();
                     fChiTietChuyenBay Child = new fChiTietChuyenBay();
                     Child.Sender(txbMaChuyenBay.Text, tbCMND.Text, txbHoTen.Text, txbSoDienThoai.Text, mahangve, float.Parse(lbTongTien.Text));

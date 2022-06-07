@@ -11,7 +11,7 @@ namespace Quan_Ly_Chuyen_Bay.DAO
     public class DataProvider
     {
         private static DataProvider instance; //Ctrl + R + E
-        private string connectionStr = @"Data Source= LAPTOP-8JOFS4BS;Initial Catalog=QLYBANVECHUYENBAYYY;Integrated Security=True";
+        private string connectionStr = @"Data Source=.\SQLEXPRESS;Initial Catalog=QLYBANVECHUYENBAY;Integrated Security=True";
 
         public static DataProvider Instance { get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; } private set => instance = value; }
         private DataProvider() { }

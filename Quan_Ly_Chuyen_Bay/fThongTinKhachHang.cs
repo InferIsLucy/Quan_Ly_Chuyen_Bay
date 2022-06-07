@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Quan_Ly_Chuyen_Bay.DAO;
+using Quan_Ly_Chuyen_Bay.DTO;
 
 namespace Quan_Ly_Chuyen_Bay
 {
@@ -51,21 +53,13 @@ namespace Quan_Ly_Chuyen_Bay
         {
             if(DAO.CustomersDAO.Instance.GetListNameCustomers().Rows.Count > 0)
             {
-                dtgvCustomerInfo.DataSource = DAO.CustomersDAO.Instance.GetListCustomInForByName(txbFullName.Text);
+                dtgvCustomerInfo.DataSource = DAO.CustomersDAO.Instance.GetCustomerInfoByName(txbFullName.Text);
                 //txbPhoneNum.DataBindings.Add("Text", dtgvCustomerInfo.DataSource, "DienThoai");
                 cmbCMND.ValueMember = "CMND";
-                cmbCMND.DataSource = DAO.CustomersDAO.Instance.GetListCustomInForByName(txbFullName.Text).DefaultView;
+                cmbCMND.DataSource = DAO.CustomersDAO.Instance.GetCustomerInfoByName(txbFullName.Text).DefaultView;
             }
 
 
-        }
-
-        void PaymentYet(int pay)
-        {
-            if(pay == 0)
-                btnPayment.Enabled = true;
-            else
-                btnPayment.Enabled = false;
         }
 
         #endregion
@@ -73,22 +67,21 @@ namespace Quan_Ly_Chuyen_Bay
         #region EVENTS
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-           AutoFillDtgv();
-        }
-
-        private void cmbCMND_SelectedValueChanged(object sender, EventArgs e)
-        {
-            ComboBox cb = (ComboBox)sender;
-            if (cb.SelectedValue != null)
-                PaymentYet(DAO.ReverseOrderDAO.Instance.GetStatusByCMND(cb.SelectedValue.ToString()));
+            if (txbFullName.Text == "")
+            {
+                dtgvCustomerInfo.DataSource = CustomersDAO.Instance.GetListNameCustomers();
+            }
+            else
+                AutoFillDtgv();
         }
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-
+            fThanhToanPhieuDatCho f = new fThanhToanPhieuDatCho();
+            f.ShowDialog();
         }
-        #endregion
 
+        #endregion
 
     }
 }

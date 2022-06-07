@@ -39,7 +39,6 @@ namespace Quan_Ly_Chuyen_Bay
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dtgvCustomerInfo = new System.Windows.Forms.DataGridView();
-            this.btnPayment = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -49,7 +48,6 @@ namespace Quan_Ly_Chuyen_Bay
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnPayment);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label1);
@@ -77,7 +75,6 @@ namespace Quan_Ly_Chuyen_Bay
             this.cmbCMND.Name = "cmbCMND";
             this.cmbCMND.Size = new System.Drawing.Size(671, 45);
             this.cmbCMND.TabIndex = 1;
-            this.cmbCMND.SelectedValueChanged += new System.EventHandler(this.cmbCMND_SelectedValueChanged);
             // 
             // lbCMND
             // 
@@ -152,17 +149,6 @@ namespace Quan_Ly_Chuyen_Bay
             this.dtgvCustomerInfo.Size = new System.Drawing.Size(1744, 726);
             this.dtgvCustomerInfo.TabIndex = 0;
             // 
-            // btnPayment
-            // 
-            this.btnPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPayment.Location = new System.Drawing.Point(1404, 349);
-            this.btnPayment.Name = "btnPayment";
-            this.btnPayment.Size = new System.Drawing.Size(301, 73);
-            this.btnPayment.TabIndex = 7;
-            this.btnPayment.Text = "Thanh toán";
-            this.btnPayment.UseVisualStyleBackColor = true;
-            this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
-            // 
             // fThongTinKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -200,6 +186,5 @@ namespace Quan_Ly_Chuyen_Bay
         private System.Windows.Forms.Label lbCMND;
         private System.Windows.Forms.TextBox txbFullName;
         private System.Windows.Forms.ComboBox cmbCMND;
-        private System.Windows.Forms.Button btnPayment;
     }
 }

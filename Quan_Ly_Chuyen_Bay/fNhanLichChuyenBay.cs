@@ -109,7 +109,7 @@ namespace Quan_Ly_Chuyen_Bay
         #region Events
         void NhapHangVe(string machuyenbay, string mahangve, string tenhangve, string phantramdongia, string soluongghe)
         {
-            string query = string.Format("INSERT INTO HANGVE VALUES({0}, N'{1}', '{2}', '{3}', '{4}','{5}')", machuyenbay, tenhangve, phantramdongia, soluongghe, 0, soluongghe);
+            string query = string.Format("INSERT INTO HANGVE VALUES({0}, '{1}', N'{2}', '{3}', '{4}','{5}', {6})", mahangve, machuyenbay, tenhangve, phantramdongia, soluongghe, 0, soluongghe);
             DAO.DataProvider.Instance.ExecuteNonQuery(query);
         }
         void NhapGhe(string machuyenbay, string mahangve, string soluongghe)
@@ -187,8 +187,8 @@ namespace Quan_Ly_Chuyen_Bay
             {
                 sbmax = int.Parse(item["ThoiGianBayToiThieu"].ToString());
             }
-            if (DateTime.Compare(dateTime.Value, DateTime.Now) == -1)
-                return false;
+            //if (DateTime.Compare(dateTime.Value, DateTime.Now) == -1)
+            //    return false;
             if (float.Parse(txbThoiGianBay.Text) <= sbmax || float.Parse(txbGiaVe.Text) < 0)
                 return false;
             return true;

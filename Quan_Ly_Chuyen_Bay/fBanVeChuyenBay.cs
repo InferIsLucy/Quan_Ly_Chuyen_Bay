@@ -55,8 +55,8 @@ namespace Quan_Ly_Chuyen_Bay
             txbMaChuyenBay.DataBindings.Add(new Binding("Text", dtgvDSChuyenBay.DataSource, "MaChuyenBay", true, DataSourceUpdateMode.Never));
             txbThoIGianBay.DataBindings.Add(new Binding("Text", dtgvDSChuyenBay.DataSource, "ThoiGianBay", true, DataSourceUpdateMode.Never));
             dtimeNgayBay.DataBindings.Add(new Binding("Value", dtgvDSChuyenBay.DataSource, "NgayGioKhoiHanh", true, DataSourceUpdateMode.Never));
-            txbSanBayDen.DataBindings.Add(new Binding("Text", dtgvDSChuyenBay.DataSource, "MaSanBayDi", true, DataSourceUpdateMode.Never));
-            txbSanBayDi.DataBindings.Add(new Binding("Text", dtgvDSChuyenBay.DataSource, "MaSanBayDen", true, DataSourceUpdateMode.Never));
+            txbSanBayDen.DataBindings.Add(new Binding("Text", dtgvDSChuyenBay.DataSource, "MaSanBayDen", true, DataSourceUpdateMode.Never));
+            txbSanBayDi.DataBindings.Add(new Binding("Text", dtgvDSChuyenBay.DataSource, "MaSanBayDi", true, DataSourceUpdateMode.Never));
         }
         void LoadDSChuyenBay()
         {

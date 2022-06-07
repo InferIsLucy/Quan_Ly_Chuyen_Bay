@@ -16,6 +16,9 @@ namespace Quan_Ly_Chuyen_Bay
     public partial class fAdmin : Form
     {
         BindingSource listAccount = new BindingSource();
+        BindingSource listHangVe = new BindingSource();
+        BindingSource listSanBay = new BindingSource();
+
         public AccountDTO loginAcc;
         public fAdmin()
         {
@@ -27,7 +30,7 @@ namespace Quan_Ly_Chuyen_Bay
         void LoadFunction()
         {
             LoadYearForTurnoverByYear();
-            LoadListAirport();
+            ShowSLHVMax();
         }
 
         void AddAccountBinding()
@@ -36,11 +39,37 @@ namespace Quan_Ly_Chuyen_Bay
             txbDisplayName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "DisplayName"));
         }
 
+        void AddHangVeBinding()
+        {
+            txbTenHangVe.DataBindings.Add(new Binding("Text", dtgvListHangVe.DataSource, "TenHangVe"));
+            txbSoLuongGhe.DataBindings.Add(new Binding("Text", dtgvListHangVe.DataSource, "SoLuongGhe"));
+            txbPhanTramDonGia.DataBindings.Add(new Binding("Text", dtgvListHangVe.DataSource, "PhanTramDonGia"));
+        }
+
+        void AddSanBayBinding()
+        {
+            txbMaSB.DataBindings.Add(new Binding("Text", dtgvSanBay.DataSource, "MaSanBay"));
+            txbTenSB.DataBindings.Add(new Binding("Text", dtgvSanBay.DataSource, "TenSanBay"));
+        }
+
         void LoadAccount()
         {
             listAccount.DataSource = AccountDAO.Instance.GetListAccount();
             dtgvAccount.DataSource = listAccount;
         }
+
+        void LoadHangVe()
+        {
+            listHangVe.DataSource = SoLuongGheDAO.Instance.GetListHangVe();
+            dtgvListHangVe.DataSource = listHangVe;
+        }
+
+        void LoadSanBay()
+        {
+            listSanBay.DataSource = SanBayDAO.Instance.GetListSanBay();
+            dtgvSanBay.DataSource = listSanBay;
+        }
+
         void LoadYearForTurnoverByYear()
         {
             //Giả sử 2015 là năm thành lập công ty
@@ -84,16 +113,6 @@ namespace Quan_Ly_Chuyen_Bay
 
         void EditAccount(string userName, string displayName, int type)
         {
-            DataTable data = AccountDAO.Instance.GetAllUserName();
-            foreach (DataRow row in data.Rows)
-            {
-                if (txbUserName.Text.Equals(row["UserName"].ToString()))
-                {
-                    MessageBox.Show("Tên này đã tồn tại!");
-                    return;
-                }
-            }
-
             if (AccountDAO.Instance.UpdateAccount(userName, displayName, type))
                 MessageBox.Show("Cập nhật tài khoản thành công!", "Thông báo");
             else
@@ -197,23 +216,155 @@ namespace Quan_Ly_Chuyen_Bay
             }
             else return;
         }
-        void UpDateMin(string mincancel, string minpayment)
-        {
-            string query = string.Format("Update THAMSO Set TGChamNhatHuyDatVe = '{0}', TGChamNhatDatVe = '{1}'",mincancel,minpayment);
-            DAO.DataProvider.Instance.ExecuteQuery(query);
 
-        }
-        void AddSanBay(string masanbay, string tensanbay)
+        void AddHangVe(string tenHangVe, float phanTramDonGia, int soLuongGhe)
         {
-            string query = string.Format("INSERT INTO SANBAY VALUES('{0}','{1}') ", masanbay, tensanbay);
-            DAO.DataProvider.Instance.ExecuteQuery(query);
+            int slhvMax = SoLuongGheDAO.Instance.GetSLHVMax();
+            int slhv = SoLuongGheDAO.Instance.GetSLHV();
+
+            if(slhv >= slhvMax)
+            {
+                MessageBox.Show("Số lượng hạn vé vượt quá mức quy định. Không thể thêm hạng vé!");
+                return;
+            }
+            else
+            {
+                DataTable data = SoLuongGheDAO.Instance.GetAllTenHangVe();
+                foreach (DataRow dr in data.Rows)
+                {
+                    if (txbTenHangVe.Text.Equals(dr["TenHangVe"].ToString()))
+                    {
+                        MessageBox.Show("Tên hạng vé này đã tồn tại!");
+                        return;
+                    }
+                }
+
+                if (SoLuongGheDAO.Instance.InsertHangVe(tenHangVe, phanTramDonGia, soLuongGhe))
+                    MessageBox.Show("Thêm hạng vé thành công!");
+                else
+                    MessageBox.Show("Thêm hạng vé thất bại!");
+
+                LoadHangVe();
+            }
         }
-        void LoadListAirport()
+
+        void EditHangVe(string tenHangVe, float phanTramDonGia, int soLuongGhe)
         {
-            cmbListAirport.DataSource = ThamSoDAO.Instance.GetListAirport();
-            cmbListAirport.ValueMember = "TenSanBay";
+            if (SoLuongGheDAO.Instance.UpdateHangVe(tenHangVe, phanTramDonGia, soLuongGhe))
+                MessageBox.Show("Cập nhật hạng vé thành công!");
+            else
+                MessageBox.Show("Cập nhật hạng vé thất bại!");
+
+            LoadHangVe();
+        }
+
+        void DeleteHangVe(string tenHangVe)
+        {
+            if (SoLuongGheDAO.Instance.DeleteHangVe(tenHangVe))
+                MessageBox.Show("Xóa tài khoản thành công!");
+            else
+                MessageBox.Show("Xóa tài khoản thất bại!");
+
+            LoadHangVe();
+        }
+
+        void ShowSLHVMax()
+        {
+            int SLHVTD = SoLuongGheDAO.Instance.GetSLHVMax();
+            lbSLHVTD.Text = "(Số lượng hạng vé tối đa hiện tại là: " + SLHVTD + ")";
+        }
+
+        void UpdateSLHV(string slhv)
+        {
+            int result = 0;
+            if (slhv == "")
+            {
+                MessageBox.Show("Vui lòng nhập dữ liệu vào ô dữ liệu trước khi cập nhật!");
+                return;
+            }
+                
+            CheckInt(slhv, ref result);
+
+            if (ThamSoDAO.Instance.UpdateSLHV(result))
+                MessageBox.Show("Cập nhật số lượng hạng vé tối đa thành công!");
+            else
+                MessageBox.Show("Cập nhật số lượng hạng vé tối đa thất bại!");
+        }
+
+        void UpdateTGHV(string tghv)
+        {
+            int result = 0;
+            if (tghv == "")
+                return;
+
+            CheckInt(tghv, ref result);
+
+            if (ThamSoDAO.Instance.UpdateHuyVeChamNhat(result))
+                MessageBox.Show("Cập nhật thời gian hủy vé chậm nhất trước giờ bay thành công!");
+            else
+                MessageBox.Show("Cập nhật thời gian hủy vé chậm nhất trước giờ bay thất bại!");
+        }
+
+        void UpdateTGTT(string tgtt)
+        {
+            int result = 0;
+            if (tgtt == "")
+                return;
+
+            CheckInt(tgtt, ref result);
+
+            if (ThamSoDAO.Instance.UpdateThanhToanChamNhat(result))
+                MessageBox.Show("Cập nhật thời gian thanh toán chậm nhất sau khi đặt vé thành công!");
+            else
+                MessageBox.Show("Cập nhật thời gian thanh toán chậm nhất sau khi đặt vé thất bại!");
+        }
+
+        void AddSanBay(string maSanBay, string tenSanBay)
+        {
+            DataTable data = SanBayDAO.Instance.GetAllMaSB();
+            foreach (DataRow dr in data.Rows)
+            {
+                if (txbTenHangVe.Text.Equals(dr["MaSanBay"].ToString()))
+                {
+                    MessageBox.Show("Mã sân bay này đã tồn tại!");
+                    return;
+                }
+            }
+
+            if (SanBayDAO.Instance.InsertSanBay(maSanBay,  tenSanBay))
+                MessageBox.Show("Thêm sân bay thành công!");
+            else
+                MessageBox.Show("Thêm sân bay thất bại!");
+
+            LoadSanBay();
+        }
+
+        void EditSanBay(string maSanBay, string tenSanBay)
+        {
+            if (SanBayDAO.Instance.UpdateSanBay(maSanBay, tenSanBay))
+                MessageBox.Show("Cập nhật sân bay thành công!");
+            else
+                MessageBox.Show("Cập nhật sân bay thất bại!");
+
+            LoadSanBay();
+        }
+
+        void DeleteSanBay(string maSanBay)
+        {
+            if (SanBayDAO.Instance.DeleteSanBay(maSanBay))
+                MessageBox.Show("Xóa sân bay thành công!");
+            else
+                MessageBox.Show("Xóa sân bay thất bại!");
+
+            LoadSanBay();
         }
         #endregion
+
+
+
+
+
+
 
         #region EVENTS
         private void btnViewBillByFlightID_Click(object sender, EventArgs e)
@@ -252,7 +403,7 @@ namespace Quan_Ly_Chuyen_Bay
             try
             {
                 AddAccountBinding();
-            }catch(Exception ex)
+            }catch(Exception)
             {
                 return;
             }
@@ -304,7 +455,136 @@ namespace Quan_Ly_Chuyen_Bay
             updateMaxBreakAirport(txbMaxBreakAirport.Text);
             updateMinFlightTime(txbMinFlightTime.Text);
         }
+
+        private void btnUpdateTicket_Click(object sender, EventArgs e)
+        {
+            string slhvtd = txbFlightTicketName.Text;
+            UpdateSLHV(slhvtd);
+        }
+
+        private void btnUpdateBookTicket_Click(object sender, EventArgs e)
+        {
+            string tghv = txbMinTimeCancelTicket.Text;
+            string tgtt = txbMinTimePayment.Text;
+
+            UpdateTGHV(tghv);
+            UpdateTGTT(tgtt);
+        }
+
+        private void btnXemHangVe_Click(object sender, EventArgs e)
+        {
+            LoadHangVe();
+            try
+            {
+                AddHangVeBinding();
+            }catch(Exception)
+            {
+                return;
+            }
+        }
+
+        private void btnThemHangVe_Click(object sender, EventArgs e)
+        {
+            string tenHangVe = txbTenHangVe.Text;
+            float phanTramDonGia;
+            if (!float.TryParse(txbPhanTramDonGia.Text, out phanTramDonGia))
+            {
+                MessageBox.Show("Vui lòng chỉ nhập số ở ô 'Phần trăm đơn giá'!");
+                return;
+            }
+            int soLuongGhe;
+            if (!Int32.TryParse(txbSoLuongGhe.Text, out soLuongGhe))
+            {
+                MessageBox.Show("Vui lòng chỉ nhập số ở ô 'Số lượng ghế'!");
+                return;
+            }
+
+            AddHangVe(tenHangVe, phanTramDonGia, soLuongGhe);
+        }
+
+        private void btnXoaHangVe_Click(object sender, EventArgs e)
+        {
+            string tenHangVe = txbTenHangVe.Text;
+
+            DeleteHangVe(tenHangVe);
+        }
+
+        private void btnSuaHangVe_Click(object sender, EventArgs e)
+        {
+            string tenHangVe = txbTenHangVe.Text;
+            float phanTramDonGia;
+            if (!float.TryParse(txbPhanTramDonGia.Text, out phanTramDonGia))
+            {
+                MessageBox.Show("Vui lòng chỉ nhập số ở ô 'Phần trăm đơn giá'!");
+                return;
+            }
+            int soLuongGhe;
+            if (!Int32.TryParse(txbSoLuongGhe.Text, out soLuongGhe))
+            {
+                MessageBox.Show("Vui lòng chỉ nhập số ở ô 'Số lượng ghế'!");
+                return;
+            }
+
+            EditHangVe(tenHangVe, phanTramDonGia, soLuongGhe);
+        }
+
+        private void btnXemSB_Click(object sender, EventArgs e)
+        {
+            LoadSanBay();
+            try
+            {
+                AddSanBayBinding();
+            }
+            catch (Exception)
+            {
+                return;
+            }
+        }
+
+        private void btnThemSB_Click(object sender, EventArgs e)
+        {
+            string maSanBay = txbMaSB.Text;
+            if(maSanBay.Length > 5)
+            {
+                MessageBox.Show("Mã sân bay không hợp lệ");
+                return;
+            }
+            string tenSanBay = txbTenSB.Text;
+            if(tenSanBay.Length > 100)
+            {
+                MessageBox.Show("Tên sân bay quá dài, vui lòng nhập lại!");
+                return;
+            }
+
+            AddSanBay(maSanBay.ToUpper(), tenSanBay);
+
+        }
+
+        private void btnSuaSB_Click(object sender, EventArgs e)
+        {
+            string maSanBay = txbMaSB.Text;
+            
+            string tenSanBay = txbTenSB.Text;
+            if (tenSanBay.Length > 100)
+            {
+                MessageBox.Show("Tên sân bay quá dài, vui lòng nhập lại!");
+                return;
+            }
+
+            EditSanBay(maSanBay, tenSanBay);
+        }
+
+        private void btnXoaSB_Click(object sender, EventArgs e)
+        {
+            string maSanBay = txbMaSB.Text;
+            DeleteSanBay(maSanBay);
+        }
         #endregion
+
+
+
+
+
 
         #region GETSET FUNCTION
         public int CmbYear
@@ -317,18 +597,14 @@ namespace Quan_Ly_Chuyen_Bay
 
 
 
+
+
+
+
+
+
         #endregion
 
-        private void btnUpdateBookTicket_Click(object sender, EventArgs e)
-        {
-            UpDateMin(txbMinTimeCancelTicket.Text, txbMinTimePayment.Text);
-            MessageBox.Show("Thay đổi quy định đặt vé thành công");
-        }
-
-        private void btnAddAirPort_Click(object sender, EventArgs e)
-        {
-            AddSanBay(txbMaSanBay.Text, txbTenSanBay.Text);
-            MessageBox.Show("Thêm sân bay thành công");
-        }
+       
     }
 }

@@ -46,9 +46,28 @@ namespace Quan_Ly_Chuyen_Bay.DAO
             return result > 0;
         }
 
-        public DataTable GetListAirport()
+        public bool UpdateSLHV(int slhv)
         {
-            return DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.SANBAY");
+            string query = string.Format("UPDATE dbo.THAMSO SET SLHangVeToiDa = {0}", slhv);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool UpdateHuyVeChamNhat(int tghv)
+        {
+            string query = string.Format("UPDATE dbo.THAMSO SET TGChamNhatHuyDatVe = {0}", tghv);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool UpdateThanhToanChamNhat(int tgtt)
+        {
+            string query = string.Format("UPDATE dbo.THAMSO SET TGChamNhatDatVe = {0}", tgtt);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
         }
     }
 }

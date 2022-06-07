@@ -108,6 +108,12 @@ namespace Quan_Ly_Chuyen_Bay
         }
         bool KiemTraCMND(string CMND)
         {
+            if (tbcmnd.Text.Length != 10)
+            {
+                MessageBox.Show("Chứng minh nhân dân không hợp lệ!");
+                return false;
+            }
+
             if (txbSoDienThoai.Text == "" || txbHoTen.Text == ""  || txbHangVe.Text == "" || txbCMND.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin");
@@ -169,6 +175,8 @@ namespace Quan_Ly_Chuyen_Bay
                     mahangve = LayMaHangVe();
                     if (AddPhieuDatCho(mahangve, cmnd, machuyenbay, giave, DateTime.Now, ngayhethan))
                     {
+                        string query = string.Format("INSERT INTO KHACHHANG VALUES ('{0}','{1}',N'{2}')", tbcmnd.Text, txbSoDienThoai.Text, txbHoTen.Text);
+                        DAO.DataProvider.Instance.ExecuteQuery(query);
                         MessageBox.Show("Đặt chỗ thành công");
                         UpdateGhe();
                         fThanhToanPhieuDatCho child = new fThanhToanPhieuDatCho();

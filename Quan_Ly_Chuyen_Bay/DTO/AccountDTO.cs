@@ -22,18 +22,18 @@ namespace Quan_Ly_Chuyen_Bay.DTO
 
         public AccountDTO(string userName, string displayName, int type, string password = null) 
         {
-            this.userName = userName;
-            this.displayName = displayName;
-            this.type = type;
-            this.password = password;
+            this.UserName = userName;
+            this.DisplayName = displayName;
+            this.Type = type;
+            this.Password = password;
         }
 
         public AccountDTO(DataRow row)
         {
-            this.userName = row["userName"].ToString();
-            this.displayName = row["displayName"].ToString();
-            this.type = (int)row["type"];
-            this.password = row["password"].ToString();
+            this.UserName = row["userName"].ToString();
+            this.DisplayName = row["displayName"].ToString();
+            this.Type = (int)row["type"];
+            this.Password = row["password"].ToString();
         }
 
     }

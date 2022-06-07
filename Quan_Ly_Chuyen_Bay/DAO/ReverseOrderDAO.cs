@@ -16,7 +16,9 @@ namespace Quan_Ly_Chuyen_Bay.DAO
 
         public int GetStatusByCMND(string id)
         {
-            string query = "EXEC USP_GetStatusByCMND @id";
+            string query = String.Format("SELECT TrangThai FROM dbo.PHIEUDATCHO WHERE CMND = '{0}'", id);
+            if (DataProvider.Instance.ExecuteScalar(query, new object[] { id }) == null)
+                return 0;
             return (int)DataProvider.Instance.ExecuteScalar(query, new object[] { id });
         }
     }

@@ -68,10 +68,29 @@ namespace Quan_Ly_Chuyen_Bay
 
         private void btnSearchFlight_Click(object sender, EventArgs e)
         {
-
+            fTraCuuChuyenBay f = new fTraCuuChuyenBay();
+            f.ShowDialog();
         }
 
-        
+
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fThongTinKhachHang f = new fThongTinKhachHang();
+            f.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            fNhanLichChuyenBay f = new fNhanLichChuyenBay();
+            f.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            fBanVeChuyenBay f = new fBanVeChuyenBay();
+            f.ShowDialog();
+        }
     }
 }

@@ -48,12 +48,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\SanBayDAO.cs" />
+    <Compile Include="DAO\SoLuongGheDAO.cs" />
     <Compile Include="DAO\ThamSoDAO.cs" />
     <Compile Include="DAO\BillDAO.cs" />
     <Compile Include="DAO\CustomersDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\ReverseOrderDAO.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
+    <Compile Include="DTO\SoLuongGheDTO.cs" />
     <Compile Include="fAccountProfile.cs">
       <SubType>Form</SubType>
     </Compile>

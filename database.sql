@@ -1,12 +1,12 @@
 ﻿CREATE database QLYBANVECHUYENBAY
 GO
----use master
----go
+--use master
+--go
 Use QLYBANVECHUYENBAY
 GO
 
---DROP database QLYBANVECHUYENBAY
---GO
+DROP database QLYBANVECHUYENBAY
+GO
 
 --Restore database QLBANVECHUYENBAY from disk = 'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\QLYBANVECHUYENBAY.mdf'
 
@@ -50,7 +50,7 @@ CREATE TABLE DOANHTHUCHUYENBAY
 CREATE TABLE SANBAY
 (
  MaSanBay varchar(5) PRIMARY KEY NOT NULL,
- TenSanBay varchar(100) NOT NULL,
+ TenSanBay varchar(100) UNIQUE NOT NULL,
 )
 --DROP TABLE SANBAY
  
@@ -93,28 +93,28 @@ CREATE TABLE VECHUYENBAY
 )
 --DROP TABLE VECHUYENBAY
 
---Bang HANGVE
-CREATE TABLE HANGVE
-(
- MaHangVe INT IDENTITY NOT NULL,
- MaChuyenBay INT NOT NULL, --NGOAI
- TenHangVe  nvarchar(100) UNIQUE NOT NULL,
- PhanTramDonGia float NOT NULL,
- SoLuongGhe int NOT NULL,
- SLGheDat int NOT NULL,
- SLGheTrong int NOT NULL,
- CONSTRAINT PK_HANGVE PRIMARY KEY(MaHangVe)
-)
---DROP TABLE HANGVE
-
 CREATE TABLE SOLUONGGHE
 (
- MaHangVe INT NOT NULL,
+ MaHangVe INT IDENTITY NOT NULL,
  TenHangVe NVARCHAR(100) NOT NULL,
  PhanTramDonGia FLOAT NOT NULL,
  SoLuongGhe INT NOT NULL
  CONSTRAINT PK_SOLUONGGHE PRIMARY KEY(MaHangVe)
 )
+
+--Bang HANGVE
+CREATE TABLE HANGVE
+(
+ MaHangVe INT NOT NULL,
+ MaChuyenBay INT NOT NULL, --NGOAI
+ TenHangVe  nvarchar(100) NOT NULL,
+ PhanTramDonGia float NOT NULL,
+ SoLuongGhe int NOT NULL,
+ SLGheDat int NOT NULL,
+ SLGheTrong int NOT NULL,
+ CONSTRAINT PK_HANGVE PRIMARY KEY(MaHangVe, MaChuyenBay)
+)
+--DROP TABLE HANGVE
 
 --Bang KHACHHANG
 CREATE TABLE KHACHHANG
@@ -148,33 +148,50 @@ CREATE TABLE PHIEUDATCHO
  MaChuyenBay INT NOT NULL, --NGOAI
  GiaTien money NOT NULL,
  NgayDat smalldatetime NOT NULL,
- NgayHetHanTT smalldatetime NOT NULL,
+ NgayHetHanTT smalldatetime NULL,
  TrangThai int DEFAULT 0 NOT NULL,
 )
  
 --DROP TABLE PHIEUDATCHO
  
 --insert INTO PHIEUDATCHO VALUES ('2', '2', '245411311', '1', 700000, '20/05/2022 05:00:00', '0')
- 
+ --DROP TABLE SOLUONGGHE
  
 --Bang THAMSO
 CREATE TABLE THAMSO
 (
- SLSanBay int NOT NULL,
- ThoiGianBayToiThieu int NOT NULL,
- SoSanBayTrungGianToiDa int NOT NULL,
- ThoiGianDungToiThieu int DEFAULT 10 NOT NULL,
- ThoiGianDungToiDa int DEFAULT 20 NOT NULL,
- SLHangVeToiDa int DEFAULT 2 NOT NULL,
- TGChamNhatDatVe int NOT NULL,
- ThoiHanThanhToan int NULL,
- TGChamNhatHuyDatVe int NOT NULL,
+ SLSanBay int DEFAULT 0 NOT NULL,
+ ThoiGianBayToiThieu int DEFAULT 0 NOT NULL,
+ SoSanBayTrungGianToiDa int DEFAULT 0 NOT NULL,
+ ThoiGianDungToiThieu int DEFAULT 0 NOT NULL,
+ ThoiGianDungToiDa int DEFAULT 0 NOT NULL,
+ SLHangVeToiDa int DEFAULT 0 NOT NULL,
+ TGChamNhatDatVe int DEFAULT 0 NOT NULL,
+ ThoiHanThanhToan int DEFAULT 0,
+ TGChamNhatHuyDatVe int DEFAULT 0 NOT NULL,
 )
 GO
 UPDATE dbo.THAMSO SET ThoiGianBayToiThieu = 100
 
-
 --DROP TABLE THAMSO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 -----------ràng buộc bảng CHUYENBAY
 --khoá ngoại
@@ -203,7 +220,7 @@ ALTER TABLE SANBAYTRUNGGIAN ADD CONSTRAINT fk04_CTTG FOREIGN KEY(MaSanBaySau) RE
 --khoá ngoại
 ALTER TABLE VECHUYENBAY ADD CONSTRAINT fk01_VCB FOREIGN KEY(MaChuyenBay) REFERENCES CHUYENBAY(MaChuyenBay)
 ALTER TABLE VECHUYENBAY ADD CONSTRAINT fk02_VCB FOREIGN KEY(CMND) REFERENCES KHACHHANG(CMND)
-ALTER TABLE VECHUYENBAY ADD CONSTRAINT fk03_VCB FOREIGN KEY(MaHangVe) REFERENCES HANGVE(MaHangVe)
+ALTER TABLE VECHUYENBAY ADD CONSTRAINT fk03_VCB FOREIGN KEY(MaHangVe) REFERENCES SOLUONGGHE(MaHangVe)
 ALTER TABLE VECHUYENBAY ADD CONSTRAINT fk04_VCB FOREIGN KEY(MaGhe) REFERENCES VITRIGHE(MaGhe)
 ALTER TABLE VECHUYENBAY ADD CONSTRAINT fk05_VCB FOREIGN KEY(MaSanBayTrungGian) REFERENCES SANBAY(MaSanBay)
 
@@ -227,16 +244,16 @@ ALTER TABLE HANGVE ADD CONSTRAINT fk02_HV FOREIGN KEY(MaHangve) REFERENCES SOLUO
 --khoá ngoại
 ALTER TABLE PHIEUDATCHO ADD CONSTRAINT fk01_PDC FOREIGN KEY(MaChuyenBay) REFERENCES CHUYENBAY(MaChuyenBay)
 ALTER TABLE PHIEUDATCHO ADD CONSTRAINT fk02_PDC FOREIGN KEY(CMND) REFERENCES KHACHHANG(CMND)
-ALTER TABLE PHIEUDATCHO ADD CONSTRAINT fk03_PDC FOREIGN KEY(MaHangVe) REFERENCES HANGVE(MaHangVe)
+ALTER TABLE PHIEUDATCHO ADD CONSTRAINT fk03_PDC FOREIGN KEY(MaHangVe) REFERENCES SOLUONGGHE(MaHangVe)
 ALTER TABLE PHIEUDATCHO ADD CONSTRAINT fk04_PDC FOREIGN KEY(MaGhe) REFERENCES VITRIGHE(MaGhe)
 
 --ALTER TABLE PHIEUDATCHO DROP CONSTRAINT fk01_PDC
---ALTER TABLE PHIEUDATCHO DROP CONSTRAINT fk02_PDC
+--
 --ALTER TABLE PHIEUDATCHO DROP CONSTRAINT fk03_PDC
 --ALTER TABLE PHIEUDATCHO DROP CONSTRAINT fk04_PDC
  
 -----------ràng buộc bảng VITRIGHE
-ALTER TABLE VITRIGHE ADD CONSTRAINT fk01_VTG FOREIGN KEY(MaHangve) REFERENCES HANGVE(MaHangVe)
+ALTER TABLE VITRIGHE ADD CONSTRAINT fk01_VTG FOREIGN KEY(MaHangve) REFERENCES SOLUONGGHE(MaHangVe)
 ALTER TABLE VITRIGHE ADD CONSTRAINT fk02_VTG FOREIGN KEY(MaChuyenBay) REFERENCES CHUYENBAY(MaChuyenBay)
 --ALTER TABLE VITRIGHE DROP CONSTRAINT fk01_VTG
 
@@ -247,6 +264,20 @@ ALTER TABLE VITRIGHE ADD CONSTRAINT fk02_VTG FOREIGN KEY(MaChuyenBay) REFERENCES
 set dateformat dmy
  
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -------------------DU LIEU
 --Du lieu ACCOUNT
 INSERT INTO dbo.ACCOUNT
@@ -274,12 +305,101 @@ VALUES    ( N'Dang',
      )
  
  
+ 
 --SELECT * FROM dbo.ACCOUNT
 --GO
  
- 
+ INSERT INTO dbo.DOANHTHUCHUYENBAY	(	MaChuyenBay,
+										NgayKhoiHanh, --ngoai
+										SoVe, --- MẶC ĐỊNH LÀ KHÔNG CÓ VÉ NÀO
+										DoanhThu
+									)
+VALUES								(	1,
+										'20150701',
+										100,
+										46000
+									)
+
+INSERT INTO dbo.DOANHTHUCHUYENBAY	(	MaChuyenBay,
+										NgayKhoiHanh, --ngoai
+										SoVe, --- MẶC ĐỊNH LÀ KHÔNG CÓ VÉ NÀO
+										DoanhThu
+									)
+VALUES								(	2,
+										'20150101',
+										100,
+										12000
+									)
+
+INSERT INTO dbo.DOANHTHUCHUYENBAY	(	MaChuyenBay,
+										NgayKhoiHanh, --ngoai
+										SoVe, --- MẶC ĐỊNH LÀ KHÔNG CÓ VÉ NÀO
+										DoanhThu
+									)
+VALUES								(	3,
+										'20220901',
+										100,
+										23000
+									)
+
+INSERT INTO dbo.DOANHTHUCHUYENBAY	(	MaChuyenBay,
+										NgayKhoiHanh, --ngoai
+										SoVe, --- MẶC ĐỊNH LÀ KHÔNG CÓ VÉ NÀO
+										DoanhThu
+									)
+VALUES								(	4,
+										'20220401',
+										100,
+										23000
+									)
+
+INSERT INTO dbo.DOANHTHUCHUYENBAY	(	MaChuyenBay,
+										NgayKhoiHanh, --ngoai
+										SoVe, --- MẶC ĐỊNH LÀ KHÔNG CÓ VÉ NÀO
+										DoanhThu
+									)
+VALUES								(	5,
+										'20220401',
+										100,
+										12000
+									)
+
+INSERT INTO dbo.DOANHTHUCHUYENBAY	(	MaChuyenBay,
+										NgayKhoiHanh, --ngoai
+										SoVe, --- MẶC ĐỊNH LÀ KHÔNG CÓ VÉ NÀO
+										DoanhThu
+									)
+VALUES								(	6,
+										'20220401',
+										100,
+										30000
+									)
+
+INSERT INTO dbo.DOANHTHUCHUYENBAY	(	MaChuyenBay,
+										NgayKhoiHanh, --ngoai
+										SoVe, --- MẶC ĐỊNH LÀ KHÔNG CÓ VÉ NÀO
+										DoanhThu
+									)
+VALUES								(	7,
+										'20160801',
+										100,
+										23000
+									)
+
+INSERT INTO dbo.DOANHTHUCHUYENBAY	(	MaChuyenBay,
+										NgayKhoiHanh, --ngoai
+										SoVe, --- MẶC ĐỊNH LÀ KHÔNG CÓ VÉ NÀO
+										DoanhThu
+									)
+VALUES								(	8,
+										'20160301',
+										100,
+										23000
+									)
+
   
 --Du lieu CHUYENBAY
+select * from THAMSO
  
 INSERT INTO CHUYENBAY (GiaVe, MaSanBayDi, MaSanBayDen, NgayGioKhoiHanh, ThoiGianBay) VALUES ('1000000', 'VCS', 'LOL', '25/09/2022 09:00:00', 45)
 --delete from CHUYENBAY WHERE GIAVE = '1000000'
@@ -321,10 +441,9 @@ INSERT INTO SANBAYTRUNGGIAN VALUES ('1', 'LOL', 'San bay quoc te Dak Nong', 'HAN
 INSERT INTO VECHUYENBAY VALUES ('1', '0000000000', 'HARI HAN', '0000000000', '2', 800000, '1', '25/09/2021')
 INSERT INTO VECHUYENBAY VALUES ('1', '1111111111', 'HARI HAN', '1111111111', '2', 900000, '2', '25/09/2021')
 INSERT INTO VECHUYENBAY VALUES ('1', '2222222222', 'HARI HAN', '2222222222', '2', 1000000, '3', '25/09/2021')
-INSERT INTO VECHUYENBAY VALUES ('1', '3333333333', 'HARI HAN', '3333333333', '1', 1100000, '7', '25/09/2021')
-INSERT INTO VECHUYENBAY VALUES ('1', '4444444444', 'HARI HAN', '4444444444', '1', 700000, '8', '25/09/2021')
-INSERT INTO VECHUYENBAY VALUES ('1', '123456789', 'HARI HAN', '0905226387', '1', 800000, '9', '25/09/2021')
-INSERT INTO VECHUYENBAY VALUES ('1', '123456789', 'HARI HAN', '0905226387', '1', 800000, '10', '25/09/2021')
+INSERT INTO VECHUYENBAY VALUES ('2', '3333333333', 'HARI HAN', '3333333333', '1', 1100000, '7', '25/09/2021')
+INSERT INTO VECHUYENBAY VALUES ('2', '4444444444', 'HARI HAN', '4444444444', '1', 700000, '8', '25/09/2021')
+
  
 INSERT INTO VECHUYENBAY VALUES ('2', '123456789', 'HARI NGOC', '0905226387', '1', 800000, '1', '25/09/2021')
 INSERT INTO VECHUYENBAY VALUES ('2', '123456789', 'HARI YANG', '0905226387', '2', 800000, '3', '25/09/2021')
@@ -337,12 +456,16 @@ SELECT * FROM HANGVE
 --Du lieu HANGVE
 INSERT INTO HANGVE (MaHangVe, MaChuyenBay, TenHangVe, PhanTramDonGia, SoLuongGhe, SLGheDat, SLGheTrong) VALUES ()
  
-INSERT INTO HANGVE VALUES ('1', 'Ve hang 1', 1.05, 50, 0, 50)
-INSERT INTO HANGVE VALUES ('1', 'Ve hang 2', 1, 50, 0, 50)
+--INSERT INTO HANGVE  VALUES ('1', 'Ve hang 1', 1.05, 50, 0, 50)
+--INSERT INTO HANGVE VALUES ('1', 'Ve hang 2', 1, 50, 0, 50)
  
-INSERT INTO HANGVE VALUES ('2', 'Ve hang 1', 1.05, 30, 0, 30)
-INSERT INTO HANGVE VALUES ('2', 'Ve hang 2', 1, 30, 0, 30)
-SELECT * FROM HANGVE
+--INSERT INTO HANGVE VALUES ('2', 'Ve hang 1', 1.05, 30, 0, 30)
+--INSERT INTO HANGVE VALUES ('2', 'Ve hang 2', 1, 30, 0, 30)
+
+INSERT INTO SOLUONGGHE (TenHangVe, PhanTramDonGia, SoLuongGhe) VALUES ('Ve hang 1', 1.5, 50)
+INSERT INTO SOLUONGGHE (TenHangVe, PhanTramDonGia, SoLuongGhe) VALUES ('Ve hang 2', 1.2, 100)
+INSERT INTO SOLUONGGHE (TenHangVe, PhanTramDonGia, SoLuongGhe) VALUES ('Ve hang 3', 1, 50)
+SELECT * FROM THAMSO
 --Du lieu KHACHHANG
 --INSERT INTO KHACHHANG (CMND, DienThoai, TenKH) VALUES ()
  
@@ -364,7 +487,24 @@ SLHangVeToiDa, TGChamNhatDatVe, TGChamNhatHuyDatVe)
 VALUES ('10', '30', '2', '10', '20', '50', '24', '1') --sua TGChanNhatDatVe = 24h/60h
 GO
  
+
+ select * from ACCOUNT
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -448,15 +588,15 @@ GO
 --DROP PROC [USP_ChartByYear]
 
 ---PROC LẤY TÊN KHÁCH HÀNG---
-CREATE PROC USP_GetListCustomInForByName
-@name varchar(100)
-AS
-BEGIN
-	SELECT * 
-	FROM dbo.KHACHHANG 
-	WHERE TenKH like @name
-END
-GO
+--CREATE PROC USP_GetListCustomInForByName
+--@name varchar(100)
+--AS
+--BEGIN
+--	SELECT * 
+--	FROM dbo.KHACHHANG 
+--	WHERE TenKH like @name
+--END
+--GO
 
 --DROP PROC USP_GetListCustomInForByName
 CREATE PROC USP_GetStatusByCMND
@@ -489,6 +629,23 @@ BEGIN
 		END
 END
 GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -------------------QUY DINH
 ---------Quy định 1: Có 10 sân bay. Thời gian bay tối thiểu là 30 phút. Có tói đa
 ---2 sân bay trung gian với thời gian dừng từ 10 đến 20 phút
@@ -686,7 +843,7 @@ BEGIN
  SELECT @Time = DATEDIFF(HOUR, @NgatDat, @NgayGioKhoiHanh)
  IF (@Time < @TGChamNhatDatVe)
  BEGIN
-     ROLLBACK TRANSACTION
+     RETURN FALSE;
  END
  ELSE
  BEGIN
@@ -735,3 +892,9 @@ GO
  
 -----------------
 CREATE FUNCTION [dbo].[fuConvertToUnsign1] ( @strInput NVARCHAR(4000) ) RETURNS NVARCHAR(4000) AS BEGIN IF @strInput IS NULL RETURN @strInput IF @strInput = '' RETURN @strInput DECLARE @RT NVARCHAR(4000) DECLARE @SIGN_CHARS NCHAR(136) DECLARE @UNSIGN_CHARS NCHAR (136) SET @SIGN_CHARS = N'ăâđêôơưàảãạáằẳẵặắầẩẫậấèẻẽẹéềểễệế ìỉĩịíòỏõọóồổỗộốờởỡợớùủũụúừửữựứỳỷỹỵý ĂÂĐÊÔƠƯÀẢÃẠÁẰẲẴẶẮẦẨẪẬẤÈẺẼẸÉỀỂỄỆẾÌỈĨỊÍ ÒỎÕỌÓỒỔỖỘỐỜỞỠỢỚÙỦŨỤÚỪỬỮỰỨỲỶỸỴÝ' +NCHAR(272)+ NCHAR(208) SET @UNSIGN_CHARS = N'aadeoouaaaaaaaaaaaaaaaeeeeeeeeee iiiiiooooooooooooooouuuuuuuuuuyyyyy AADEOOUAAAAAAAAAAAAAAAEEEEEEEEEEIIIII OOOOOOOOOOOOOOOUUUUUUUUUUYYYYYDD' DECLARE @COUNTER int DECLARE @COUNTER1 int SET @COUNTER = 1 WHILE (@COUNTER <=LEN(@strInput)) BEGIN SET @COUNTER1 = 1 WHILE (@COUNTER1 <=LEN(@SIGN_CHARS)+1) BEGIN IF UNICODE(SUBSTRING(@SIGN_CHARS, @COUNTER1,1)) = UNICODE(SUBSTRING(@strInput,@COUNTER ,1) ) BEGIN IF @COUNTER=1 SET @strInput = SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)-1) ELSE SET @strInput = SUBSTRING(@strInput, 1, @COUNTER-1) +SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)- @COUNTER) BREAK END SET @COUNTER1 = @COUNTER1 +1 END SET @COUNTER = @COUNTER +1 END SET @strInput = replace(@strInput,' ','-') RETURN @strInput END
+
+GO
+
+SELECT TenHangVe FROM SOLUONGGHE
+DELETE FROM SOLUONGGHE WHERE TenHangVe = 'Ve hang 2'
+
