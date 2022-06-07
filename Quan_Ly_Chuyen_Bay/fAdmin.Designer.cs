@@ -609,7 +609,7 @@
             // 
             this.lbAmount.AutoSize = true;
             this.lbAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAmount.Location = new System.Drawing.Point(892, 19);
+            this.lbAmount.Location = new System.Drawing.Point(856, 18);
             this.lbAmount.Name = "lbAmount";
             this.lbAmount.Size = new System.Drawing.Size(258, 37);
             this.lbAmount.TabIndex = 2;
@@ -934,6 +934,7 @@
             this.btnUpdateTicket.TabIndex = 11;
             this.btnUpdateTicket.Text = "Cập nhật";
             this.btnUpdateTicket.UseVisualStyleBackColor = true;
+            this.btnUpdateTicket.Click += new System.EventHandler(this.btnUpdateTicket_Click);
             // 
             // txbFlightTicketName
             // 

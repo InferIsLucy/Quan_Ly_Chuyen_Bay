@@ -456,12 +456,6 @@ namespace Quan_Ly_Chuyen_Bay
             updateMinFlightTime(txbMinFlightTime.Text);
         }
 
-        private void btnUpdateTicket_Click(object sender, EventArgs e)
-        {
-            string slhvtd = txbFlightTicketName.Text;
-            UpdateSLHV(slhvtd);
-        }
-
         private void btnUpdateBookTicket_Click(object sender, EventArgs e)
         {
             string tghv = txbMinTimeCancelTicket.Text;
@@ -541,6 +535,12 @@ namespace Quan_Ly_Chuyen_Bay
             }
         }
 
+        private void btnUpdateTicket_Click(object sender, EventArgs e)
+        {
+            string slhvtd = txbFlightTicketName.Text;
+            UpdateSLHV(slhvtd);
+        }
+
         private void btnThemSB_Click(object sender, EventArgs e)
         {
             string maSanBay = txbMaSB.Text;
@@ -603,8 +603,9 @@ namespace Quan_Ly_Chuyen_Bay
 
 
 
+
         #endregion
 
-       
+        
     }
 }
